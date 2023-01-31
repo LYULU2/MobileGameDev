@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class youLose : MonoBehaviour
+public class ilose : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class youLose : MonoBehaviour
     void OnTriggerEnter2D(Collider2D  other) {
         // Destroy(gameObject);
         Debug.Log("you dead !!");
-        Destroy(other.gameObject);
+        Destroy(gameObject);
+        // Destroy(other.gameObject);
     }
-    
 }
