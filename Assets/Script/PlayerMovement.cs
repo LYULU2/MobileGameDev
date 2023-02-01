@@ -30,14 +30,15 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+            if (movementVertical != 0)
+            {
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, movementSpeed * movementVertical);
+            }
+            else
+            {
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
+            }
         }
-        if (movementVertical != 0)
-        {
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, movementSpeed * movementVertical);
-        }
-        else
-        {
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
-        }
+        
     }
 }
