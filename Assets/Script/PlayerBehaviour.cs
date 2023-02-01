@@ -15,15 +15,25 @@ public class PlayerBehaviour : MonoBehaviour
     public int Red = 1;
     public Color color;
     // Start is called before the first frame update
+    Vector3 posStart;
+    public float curDistance;
+
     private void Start()
     {
         BlueCount.text = Blue.ToString();
         YellowCount.text = Yellow.ToString();
         RedCount.text = Red.ToString();
+
+        posStart = transform.position;
     }
     private void Update() {
         //need to decrease player's size when it move xx grids
-
+        curDistance = Vector2.Distance(posStart, transform.position);
+            if (curDistance >= 5)
+            {
+                transform.localScale *= 0.9f;
+                posStart = transform.position;
+            }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
