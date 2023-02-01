@@ -24,7 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (collision.tag == "Blue")
         {
-            Blue++;
+            color = new Color(0, 0, 1.0f);
             BlueCount.text = Blue.ToString();
             collision.gameObject.SetActive(false);
             // increase the size
@@ -32,7 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (collision.tag == "Yellow")
         {
-            Yellow++;
+            color = new Color(1.0f, 1.0f, 0);
             YellowCount.text = Yellow.ToString();
             collision.gameObject.SetActive(false);
             // increase the size
@@ -42,7 +42,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (collision.tag == "Red")
         {
-            Red++;
+            color = new Color(1.0f, 0, 0);
             RedCount.text = Red.ToString();
             collision.gameObject.SetActive(false);
             // increase the size
@@ -51,34 +51,7 @@ public class PlayerBehaviour : MonoBehaviour
             // GetComponent<moveForward>().speed += 1.0f;
         }
         // update color based on the number of each color
-        color = new Color((float)Red / 10, (float)Yellow / 10, (float)Blue / 10);
+        
         GetComponent<SpriteRenderer>().color = color;
-        // player die if the ratio of red to blue is greater than 2
-        if (Red > Blue * 2)
-        {
-            Debug.Log("Red > Blue * 2");
-            // output the red and blue value for debugging
-            Debug.Log("Red: " + Red);
-            Debug.Log("Blue: " + Blue);
-            Destroy(gameObject);
-        }
-        // player die if the ratio of blue to yellow is greater than 2
-        if (Blue > Yellow * 2)
-        {
-            Debug.Log("Blue > Yellow * 2");
-            // output the blue and yellow value for debugging
-            Debug.Log("Blue: " + Blue);
-            Debug.Log("Yellow: " + Yellow);
-            Destroy(gameObject);
-        }
-        // player die if the ratio of yellow to red is greater than 2
-        if (Yellow > Red * 2)
-        {
-            Debug.Log("Yellow > Red * 2");
-            // output the yellow and red value for debugging
-            Debug.Log("Yellow: " + Yellow);
-            Debug.Log("Red: " + Red);
-            Destroy(gameObject);
-        }
     }
 }

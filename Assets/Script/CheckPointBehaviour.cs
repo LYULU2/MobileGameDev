@@ -13,9 +13,7 @@ public class CheckPointBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.GetComponent<PlayerBehaviour>().Blue >= 4 &&
-                collision.gameObject.GetComponent<PlayerBehaviour>().Yellow >= 3 &&
-                collision.gameObject.GetComponent<PlayerBehaviour>().Red >= 6)
+            if (collision.GetComponent<SpriteRenderer>().color == GameObject.FindGameObjectsWithTag("Finish")[0].GetComponent<SpriteRenderer>().color)
             {
                 WinScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
