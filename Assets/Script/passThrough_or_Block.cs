@@ -36,6 +36,10 @@ public class passThrough_or_Block : MonoBehaviour
         if (palyerColor.r == 1.0 && palyerColor.g == 0.0 && palyerColor.b == 0)
         {
             wall.isTrigger = true;
-        } else wall.isTrigger = false;
+        } 
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        wall.isTrigger = false;
     }
 }
