@@ -17,7 +17,8 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     Vector3 posStart;
     public float curDistance;
-
+    public GameObject LoseScreen;
+    public GameObject player;
     private void Start()
     {
         BlueCount.text = Blue.ToString();
@@ -34,6 +35,10 @@ public class PlayerBehaviour : MonoBehaviour
                 transform.localScale *= 0.9f;
                 posStart = transform.position;
             }
+             if (transform.localScale.x < 0.5f || transform.localScale.y < 0.5f || transform.localScale.z < 0.5f) {
+                LoseScreen.SetActive(true);
+                Destroy(player);
+             }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
