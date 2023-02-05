@@ -22,7 +22,7 @@ public class StatisticManager : MonoBehaviour
         currentRequest = new RequestHelper {
             Uri = basePath + "/posts.json",
             Body = new Data {
-                curDistance = player.GetComponent<PlayerBehaviour>().curDistance
+                curDistance = player.GetComponent<PlayerBehaviour>().totalDistance
             },
             EnableDebug = true
         };

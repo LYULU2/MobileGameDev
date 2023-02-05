@@ -17,23 +17,19 @@ public class CheckPointBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.GetComponent<SpriteRenderer>().color == GameObject.FindGameObjectsWithTag("Finish")[0].GetComponent<SpriteRenderer>().color)
+            Color playerColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
+            playerColor.r = Mathf.Round(playerColor.r * 10) / 10;
+            playerColor.b = Mathf.Round(playerColor.r * 10) / 10;
+            playerColor.g = Mathf.Round(playerColor.r * 10) / 10;
+            Color wallColor = gameObject.GetComponent<SpriteRenderer>().color;
+            wallColor.r = Mathf.Round(wallColor.r * 10) / 10;
+            wallColor.b = Mathf.Round(wallColor.r * 10) / 10;
+            wallColor.g = Mathf.Round(wallColor.r * 10) / 10;
+            if (collision.transform.tag == "Player" && playerColor == wallColor)
             {
-                // size of player must be <= size of check point
-                // foreach (GameObject checkPoint in checkPoints) {
-                //     if (collision.gameObject.transform.localScale.x <= checkPoint.transform.localScale.x
-                //         && collision.gameObject.transform.localScale.y <= checkPoint.transform.localScale.y
-                //         && collision.gameObject.transform.localScale.z <= checkPoint.transform.localScale.z) {
-                //         WinScreen.SetActive(true);
-                //         collision.gameObject.SetActive(false);
-                //     }
-                // }
                 WinScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
-                
-                //post data if win
                 stats.GetComponent<StatisticManager>().OnGameFinish();
-
             }
             else
             {
