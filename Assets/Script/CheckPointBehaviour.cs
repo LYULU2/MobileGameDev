@@ -8,6 +8,7 @@ public class CheckPointBehaviour : MonoBehaviour
     public GameObject WinScreen;
     public GameObject LoseScreen;
     public GameObject[] checkPoints;
+    public GameObject stats;
     private void Start() {
         checkPoints = GameObject.FindGameObjectsWithTag("Finish");
     }
@@ -30,11 +31,17 @@ public class CheckPointBehaviour : MonoBehaviour
                 WinScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
                 
+                //post data if win
+                stats.GetComponent<StatisticManager>().OnGameFinish();
+
             }
             else
             {
                 LoseScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
+                
+                //post data if lose
+                stats.GetComponent<StatisticManager>().OnGameFinish();
             }
         }
     }
