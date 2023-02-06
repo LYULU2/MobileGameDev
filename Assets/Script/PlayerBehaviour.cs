@@ -24,7 +24,8 @@ public class PlayerBehaviour : MonoBehaviour
     public Vector3 lastEatPosition;
     public float totalDistance = 0;
     public float lastEatDistance = 0;
-    public GameObject LoseScreen;
+    public GameObject LoseScreen_Big;
+    public GameObject LoseScreen_Small;
     public GameObject player;
     
     private void Start()
@@ -58,12 +59,12 @@ public class PlayerBehaviour : MonoBehaviour
             lastEatPosition = transform.position;
         }
         if (transform.localScale.x < loseScale_Small || transform.localScale.y < loseScale_Small || transform.localScale.z < loseScale_Small) {
-            LoseScreen.SetActive(true);
+            LoseScreen_Small.SetActive(true);
             Destroy(gameObject);
         }
         if (transform.localScale.x > loseScale_Big || transform.localScale.y > loseScale_Big || transform.localScale.z > loseScale_Big) {
             Debug.Log("Eat Too Much!!!!!!");
-            LoseScreen.SetActive(true);
+            LoseScreen_Big.SetActive(true);
             Destroy(gameObject);
         }
     }
