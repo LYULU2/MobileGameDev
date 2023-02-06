@@ -21,12 +21,12 @@ public class passThrough_or_Block : MonoBehaviour
         Debug.Log(gameObject.GetComponent<SpriteRenderer>().color.linear);
         Color playerColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
         playerColor.r = Mathf.Round(playerColor.r * 10) / 10;
-        playerColor.b = Mathf.Round(playerColor.r * 10) / 10;
-        playerColor.g = Mathf.Round(playerColor.r * 10) / 10;
+        playerColor.b = Mathf.Round(playerColor.b * 10) / 10;
+        playerColor.g = Mathf.Round(playerColor.g * 10) / 10;
         Color wallColor = gameObject.GetComponent<SpriteRenderer>().color;
         wallColor.r = Mathf.Round(wallColor.r * 10) / 10;
-        wallColor.b = Mathf.Round(wallColor.r * 10) / 10;
-        wallColor.g = Mathf.Round(wallColor.r * 10) / 10;
+        wallColor.b = Mathf.Round(wallColor.b * 10) / 10;
+        wallColor.g = Mathf.Round(wallColor.g * 10) / 10;
         if (collision.transform.tag == "Player" &&  playerColor == wallColor)
         {
             wall.isTrigger = true;
