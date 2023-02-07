@@ -96,7 +96,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (collision.tag == "Blue")
         {
-            color = collision.GetComponent<SpriteRenderer>().color;
+            //color = collision.GetComponent<SpriteRenderer>().color;
             Blue = Blue + 1;
             BlueCount.text = Blue.ToString();
             collision.gameObject.SetActive(false);
@@ -107,7 +107,7 @@ public class PlayerBehaviour : MonoBehaviour
             // transform.localScale += new Vector3(increaseScale, increaseScale, increaseScale);
             //transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
         } else if (collision.tag == "Yellow") {
-            color = collision.GetComponent<SpriteRenderer>().color;
+            //color = collision.GetComponent<SpriteRenderer>().color;
             Yellow = Yellow + 1;
             YellowCount.text = Yellow.ToString();
             collision.gameObject.SetActive(false);
@@ -139,7 +139,18 @@ public class PlayerBehaviour : MonoBehaviour
         //if (transform.localScale > upLimit) transform.localScale = upLimit;
         //transform.localScale = Mathf.Max(transform.localScale, upLimit);
         // update color based on the number of each color
-        
+        if (Blue > Yellow)
+        {
+            color = Color.blue;
+        }
+        else if (Yellow > Blue)
+        {
+            color = Color.yellow;
+        }
+        else if (Blue == Yellow)
+        {
+            color = Color.green;
+        }
         GetComponent<SpriteRenderer>().color = color;
     }
     
