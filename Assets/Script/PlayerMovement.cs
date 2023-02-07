@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementHorizontal != 0)
         {
-            Debug.Log("horray");
+            //Debug.Log("horray");
             rigidbody.velocity = new Vector2(movementSpeed * movementHorizontal, 0);
         }
         else if (movementVertical != 0)

@@ -19,12 +19,14 @@ public class CheckPointBehaviour : MonoBehaviour
         {
             Color playerColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
             playerColor.r = Mathf.Round(playerColor.r * 10) / 10;
-            playerColor.b = Mathf.Round(playerColor.r * 10) / 10;
-            playerColor.g = Mathf.Round(playerColor.r * 10) / 10;
+            playerColor.b = Mathf.Round(playerColor.b * 10) / 10;
+            playerColor.g = Mathf.Round(playerColor.g * 10) / 10;
+            // Debug.Log(playerColor.r + "" + playerColor.b );
             Color wallColor = gameObject.GetComponent<SpriteRenderer>().color;
             wallColor.r = Mathf.Round(wallColor.r * 10) / 10;
-            wallColor.b = Mathf.Round(wallColor.r * 10) / 10;
-            wallColor.g = Mathf.Round(wallColor.r * 10) / 10;
+            wallColor.b = Mathf.Round(wallColor.b * 10) / 10;
+            wallColor.g = Mathf.Round(wallColor.g * 10) / 10;
+            // Debug.Log(wallColor);
             if (collision.transform.tag == "Player" && playerColor == wallColor)
             {
                 WinScreen.SetActive(true);

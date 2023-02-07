@@ -18,5 +18,9 @@ public class RESET : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (Input.GetKeyDown(KeyCode.N) && SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
     }
 }

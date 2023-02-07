@@ -12,21 +12,26 @@ public class PlayerBehaviour : MonoBehaviour
     public float increaseScale = 0.05f;
     public float loseScale_Small = 0.01f;
     public float loseScale_Big = 3.0f;
+
+    public GameObject BlueBall;
+    public GameObject YellowBall;
+    public GameObject CheckPoint;
     public Text BlueCount;
     public Text YellowCount;
-    public Text RedCount;
-    public int Blue = 0;
-    public int Yellow = 0;
-    public int Red = 1;
-    public Color color;
+
+    // public Text RedCount;
+    private int Blue = 0;
+    private int Yellow = 0;
+    // public int Red = 1;
+    private Color playerColor;
     Vector3 posStart;
     // public float shrinkDistance; // distance that haven't eat
     public Vector3 oldPosition;
     public Vector3 lastEatPosition;
     public float totalDistance = 0;
     public float lastEatDistance = 0;
-    public GameObject LoseScreen_Big;
-    public GameObject LoseScreen_Small;
+    // public GameObject LoseScreen_Big;
+    // public GameObject LoseScreen_Small;
     // public GameObject player;
     
     private void Start()
@@ -39,7 +44,7 @@ public class PlayerBehaviour : MonoBehaviour
         lastEatPosition = transform.position;
     }
     private void Update() {
-        checkShit(decreaseScale_Shit);
+        // checkShit(decreaseScale_Shit);
 
         //calculate player's walking distance
         Vector3 distanceVector = transform.position - oldPosition;
@@ -66,11 +71,11 @@ public class PlayerBehaviour : MonoBehaviour
         //     LoseScreen_Small.SetActive(true);
         //     Destroy(gameObject);
         // }
-        if (transform.localScale.x > loseScale_Big || transform.localScale.y > loseScale_Big || transform.localScale.z > loseScale_Big) {
-            Debug.Log("Eat Too Much!!!!!!");
-            LoseScreen_Big.SetActive(true);
-            Destroy(gameObject);
-        }
+        // if (transform.localScale.x > loseScale_Big || transform.localScale.y > loseScale_Big || transform.localScale.z > loseScale_Big) {
+        //     Debug.Log("Eat Too Much!!!!!!");
+        //     LoseScreen_Big.SetActive(true);
+        //     Destroy(gameObject);
+        // }
     }
     private void checkShit(float decreaseScale_Shit)
     {
@@ -80,7 +85,6 @@ public class PlayerBehaviour : MonoBehaviour
             DecreaseScale(decreaseScale_Shit);
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             // color = Color.white;
-            Debug.Log("space key was pressed");
         }
     }
     public void DecreaseScale(float decreaseScale)
@@ -138,20 +142,21 @@ public class PlayerBehaviour : MonoBehaviour
         // }
         //if (transform.localScale > upLimit) transform.localScale = upLimit;
         //transform.localScale = Mathf.Max(transform.localScale, upLimit);
+
         // update color based on the number of each color
         if (Blue > Yellow)
         {
-            color = Color.blue;
+            playerColor = BlueBall.GetComponent<SpriteRenderer>().color;
         }
         else if (Yellow > Blue)
         {
-            color = Color.yellow;
+            playerColor = YellowBall.GetComponent<SpriteRenderer>().color;
         }
         else if (Blue == Yellow)
         {
-            color = Color.green;
+            playerColor = CheckPoint.GetComponent<SpriteRenderer>().color;
         }
-        GetComponent<SpriteRenderer>().color = color;
+        gameObject.GetComponent<SpriteRenderer>().color = playerColor;
     }
     
 }
