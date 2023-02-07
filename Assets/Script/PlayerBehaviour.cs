@@ -53,19 +53,19 @@ public class PlayerBehaviour : MonoBehaviour
         oldPosition = transform.position;
         //need to decrease player's size when it move xx grids
         // shrinkDistance = Vector2.Distance(posStart, transform.position);
-        if (lastEatDistance >= decreaseDistance)
-        {
-            DecreaseScale(decreaseScale);
-            // transform.localScale -= new Vector3(decreaseScale, decreaseScale, decreaseScale);
-            // // transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
-            // posStart = transform.position;
-            // lastEatDistance = 0;
-            // lastEatPosition = transform.position;
-        }
-        if (transform.localScale.x < loseScale_Small || transform.localScale.y < loseScale_Small || transform.localScale.z < loseScale_Small) {
-            LoseScreen_Small.SetActive(true);
-            Destroy(gameObject);
-        }
+        // if (lastEatDistance >= decreaseDistance)
+        // {
+        //     DecreaseScale(decreaseScale);
+        //     // transform.localScale -= new Vector3(decreaseScale, decreaseScale, decreaseScale);
+        //     // // transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
+        //     // posStart = transform.position;
+        //     // lastEatDistance = 0;
+        //     // lastEatPosition = transform.position;
+        // }
+        // if (transform.localScale.x < loseScale_Small || transform.localScale.y < loseScale_Small || transform.localScale.z < loseScale_Small) {
+        //     LoseScreen_Small.SetActive(true);
+        //     Destroy(gameObject);
+        // }
         if (transform.localScale.x > loseScale_Big || transform.localScale.y > loseScale_Big || transform.localScale.z > loseScale_Big) {
             Debug.Log("Eat Too Much!!!!!!");
             LoseScreen_Big.SetActive(true);
@@ -104,7 +104,7 @@ public class PlayerBehaviour : MonoBehaviour
             lastEatDistance = 0;
             lastEatPosition = transform.position;
             // increase the size
-            transform.localScale += new Vector3(increaseScale, increaseScale, increaseScale);
+            // transform.localScale += new Vector3(increaseScale, increaseScale, increaseScale);
             //transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
         } else if (collision.tag == "Yellow") {
             color = collision.GetComponent<SpriteRenderer>().color;
@@ -115,7 +115,7 @@ public class PlayerBehaviour : MonoBehaviour
             lastEatDistance = 0;
             lastEatPosition = transform.position;
             // increase the size
-            transform.localScale += new Vector3(increaseScale, increaseScale, increaseScale);
+            // transform.localScale += new Vector3(increaseScale, increaseScale, increaseScale);
             // transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
             // increase the speed
             // GetComponent<moveForward>().speed += 1.0f;
@@ -132,10 +132,10 @@ public class PlayerBehaviour : MonoBehaviour
         //     // increase the speed
         //     // GetComponent<moveForward>().speed += 1.0f;
         // }
-        if (transform.localScale.x > loseScale_Big || transform.localScale.y > loseScale_Big || transform.localScale.z > loseScale_Big) {
-            Debug.Log("I really don't know does it work?");
-            transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-        }
+        // if (transform.localScale.x > loseScale_Big || transform.localScale.y > loseScale_Big || transform.localScale.z > loseScale_Big) {
+        //     Debug.Log("Ofcourse it works!");
+        //     transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+        // }
         //if (transform.localScale > upLimit) transform.localScale = upLimit;
         //transform.localScale = Mathf.Max(transform.localScale, upLimit);
         // update color based on the number of each color
