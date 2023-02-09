@@ -7,14 +7,21 @@ using Model; // Data class's namespace
 
 public class StatisticManager : MonoBehaviour
 {
+    public GameObject player;
+
     private readonly string basePath = "https://qaqthebest-3d6c6-default-rtdb.firebaseio.com/";
     private RequestHelper currentRequest;
 
-    public GameObject player;
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Stat");
+
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void PostData()
@@ -22,7 +29,11 @@ public class StatisticManager : MonoBehaviour
         currentRequest = new RequestHelper {
             Uri = basePath + "/posts.json",
             Body = new Data {
-                curDistance = player.GetComponent<PlayerBehaviour>().totalDistance
+                curDistance = player.GetComponent<PlayerBehaviour>().totalDistance,
+                // resetTimes = GameObject.FindGameObjectsWithTag("Reset").GetComponent<RESET>().restartTimes,
+                // playTime = GameObject.FindGameObjectsWithTag("Reset").GetComponent<RESET>().timer,
+                // collectBlue = player.GetComponent<PlayerBehaviour>().Blue,
+                // collectYellow = player.GetComponent<PlayerBehaviour>().Yellow,
             },
             EnableDebug = true
         };
@@ -32,9 +43,9 @@ public class StatisticManager : MonoBehaviour
                 // And later we can clear the default query string params for all requests
                 RestClient.ClearDefaultParams();
 
-                Debug.Log( JsonUtility.ToJson(res, true));
+                Debug.Log(JsonUtility.ToJson(res, true));
             })
-            .Catch(err => Debug.Log( err.Message));
+            .Catch(err => Debug.Log(err.Message));
     }
 
     public void OnGameFinish()

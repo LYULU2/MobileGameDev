@@ -11,6 +11,8 @@ TagManager:
   - LiveWalls
   - redWall
   - colorBar
+  - Reset
+  - Stat
   layers:
   - Default
   - TransparentFX
