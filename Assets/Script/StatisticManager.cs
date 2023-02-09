@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Proyecto26;
 using Model; // Data class's namespace
+using UnityEngine.SceneManagement;
 
 public class StatisticManager : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class StatisticManager : MonoBehaviour
                 playTime = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().timer,
                 collectBlue = player.GetComponent<PlayerBehaviour>().Blue,
                 collectYellow = player.GetComponent<PlayerBehaviour>().Yellow,
+                sceneName = SceneManager.GetActiveScene().name
             },
             EnableDebug = true
         };

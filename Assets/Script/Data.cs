@@ -6,6 +6,7 @@ namespace Model
     [Serializable]
     public class Data
     {
+        public string sceneName;
         public float curDistance;
         public int resetTimes;
         public float playTime;
