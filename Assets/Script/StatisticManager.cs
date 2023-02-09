@@ -27,13 +27,13 @@ public class StatisticManager : MonoBehaviour
     public void PostData()
     {
         currentRequest = new RequestHelper {
-            Uri = basePath + "/posts.json",
+            Uri = basePath + "/exp.json",
             Body = new Data {
                 curDistance = player.GetComponent<PlayerBehaviour>().totalDistance,
-                // resetTimes = GameObject.FindGameObjectsWithTag("Reset").GetComponent<RESET>().restartTimes,
-                // playTime = GameObject.FindGameObjectsWithTag("Reset").GetComponent<RESET>().timer,
-                // collectBlue = player.GetComponent<PlayerBehaviour>().Blue,
-                // collectYellow = player.GetComponent<PlayerBehaviour>().Yellow,
+                resetTimes = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().restartTimes,
+                playTime = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().timer,
+                collectBlue = player.GetComponent<PlayerBehaviour>().Blue,
+                collectYellow = player.GetComponent<PlayerBehaviour>().Yellow,
             },
             EnableDebug = true
         };
@@ -50,6 +50,9 @@ public class StatisticManager : MonoBehaviour
 
     public void OnGameFinish()
     {
+        //post data when not testing in editor
+#if !UNITY_EDITOR
         PostData();
+#endif
     }
 }
