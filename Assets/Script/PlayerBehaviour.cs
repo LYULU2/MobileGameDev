@@ -16,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject BlueBall;
     public GameObject YellowBall;
     public GameObject CheckPoint;
-    private GameObject[] colorBar = new GameObject[4];
+    private GameObject[] colorBar = new GameObject[10];
     public Text BlueCount;
     public Text YellowCount;
 
@@ -44,7 +44,7 @@ public class PlayerBehaviour : MonoBehaviour
         oldPosition = transform.position;
         lastEatPosition = transform.position;
         Blue = Yellow = 0;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
             
             // Get the Renderer component from the new cube
@@ -109,31 +109,23 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
     private void updateColorBar() {
-        int B = 2, Y = 2, i = 0;
-        if (Blue + Yellow < 4) {
-            B = Blue; Y = Yellow;
+        int B = Blue, Y = Yellow;
+        if (Yellow == 0) B = 10;
+        else if (Blue == 0) Y = 10;
+        else if (Blue == Yellow) {
+            B = Y = 5;
         } else {
-            if (Blue != Yellow) {
-                if (Yellow > Blue) {
-                    if (Yellow - Blue == 1) {
-                        Y = 3; B = 1;
-                    } else Y = 4;
-                } else {
-                    if (Blue - Yellow == 1) {
-                        B = 3; Y = 1;
-                    } else B = 4;
-                }
-            } 
+            //Y = 10*Yellow/total;
+            B = 10*Blue/(Yellow + Blue);
         }
+        //Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
         for (int j = 0; j < B; j++) {
-                var cubeRenderer = colorBar[i].GetComponent<Renderer>();
-                cubeRenderer.material.SetColor("_Color", Color.blue);
-                i++;
-            }
-        for (int j = 0; j < Y; j++) {
-            var cubeRenderer = colorBar[i].GetComponent<Renderer>();
+            var cubeRenderer = colorBar[j].GetComponent<Renderer>();
+            cubeRenderer.material.SetColor("_Color", Color.blue);
+        }
+        for (int j = B; j < 10; j++) {
+            var cubeRenderer = colorBar[j].GetComponent<Renderer>();
             cubeRenderer.material.SetColor("_Color", Color.yellow);
-            i++;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
