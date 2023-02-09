@@ -14,13 +14,15 @@ public class RESET : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(currentSceneIndex);
         }
-        if (Input.GetKeyDown(KeyCode.N) && SceneManager.GetActiveScene().buildIndex == 0)
+        if (Input.GetKeyDown(KeyCode.N) && (currentSceneIndex + 1) < SceneManager.sceneCountInBuildSettings)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
 }
