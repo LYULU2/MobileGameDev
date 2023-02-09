@@ -27,11 +27,17 @@ public class CheckPointBehaviour : MonoBehaviour
             wallColor.b = Mathf.Round(wallColor.b * 10) / 10;
             wallColor.g = Mathf.Round(wallColor.g * 10) / 10;
             // Debug.Log(wallColor);
-            if (collision.transform.tag == "Player" && playerColor == wallColor)
+            if (collision.transform.tag == "Player")
             {
-                WinScreen.SetActive(true);
-                collision.gameObject.SetActive(false);
-                stats.GetComponent<StatisticManager>().OnGameFinish();
+                if (playerColor == wallColor) {
+                    WinScreen.SetActive(true);
+                    collision.gameObject.SetActive(false);
+                    stats.GetComponent<StatisticManager>().OnGameFinish();
+                } else {
+                    LoseScreen.SetActive(true);
+                    collision.gameObject.SetActive(false);
+                    stats.GetComponent<StatisticManager>().OnGameFinish();
+                }
             }
             // else
             // {

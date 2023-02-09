@@ -42,6 +42,7 @@ public class PlayerBehaviour : MonoBehaviour
         posStart = transform.position;
         oldPosition = transform.position;
         lastEatPosition = transform.position;
+        Blue = Yellow = 0;
     }
     private void Update() {
         // checkShit(decreaseScale_Shit);
