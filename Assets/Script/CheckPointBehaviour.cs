@@ -23,14 +23,6 @@ public class CheckPointBehaviour : MonoBehaviour
             Color wallColor = gameObject.GetComponent<SpriteRenderer>().color;
             string playerColorHex = ColorUtility.ToHtmlStringRGBA(playerColor);
             string wallColorHex = ColorUtility.ToHtmlStringRGBA(wallColor);
-            //playerColor.r = Mathf.Round(playerColor.r * 10) / 10;
-            //playerColor.b = Mathf.Round(playerColor.b * 10) / 10;
-            //playerColor.g = Mathf.Round(playerColor.g * 10) / 10;
-            // Debug.Log(playerColor.r + "" + playerColor.b );
-            //wallColor.r = Mathf.Round(wallColor.r * 10) / 10;
-            //wallColor.b = Mathf.Round(wallColor.b * 10) / 10;
-            //wallColor.g = Mathf.Round(wallColor.g * 10) / 10;
-            // Debug.Log(wallColor);
             if (playerColorHex == wallColorHex) {
                 WinScreen.SetActive(true);
                 collision.gameObject.SetActive(false);

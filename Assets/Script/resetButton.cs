@@ -16,7 +16,7 @@ public class resetButton : MonoBehaviour
     {
         
     }
-    public void OnButtonPress(){
+    public void OnButtonPress() {
         Debug.Log("we got reset !!!");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

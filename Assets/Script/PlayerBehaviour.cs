@@ -43,6 +43,7 @@ public class PlayerBehaviour : MonoBehaviour
         float distance = distanceVector.magnitude;
         totalDistance += distance;
         oldPosition = gameObject.transform.position;
+        //Debug.Log("we walk" + totalDistance);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
