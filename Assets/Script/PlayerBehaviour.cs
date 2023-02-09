@@ -16,6 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject BlueBall;
     public GameObject YellowBall;
     public GameObject CheckPoint;
+    private GameObject[] colorBar = new GameObject[4];
     public Text BlueCount;
     public Text YellowCount;
 
@@ -43,6 +44,16 @@ public class PlayerBehaviour : MonoBehaviour
         oldPosition = transform.position;
         lastEatPosition = transform.position;
         Blue = Yellow = 0;
+        for (int i = 0; i < 4; i++) {
+            colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
+            
+            // Get the Renderer component from the new cube
+            var cubeRenderer = colorBar[i].GetComponent<Renderer>();
+
+            // Call SetColor using the shader property name "_Color" and setting the color to red
+            cubeRenderer.material.SetColor("_Color", Color.white);
+        }
+        
     }
     private void Update() {
         // checkShit(decreaseScale_Shit);
@@ -96,6 +107,34 @@ public class PlayerBehaviour : MonoBehaviour
         lastEatDistance = 0;
         lastEatPosition = transform.position;
 
+    }
+    private void updateColorBar() {
+        int B = 2, Y = 2, i = 0;
+        if (Blue + Yellow < 4) {
+            B = Blue; Y = Yellow;
+        } else {
+            if (Blue != Yellow) {
+                if (Yellow > Blue) {
+                    if (Yellow - Blue == 1) {
+                        Y = 3; B = 1;
+                    } else Y = 4;
+                } else {
+                    if (Blue - Yellow == 1) {
+                        B = 3; Y = 1;
+                    } else B = 4;
+                }
+            } 
+        }
+        for (int j = 0; j < B; j++) {
+                var cubeRenderer = colorBar[i].GetComponent<Renderer>();
+                cubeRenderer.material.SetColor("_Color", Color.blue);
+                i++;
+            }
+        for (int j = 0; j < Y; j++) {
+            var cubeRenderer = colorBar[i].GetComponent<Renderer>();
+            cubeRenderer.material.SetColor("_Color", Color.yellow);
+            i++;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -158,6 +197,7 @@ public class PlayerBehaviour : MonoBehaviour
             playerColor = CheckPoint.GetComponent<SpriteRenderer>().color;
         }
         gameObject.GetComponent<SpriteRenderer>().color = playerColor;
+        updateColorBar();
     }
     
 }
