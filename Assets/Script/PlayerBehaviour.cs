@@ -12,6 +12,8 @@ public class PlayerBehaviour : MonoBehaviour
     public int Blue = 0;
     public int Yellow = 0;
     public float totalDistance = 0;
+    public Color color1;
+    public Color color2;
 
     private Vector3 oldPosition;
     private Color playerColor;
@@ -25,10 +27,10 @@ public class PlayerBehaviour : MonoBehaviour
             colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
             
             // Get the Renderer component from the new cube
-            var cubeRenderer = colorBar[i].GetComponent<Renderer>();
+            var cubeRenderer = colorBar[i].GetComponent<SpriteRenderer>();
 
             // Call SetColor using the shader property name "_Color" and setting the color to red
-            cubeRenderer.material.SetColor("_Color", Color.white);
+            //cubeRenderer.material.SetColor("_Color", Color.white);
         }     
     }
     private void Update() 
@@ -90,12 +92,12 @@ public class PlayerBehaviour : MonoBehaviour
         }
         //Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
         for (int j = 0; j < B; j++) {
-            var cubeRenderer = colorBar[j].GetComponent<Renderer>();
-            cubeRenderer.material.SetColor("_Color", Color.blue);
+            var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
+            cubeRenderer.color = color1;
         }
         for (int j = B; j < 10; j++) {
-            var cubeRenderer = colorBar[j].GetComponent<Renderer>();
-            cubeRenderer.material.SetColor("_Color", Color.yellow);
+            var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
+            cubeRenderer.color = color2;
         }
     }
 }

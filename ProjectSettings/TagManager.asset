@@ -13,6 +13,7 @@ TagManager:
   - colorBar
   - Reset
   - Stat
+  - Reset Button
   layers:
   - Default
   - TransparentFX
