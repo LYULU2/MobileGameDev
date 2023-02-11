@@ -13206,21 +13206,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e933b86b7451646a4f9aa03b8c8a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decreaseDistance: 1
-  decreaseScale_Shit: 0.05
-  decreaseScale: 0.03
-  increaseScale: 0.05
-  loseScale_Small: 0.03
-  loseScale_Big: 0.47
+  CheckPoint: {fileID: 5919164483207715705, guid: bf266fa95b6b643f1929c31e49d3b318, type: 3}
   BlueBall: {fileID: 1901933700519093691, guid: 685f7068fcf744e2cba69fd1ada015f1, type: 3}
   YellowBall: {fileID: 8322706472797333032, guid: 49fdc005ee4064c2a920b714a1f81986, type: 3}
-  CheckPoint: {fileID: 5919164483207715705, guid: bf266fa95b6b643f1929c31e49d3b318, type: 3}
-  BlueCount: {fileID: 1800862602}
-  YellowCount: {fileID: 1179736045}
-  oldPosition: {x: 0, y: 0, z: 0}
-  lastEatPosition: {x: 0, y: 0, z: 0}
+  Blue: 0
+  Yellow: 0
   totalDistance: 0
-  lastEatDistance: 0
+  color1: {r: 0, g: 0, b: 0, a: 0}
+  color2: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &477838680
 GameObject:
   m_ObjectHideFlags: 0
@@ -26980,6 +26973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703e4bcca12ad044b935a26da8322b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restartTimes: 0
+  timer: 0
 --- !u!4 &1019146620
 Transform:
   m_ObjectHideFlags: 0
@@ -31237,7 +31232,7 @@ GameObject:
   - component: {fileID: 1160950012}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: redWall
+  m_TagString: Reset Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
