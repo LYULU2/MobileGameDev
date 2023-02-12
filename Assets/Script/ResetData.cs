@@ -3,11 +3,10 @@ using System;
 namespace Model
 {
     [Serializable]
-    public class Data
+    public class ResetData
     {
         public string sceneName;
         public float curDistance;
-        public int resetTimes;
         public float playTime;
         public int collectBlue;
         public int collectYellow;
