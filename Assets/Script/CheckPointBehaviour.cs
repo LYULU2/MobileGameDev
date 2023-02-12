@@ -10,7 +10,7 @@ public class CheckPointBehaviour : MonoBehaviour
     public GameObject WinScreen;
     public GameObject LoseScreen;
     public GameObject[] checkPoints;
-    public GameObject stats;
+    public GameObject Stats;
 
     public int SceneIndex;
     /*
@@ -61,11 +61,11 @@ public class CheckPointBehaviour : MonoBehaviour
             if (playerColorHex == wallColorHex) {
                 WinScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
-                stats.GetComponent<StatisticManager>().OnGameFinish();
+                Stats.GetComponent<StatisticManager>().OnGameFinish();
             } else {
                 LoseScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
-                stats.GetComponent<StatisticManager>().OnGameFinish();
+                Stats.GetComponent<StatisticManager>().OnGameFinish();
             }
         }
     }

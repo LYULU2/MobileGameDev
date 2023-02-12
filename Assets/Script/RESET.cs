@@ -11,9 +11,11 @@ public class RESET : MonoBehaviour
     public GameObject Player;
     public GameObject Canvas;
     public GameObject GameManager;
+	public GameObject Stats;
     // Start is called before the first frame update
     public void Reset()
     {
+		Stats.GetComponent<StatisticManager>().OnGameReset();
         timer = 0f;
         restartTimes += 1;
         Player.GetComponent<PlayerBehaviour>().Reset();

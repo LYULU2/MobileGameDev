@@ -9035,6 +9035,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 405825578}
+    - target: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
       propertyPath: Canvas
       value: 
       objectReference: {fileID: 5152369952533462368}
