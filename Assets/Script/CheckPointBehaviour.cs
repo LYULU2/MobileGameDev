@@ -13,23 +13,36 @@ public class CheckPointBehaviour : MonoBehaviour
     public GameObject stats;
 
     public int SceneIndex;
-    private void Awake()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Finish");
+    /*
+        private void Awake()
+        {
+            Debug.Log("Awake");
+            GameObject[] objs = GameObject.FindGameObjectsWithTag("Finish");
+            Debug.Log(objs.Length > 1 && SceneIndex != SceneManager.GetActiveScene().buildIndex);
+            if (objs.Length > 1 && SceneIndex != SceneManager.GetActiveScene().buildIndex)
+            {
+                Destroy(this.gameObject);
+            }
+            DontDestroyOnLoad(this.gameObject);
+        }
 
-        if (objs.Length > 1)
+        private void OnLevelWasLoaded(int level)
         {
-            Destroy(this.gameObject);
+            Debug.Log("LevelWasLoaded");
+            GameObject[] objs = GameObject.FindGameObjectsWithTag("Finish");
+            if (level != SceneIndex)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(objs[1]);
+            }
         }
-        DontDestroyOnLoad(this.gameObject);
-        SceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
-    private void OnLevelWasLoaded(int level)
+    */
+    private void Reset()
     {
-        if (level != SceneIndex)
-        {
-            Destroy(gameObject);
-        }
+        
     }
     private void Start() {
         checkPoints = GameObject.FindGameObjectsWithTag("Finish");

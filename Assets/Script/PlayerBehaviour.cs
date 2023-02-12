@@ -14,13 +14,20 @@ public class PlayerBehaviour : MonoBehaviour
     public float totalDistance = 0;
     public Color color1;
     public Color color2;
+    public int SceneIndex;
 
+    private Vector3 StartPosition;
     private Vector3 oldPosition;
     private Color playerColor;
     private GameObject[] colorBar = new GameObject[10];
+    
+
+    //Reload same level
+
 
     private void Start()
     {
+        StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
  
         for (int i = 0; i < 10; i++) {
@@ -99,5 +106,28 @@ public class PlayerBehaviour : MonoBehaviour
             var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
             cubeRenderer.color = color2;
         }
+    }
+    public void Reset()
+    {
+        transform.position = StartPosition;
+        oldPosition = gameObject.transform.position;
+        colorBar = new GameObject[10];
+        for (int i = 0; i < 10; i++)
+        {
+            colorBar[i] = this.gameObject.transform.GetChild(i + 1).gameObject;
+
+            // Get the Renderer component from the new cube
+            var cubeRenderer = colorBar[i].GetComponent<SpriteRenderer>();
+            cubeRenderer.color = Color.white;
+
+            // Call SetColor using the shader property name "_Color" and setting the color to red
+            //cubeRenderer.material.SetColor("_Color", Color.white);
+        }
+        totalDistance = 0;
+        playerColor = Color.white;
+        gameObject.GetComponent<SpriteRenderer>().color = playerColor;
+        Blue = 0;
+        Yellow = 0;
+        gameObject.SetActive(true);
     }
 }

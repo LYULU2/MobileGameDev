@@ -12,7 +12,7 @@ public class StatisticManager : MonoBehaviour
 
     private readonly string basePath = "https://qaqthebest-3d6c6-default-rtdb.firebaseio.com/";
     private RequestHelper currentRequest;
-
+    /*
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Stat");
@@ -24,7 +24,7 @@ public class StatisticManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
     }
-
+    */
     public void PostData()
     {
         currentRequest = new RequestHelper {

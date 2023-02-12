@@ -1,13 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject[] Collectables;
+    public int SceneIndex;
+    public GameObject CheckPoint;
+    public GameObject WinScreen;
+
     private resetButton rb = new resetButton();
     private GameObject player;
+    public void Reset()
+    {
+        foreach(GameObject collectable in Collectables)
+        {
+            collectable.gameObject.SetActive(true);
+        }
+    }
     GameObject[] FindGameObjectsWithTags(params string[] tags)
     {
         var all = new List<GameObject>();
@@ -19,7 +31,6 @@ public class GameManager : MonoBehaviour
 
         return all.ToArray();
     }
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -50,5 +61,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         finishCollect();
+        if (WinScreen.activeSelf == true)
+        {
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+            if (currentIndex +1 < SceneManager.sceneCountInBuildSettings && Input.GetKeyDown(KeyCode.N))
+            {
+                SceneManager.LoadScene(currentIndex + 1);
+            }
+        }
     }
 }
