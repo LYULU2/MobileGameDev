@@ -14,6 +14,7 @@ TagManager:
   - Reset
   - Stat
   - Reset Button
+  - tcb
   layers:
   - Default
   - TransparentFX
