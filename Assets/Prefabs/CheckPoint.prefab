@@ -129,4 +129,5 @@ MonoBehaviour:
   WinScreen: {fileID: 0}
   LoseScreen: {fileID: 0}
   checkPoints: []
-  stats: {fileID: 0}
+  Stats: {fileID: 2382865661956447277, guid: 8884ec4e39d0f4e64b00d0cdeec7ff8a, type: 3}
+  SceneIndex: 0
