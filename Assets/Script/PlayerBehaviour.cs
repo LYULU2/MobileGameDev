@@ -92,14 +92,14 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (Yellow == 0) {
             var cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color2;
+            cubeRenderer.color = color1;
             cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color2;
+            cubeRenderer.color = color1;
         } else if (Blue == 0) {
             var cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color1;
+            cubeRenderer.color = color2;
             cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color1;
+            cubeRenderer.color = color2;
         }
         else if (Blue == Yellow) {
             tcb[0].transform.localScale = new Vector3(12.88075f, 1.880215f, 1f);
