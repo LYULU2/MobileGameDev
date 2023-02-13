@@ -15,11 +15,12 @@ public class PlayerBehaviour : MonoBehaviour
     public Color color1;
     public Color color2;
     public int SceneIndex;
-
+    private double barLength = 12.88075*2;
     private Vector3 StartPosition;
     private Vector3 oldPosition;
     private Color playerColor;
     private GameObject[] colorBar = new GameObject[10];
+    private GameObject[] tcb;
     
 
     //Reload same level
@@ -29,7 +30,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
- 
+        tcb = GameObject.FindGameObjectsWithTag("tcb");
         for (int i = 0; i < 10; i++) {
             colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
             
@@ -84,8 +85,41 @@ public class PlayerBehaviour : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().color = playerColor;
         updateColorBar();
+        updateTopColorBar();
     }
+    private void updateTopColorBar() {
+        //tcb 0 = blue, 1 = yellow
 
+        if (Yellow == 0) {
+            var cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
+            cubeRenderer.color = color2;
+            cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
+            cubeRenderer.color = color2;
+        } else if (Blue == 0) {
+            var cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
+            cubeRenderer.color = color1;
+            cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
+            cubeRenderer.color = color1;
+        }
+        else if (Blue == Yellow) {
+            tcb[0].transform.localScale = new Vector3(12.88075f, 1.880215f, 1f);
+            tcb[1].transform.localScale = new Vector3(12.88075f, 1.880215f, 1f);
+            var c2 = tcb[1].GetComponent<SpriteRenderer>();
+            c2.color = color2;
+            var c1 = tcb[0].GetComponent<SpriteRenderer>();
+            c1.color = color1;
+        } else {
+            //Y = 10*Yellow/total;
+            float B = 25.7615f*(float)Blue/(float)(Yellow + Blue);
+            float Y = 25.7615f-B;
+            tcb[0].transform.localScale = new Vector3(B, 1.880215f, 1f);
+            tcb[1].transform.localScale = new Vector3(Y, 1.880215f, 1f);
+            var c2 = tcb[1].GetComponent<SpriteRenderer>();
+            c2.color = color2;
+            var c1 = tcb[0].GetComponent<SpriteRenderer>();
+            c1.color = color1;
+        }
+    }
     private void updateColorBar() 
     {
         int B = Blue, Y = Yellow;
