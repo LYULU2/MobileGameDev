@@ -7,7 +7,7 @@ public class RESET : MonoBehaviour
 {
     public int restartTimes = 0;
     public float timer = 0f;
-    public int SceneIndex;
+    // public int SceneIndex;
     public GameObject Player;
     public GameObject Canvas;
     public GameObject GameManager;
