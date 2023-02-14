@@ -59,13 +59,13 @@ public class CheckPointBehaviour : MonoBehaviour
             string playerColorHex = ColorUtility.ToHtmlStringRGBA(playerColor);
             string wallColorHex = ColorUtility.ToHtmlStringRGBA(wallColor);
             if (playerColorHex == wallColorHex) {
+                Stats.GetComponent<StatisticManager>().OnGameFinish();
                 WinScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
-                Stats.GetComponent<StatisticManager>().OnGameFinish();
             } else {
+                Stats.GetComponent<StatisticManager>().OnGameFinish();
                 LoseScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
-                Stats.GetComponent<StatisticManager>().OnGameFinish();
             }
         }
     }

@@ -60,7 +60,7 @@ public class StatisticManager : MonoBehaviour
     {
         currentRequest = new RequestHelper {
             Uri = basePath + "/reset.json",
-            Body = new Data {
+            Body = new ResetData {
                 curDistance = player.GetComponent<PlayerBehaviour>().totalDistance,
                 playTime = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().timer,
                 collectBlue = player.GetComponent<PlayerBehaviour>().Blue,
@@ -69,7 +69,7 @@ public class StatisticManager : MonoBehaviour
             },
             EnableDebug = true
         };
-        RestClient.Post<Data>(currentRequest)
+        RestClient.Post<ResetData>(currentRequest)
             .Then(res => {
 
                 // And later we can clear the default query string params for all requests
