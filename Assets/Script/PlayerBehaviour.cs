@@ -48,6 +48,12 @@ public class PlayerBehaviour : MonoBehaviour
         cx[1] = colorBar2Position.x;
         cy = colorBar2Position.y;
         cz = colorBar2Position.z;
+        //workaround ... not find root cause yet ...
+        if (cx[0] > cx[1]) {
+            float tmp = cx[1];
+            cx[1] = cx[0];
+            cx[0] = tmp;
+        }
     }
     private void Update() 
     {
@@ -126,11 +132,12 @@ public class PlayerBehaviour : MonoBehaviour
             float B = 25.7615f*(float)Blue/(float)(Yellow + Blue);
             float Y = 25.7615f-B;
             float start = cx[0]-6.4404f;
+            Debug.Log(cx[0]+ " : " + cx[1]);
+            Debug.Log(B + ", " + Y + " : " + start);
             tcb[1].transform.localScale = new Vector3(B, 1.880215f, 1f);
             tcb[0].transform.localScale = new Vector3(Y, 1.880215f, 1f);
             tcb[1].transform.position = new Vector3(B/2+start, cy, cz);
             tcb[0].transform.position = new Vector3(start+B+Y/2, cy, cz);
-            float l1 = B+cx[0], l2 = cx[0]+25.7615f;
 
             var c2 = tcb[0].GetComponent<SpriteRenderer>();
             c2.color = color2;
