@@ -18,11 +18,13 @@ public class PlayerBehaviour : MonoBehaviour
     private double barLength = 12.88075*2;
     private Vector3 StartPosition;
     private Vector3 oldPosition;
+    private Vector3 colorBar1Position;
+    private Vector3 colorBar2Position;
     private Color playerColor;
     private GameObject[] colorBar = new GameObject[10];
     private GameObject[] tcb;
-    
-
+    float[] cx = new float[2];
+    float cy, cz;
     //Reload same level
 
 
@@ -39,7 +41,13 @@ public class PlayerBehaviour : MonoBehaviour
 
             // Call SetColor using the shader property name "_Color" and setting the color to red
             //cubeRenderer.material.SetColor("_Color", Color.white);
-        }     
+        }
+        colorBar2Position = tcb[0].transform.position;
+        colorBar1Position = tcb[1].transform.position;
+        cx[0] = colorBar1Position.x;
+        cx[1] = colorBar2Position.x;
+        cy = colorBar2Position.y;
+        cz = colorBar2Position.z;
     }
     private void Update() 
     {
@@ -89,36 +97,50 @@ public class PlayerBehaviour : MonoBehaviour
     }
     private void updateTopColorBar() {
         //tcb 0 = blue, 1 = yellow
-
         if (Yellow == 0) {
             var cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
             cubeRenderer.color = color1;
             cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
             cubeRenderer.color = color1;
+            tcb[0].transform.position = new Vector3(cx[1], cy, cz);
+            tcb[1].transform.position = new Vector3(cx[0], cy, cz);
         } else if (Blue == 0) {
             var cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
             cubeRenderer.color = color2;
             cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
             cubeRenderer.color = color2;
+            tcb[0].transform.position = new Vector3(cx[1], cy, cz);
+            tcb[1].transform.position = new Vector3(cx[0], cy, cz);
         }
         else if (Blue == Yellow) {
             tcb[0].transform.localScale = new Vector3(12.88075f, 1.880215f, 1f);
             tcb[1].transform.localScale = new Vector3(12.88075f, 1.880215f, 1f);
-            var c2 = tcb[1].GetComponent<SpriteRenderer>();
+            var c2 = tcb[0].GetComponent<SpriteRenderer>();
             c2.color = color2;
-            var c1 = tcb[0].GetComponent<SpriteRenderer>();
+            var c1 = tcb[1].GetComponent<SpriteRenderer>();
             c1.color = color1;
+            tcb[0].transform.position = new Vector3(cx[1], cy, cz);
+            tcb[1].transform.position = new Vector3(cx[0], cy, cz);
         } else {
             //Y = 10*Yellow/total;
             float B = 25.7615f*(float)Blue/(float)(Yellow + Blue);
             float Y = 25.7615f-B;
-            tcb[0].transform.localScale = new Vector3(B, 1.880215f, 1f);
-            tcb[1].transform.localScale = new Vector3(Y, 1.880215f, 1f);
-            var c2 = tcb[1].GetComponent<SpriteRenderer>();
+            float start = cx[0]-6.4404f;
+            tcb[1].transform.localScale = new Vector3(B, 1.880215f, 1f);
+            tcb[0].transform.localScale = new Vector3(Y, 1.880215f, 1f);
+            tcb[1].transform.position = new Vector3(B/2+start, cy, cz);
+            tcb[0].transform.position = new Vector3(start+B+Y/2, cy, cz);
+            float l1 = B+cx[0], l2 = cx[0]+25.7615f;
+
+            var c2 = tcb[0].GetComponent<SpriteRenderer>();
             c2.color = color2;
-            var c1 = tcb[0].GetComponent<SpriteRenderer>();
+            var c1 = tcb[1].GetComponent<SpriteRenderer>();
             c1.color = color1;
         }
+        // tcb[0].transform.position = colorBar2Position;
+        // //tcb[0].transform.position.x = tcb[0].transform.localScale.x+cx[0];
+        // tcb[1].transform.position = colorBar1Position;
+        //tcb[1].transform.position.x = tcb[1].transform.localScale.x+cx[1];
     }
     private void updateColorBar() 
     {
