@@ -153,23 +153,25 @@ public class PlayerBehaviour : MonoBehaviour
             var c1 = tcb[1].GetComponent<SpriteRenderer>();
             c1.color = color1;
         }
-        // tcb[0].transform.position = colorBar2Position;
-        // //tcb[0].transform.position.x = tcb[0].transform.localScale.x+cx[0];
-        // tcb[1].transform.position = colorBar1Position;
-        //tcb[1].transform.position.x = tcb[1].transform.localScale.x+cx[1];
     }
     private void updateColorBar() 
     {
-        int B = Blue, Y = Yellow, total = B+Y;
-        Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
-        for (int j = 0; j < B; j++) {
-            var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color1;
+        int B = Blue, Y = Yellow, total = B+Y, i = 0;
+        // Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
+        foreach (bool blue in colorQueue) {
+            var cubeRenderer = colorBar[i].GetComponent<SpriteRenderer>();
+            if (blue) cubeRenderer.color = color1;
+            else cubeRenderer.color = color2;
+            i++;
         }
-        for (int j = B; j < total; j++) {
-            var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color2;
-        }
+        // for (int j = 0; j < B; j++) {
+        //     var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
+        //     cubeRenderer.color = color1;
+        // }
+        // for (int j = B; j < total; j++) {
+        //     var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
+        //     cubeRenderer.color = color2;
+        // }
     }
     public void Reset()
     {
