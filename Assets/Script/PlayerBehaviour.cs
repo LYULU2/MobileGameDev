@@ -21,8 +21,10 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector3 colorBar1Position;
     private Vector3 colorBar2Position;
     private Color playerColor;
-    private GameObject[] colorBar = new GameObject[10];
+    private GameObject[] colorBar = new GameObject[6];
     private GameObject[] tcb;
+    //true = blue, false = yellow
+    private Queue<bool> colorQueue = new Queue<bool>();
     float[] cx = new float[2];
     float cy, cz;
     //Reload same level
@@ -33,14 +35,15 @@ public class PlayerBehaviour : MonoBehaviour
         StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
         tcb = GameObject.FindGameObjectsWithTag("tcb");
-        for (int i = 0; i < 10; i++) {
+        colorQueue.Clear();
+        for (int i = 0; i < 6; i++) {
             colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
             
             // Get the Renderer component from the new cube
             var cubeRenderer = colorBar[i].GetComponent<SpriteRenderer>();
 
             // Call SetColor using the shader property name "_Color" and setting the color to red
-            //cubeRenderer.material.SetColor("_Color", Color.white);
+            cubeRenderer.material.SetColor("_Color", Color.white);
         }
         colorBar2Position = tcb[0].transform.position;
         colorBar1Position = tcb[1].transform.position;
@@ -76,13 +79,19 @@ public class PlayerBehaviour : MonoBehaviour
         {
             Blue = Blue + 1;
             collision.gameObject.SetActive(false);
+            colorQueue.Enqueue(true);
         } 
         else if (collision.tag == "Yellow") 
         {
             Yellow = Yellow + 1;
             collision.gameObject.SetActive(false);
+            colorQueue.Enqueue(false);
         }
-
+        if (colorQueue.Count > 6) {
+            bool front = colorQueue.Dequeue();
+            if (front) Blue--;
+            else Yellow--;
+        }
         // update player's color based on the number of collected balls
         if (Blue > Yellow)
         {
@@ -151,21 +160,13 @@ public class PlayerBehaviour : MonoBehaviour
     }
     private void updateColorBar() 
     {
-        int B = Blue, Y = Yellow;
-        if (Yellow == 0) B = 10;
-        else if (Blue == 0) Y = 10;
-        else if (Blue == Yellow) {
-            B = Y = 5;
-        } else {
-            //Y = 10*Yellow/total;
-            B = 10*Blue/(Yellow + Blue);
-        }
-        //Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
+        int B = Blue, Y = Yellow, total = B+Y;
+        Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
         for (int j = 0; j < B; j++) {
             var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
             cubeRenderer.color = color1;
         }
-        for (int j = B; j < 10; j++) {
+        for (int j = B; j < total; j++) {
             var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
             cubeRenderer.color = color2;
         }
