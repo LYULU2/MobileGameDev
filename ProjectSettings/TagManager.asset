@@ -15,6 +15,7 @@ TagManager:
   - Stat
   - Reset Button
   - tcb
+  - Enemy
   layers:
   - Default
   - TransparentFX
