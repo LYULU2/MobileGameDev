@@ -5392,8 +5392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7270c21d06bd84e629fde742cf0193aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
-  player: {fileID: 0}
+  range: 10
+  player: {fileID: 1730771216}
   StartPosition: {x: 0, y: 0}
   speed: 3
 --- !u!61 &618769386
@@ -5811,7 +5811,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677505005}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7270c21d06bd84e629fde742cf0193aa, type: 3}
   m_Name: 
@@ -5856,7 +5856,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &727834559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8430,6 +8430,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 304523671263461848, guid: eb4ec92002bb443308896582b850b1ab, type: 3}
   m_PrefabInstance: {fileID: 1683927959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1730771216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2885209254333708674, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+  m_PrefabInstance: {fileID: 2885209254433346245}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1754893682
 PrefabInstance:
