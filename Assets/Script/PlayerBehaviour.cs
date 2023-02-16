@@ -21,7 +21,8 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector3 colorBar1Position;
     private Vector3 colorBar2Position;
     private Color playerColor;
-    private GameObject[] colorBar = new GameObject[6];
+    public int packageCapacity;
+    private GameObject[] colorBar;
     private GameObject[] tcb;
     //true = blue, false = yellow
     private Queue<bool> colorQueue = new Queue<bool>();
@@ -34,9 +35,10 @@ public class PlayerBehaviour : MonoBehaviour
     {
         StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
+        colorBar = new GameObject[packageCapacity];
         tcb = GameObject.FindGameObjectsWithTag("tcb");
         colorQueue.Clear();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < packageCapacity; i++) {
             colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
             
             // Get the Renderer component from the new cube
