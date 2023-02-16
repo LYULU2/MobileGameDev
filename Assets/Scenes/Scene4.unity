@@ -9612,9 +9612,15 @@ PrefabInstance:
       propertyPath: SceneIndex
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 2885209254637193822, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: movementSpeed
       value: 15
+=======
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: packageCapacity
+      value: 6
+>>>>>>> 95f1c5ec9e2600212b4be461fde858c7d2725048
       objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193823, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: m_RootOrder
