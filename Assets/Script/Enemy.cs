@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public float range = 100f;
-    public Transform player;
+    public GameObject player;
     public Vector2 StartPosition;
     public float speed = 3.0f;
     private bool isWaiting = false;
@@ -19,27 +19,24 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // when out of range, the enemy slowly move back to the origin
-        if (Vector2.Distance(player.position , transform.position) > range)
+        if (Vector2.Distance(player.transform.position , transform.position) > range)
         {
             transform.position = Vector2.MoveTowards(transform.position, StartPosition, Time.deltaTime * speed);
         }
         if (!isWaiting)
         {
-            if (Vector2.Distance(player.position, transform.position) == 0)
+            if (Vector2.Distance(player.transform.position, transform.position) == 0)
             {
-                print("collision");
+                Debug.Log("collision");
                 StartCoroutine(Wait());
             }
         }
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isWaiting)
+        if (!isWaiting && collision.transform.tag == "Player")
         {
-            if (collision.tag == "Player")
-            {
-                StartCoroutine(Wait());
-            }
+            StartCoroutine(Wait());
         }
     }
 

@@ -74,7 +74,17 @@ public class PlayerBehaviour : MonoBehaviour
         oldPosition = gameObject.transform.position;
         //Debug.Log("we walk" + totalDistance);
     }
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Enemy") {
+            for (int i = 0; i < 2 && colorQueue.Count > 0; i++) {
+                if (colorQueue.Dequeue()) Blue--;
+                else Yellow--;
+            }
+            updateColorBar();
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Blue")
@@ -166,13 +176,16 @@ public class PlayerBehaviour : MonoBehaviour
             else cubeRenderer.color = color2;
             i++;
         }
+        int left = packageCapacity-colorQueue.Count;
+        if (left > 0) {
+            for (int k = packageCapacity-1, j = 0; k > -1 && j < left; k--, j++) {
+                var cubeRenderer = colorBar[k].GetComponent<SpriteRenderer>();
+                cubeRenderer.color = Color.white;
+            }
+        }
         // for (int j = 0; j < B; j++) {
         //     var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
         //     cubeRenderer.color = color1;
-        // }
-        // for (int j = B; j < total; j++) {
-        //     var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
-        //     cubeRenderer.color = color2;
         // }
     }
     public void Reset()
