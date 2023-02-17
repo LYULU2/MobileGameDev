@@ -113,10 +113,15 @@ public class PlayerBehaviour : MonoBehaviour
         {
             playerColor = YellowBall.GetComponent<SpriteRenderer>().color;
         }
+        else if (Blue == 0 && Yellow == 0)
+        {
+            playerColor = Color.white;
+        }
         else if (Blue == Yellow)
         {
             playerColor = CheckPoint.GetComponent<SpriteRenderer>().color;
         }
+
 
         gameObject.GetComponent<SpriteRenderer>().color = playerColor;
         updateColorBar();
