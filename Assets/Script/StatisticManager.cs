@@ -79,6 +79,32 @@ public class StatisticManager : MonoBehaviour
             })
             .Catch(err => Debug.Log(err.Message));
     }
+    
+    /**
+     * Post tutorial data to the database
+     */
+    public void PostTutorialData(int finish)
+    {
+        currentRequest = new RequestHelper {
+            Uri = basePath + "/tutorial.json",
+            Body = new TutorialData {
+                sceneName = SceneManager.GetActiveScene().name,
+                curDistance = player.GetComponent<PlayerBehaviour>().totalDistance,
+                playTime = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().timer,
+                finishStatus = finish
+            },
+            EnableDebug = true
+        };
+        RestClient.Post<TutorialData>(currentRequest)
+            .Then(res => {
+
+                // And later we can clear the default query string params for all requests
+                RestClient.ClearDefaultParams();
+
+                Debug.Log(JsonUtility.ToJson(res, true));
+            })
+            .Catch(err => Debug.Log(err.Message));
+    }
 
     public void OnGameFinish()
     {
@@ -92,6 +118,13 @@ public class StatisticManager : MonoBehaviour
         //post data when not testing in editor
 #if !UNITY_EDITOR
         PostResetData();
+#endif
+    }
+    public void OnGameFinishTutorial(int finish)
+    {
+        //post data when not testing in editor
+#if !UNITY_EDITOR
+        PostTutorialData(finsh);
 #endif
     }
 }

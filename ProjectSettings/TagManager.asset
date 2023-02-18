@@ -16,6 +16,7 @@ TagManager:
   - Reset Button
   - tcb
   - Enemy
+  - TutorialCheck
   layers:
   - Default
   - TransparentFX

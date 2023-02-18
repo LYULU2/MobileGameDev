@@ -6,9 +6,12 @@ using static UnityEngine.ColorUtility;
 public class passThrough_or_Block : MonoBehaviour
 {
     private BoxCollider2D wall;
+    public GameObject Stats;
+	private bool sentData;
     // Start is called before the first frame update
     void Start()
     {
+        Stats = GameObject.FindGameObjectsWithTag("Stat")[0];
         //Fetch the GameObject's Collider (make sure they have a Collider component)
         wall = gameObject.GetComponent<BoxCollider2D>();
         //Here the GameObject's Collider is not a trigger
@@ -24,26 +27,20 @@ public class passThrough_or_Block : MonoBehaviour
         string playerColorHex = ColorUtility.ToHtmlStringRGBA(playerColor);
         string wallColorHex = ColorUtility.ToHtmlStringRGBA(wallColor);
 
-        // Debug.Log(playerColorHex);
-        // Debug.Log(wallColorHex);
+         //Debug.Log(playerColorHex);
+         //Debug.Log(wallColorHex);
 
         if (collision.transform.tag == "Player" && playerColorHex == wallColorHex)
         {
             wall.isTrigger = true;
+            // post the data if its a check point wall
+            if (gameObject.CompareTag("TutorialCheck") && !sentData)
+            {
+                // 1-> win 0->lose
+				sentData = true;
+                Stats.GetComponent<StatisticManager>().OnGameFinishTutorial(0);
+            }
         } 
-        // Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().color.linear);
-        // Debug.Log(gameObject.GetComponent<SpriteRenderer>().color.linear);    
-        // playerColor.r = Mathf.Round(playerColor.r * 10) / 10;
-        // playerColor.b = Mathf.Round(playerColor.b * 10) / 10;
-        // playerColor.g = Mathf.Round(playerColor.g * 10) / 10;
-        // Color wallColor = gameObject.GetComponent<SpriteRenderer>().color;
-        // wallColor.r = Mathf.Round(wallColor.r * 10) / 10;
-        // wallColor.b = Mathf.Round(wallColor.b * 10) / 10;
-        // wallColor.g = Mathf.Round(wallColor.g * 10) / 10;
-        // if (collision.transform.tag == "Player" &&  playerColor == wallColor)
-        // {
-        //     wall.isTrigger = true;
-        // } 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

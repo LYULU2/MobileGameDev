@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static UnityEngine.ColorUtility;
+using UnityEngine.SceneManagement;
 
 public class CheckPointBehaviour : MonoBehaviour
 {
@@ -46,7 +47,6 @@ public class CheckPointBehaviour : MonoBehaviour
     }
     private void Start() {
         checkPoints = GameObject.FindGameObjectsWithTag("Finish");
-        
     }
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,10 +62,15 @@ public class CheckPointBehaviour : MonoBehaviour
                 Stats.GetComponent<StatisticManager>().OnGameFinish();
                 WinScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
+                //post data if win the tutorial
+                if (SceneManager.GetActiveScene().name == "Scene1")
+                {
+                    Stats.GetComponent<StatisticManager>().OnGameFinishTutorial(1);
+                }
             } else {
-                //Stats.GetComponent<StatisticManager>().OnGameFinish();
-                //LoseScreen.SetActive(true);
-                //collision.gameObject.SetActive(false);
+                Stats.GetComponent<StatisticManager>().OnGameFinish();
+                LoseScreen.SetActive(true);
+                collision.gameObject.SetActive(false);
             }
         }
     }
