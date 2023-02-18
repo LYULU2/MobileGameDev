@@ -334,6 +334,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2885209254637193811, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
   m_PrefabInstance: {fileID: 2885209254433346245}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &477796508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2885209254637193823, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+  m_PrefabInstance: {fileID: 2885209254433346245}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &508863955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,6 +1596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515996, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 477796502}
     - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1635,18 +1644,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515999, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 477796508}
     - target: {fileID: 3805396382574244486, guid: 23285261e582743678aaa57d5853c721, type: 3}
       propertyPath: m_Color.b
-      value: 0.049439307
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3805396382574244486, guid: 23285261e582743678aaa57d5853c721, type: 3}
       propertyPath: m_Color.g
-      value: 0.049439307
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3805396382574244486, guid: 23285261e582743678aaa57d5853c721, type: 3}
       propertyPath: m_Color.r
-      value: 0.9528302
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3805396382574244487, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382574244487, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 477796502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23285261e582743678aaa57d5853c721, type: 3}
 --- !u!114 &897191280 stripped
