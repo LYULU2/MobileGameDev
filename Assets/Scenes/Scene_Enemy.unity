@@ -1580,6 +1580,110 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+<<<<<<< HEAD
+=======
+--- !u!1001 &852555982
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3805396382364515971, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515996, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515996, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 477796502}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.14387017
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515998, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382364515999, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 477796508}
+    - target: {fileID: 3805396382574244486, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382574244486, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382574244486, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382574244487, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382574244487, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 477796502}
+    - target: {fileID: 3805396382920262881, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: maxFrameTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382920262881, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: showNavGraphs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805396382920262881, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: data.dataString
+      value: UEsDBBQAAAgIAACAn+usMtaShgIAAD8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoXxB2DorXUI6SEJE9rJxRfZXmMNsuSR5ADJ8N+7km3s0hPL28/3duUvwoSuITNSbRXLn2UO5PuEWJt8mwzOJzjTgxR79gl9zDvLTWmDqIt5o4ZJxH2bpmUFRrHshzhwG+wh2AhWSFVt8gPEUhuNcEG5BnQpaWy2QOhrQs74M13blAtaQWStT7TW3uSKZgbCgBpC/cVsuQj8eRR2GdNwtgpXy3A57xKny9lqOff8xTLcTL3IVWlExmlVQ24pDcXCdVckDF2YQLJdhCWWSc6Z7iYl5lI7JWJa6wZ5YkDOKDJ34/mzAIES2KE0lsc4/bUoNJhOGEUvD0yhhG1d8lO2ulZUH9vJPihvbKeVm6kt+fyfd+o7d6Fk9dR39T3bwZQsO77RS0a1Gck+hh9Ggzt5TpQfacrhvQTxIrdKNiJHp1GNTW00BA/D3xuxuITsOODtqHdgUw9691v2Z9Fq5YfrdkP93pDQ1QlxjjmrUhs/m7fAnksnvrsTULimXzi9uyLd1UXUjvRHw296GJ9b53hkSht0dZSFnTWVjbKhZOMEtNQaE0slwMEdgxoE5eaywzLmfpt3vlHbO88jtQ+ra975+vdyl+LgId7z7lw7ebptTpfy9Ay6fG0MZwKGoa3jBXWKpRDtsY016dP2jSpoNko7NCz/986IT9dp6OWhB2lEgyiY0vl8kUXpIoB1FGRpQdwhMoE8Kd+1g3by4NbEUFzg0fXfm8lW0dodfq7oacs+KzmSnIlC7jMFIF7bCrfBQWETfKL5Jmco0B6MYcLtm3wlhMvsCHlyK5Q4ppuzUTQZqiSkZh/SWCQhsfvAJMTCt8PeKfhgcLLN+2JXcv0LUEsDBBQAAAgIAACAn+tuy/REbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSYaJlkrFBirFBapJ5opG5kW6iiYlpsnmSqVGqpblRclKaUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACAn+usMtaShgIAAD8FAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACAn+tuy/REbQAAAHgAAAAJACQAAAAAAAAAAAAAANMCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAiwMAAAAA
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23285261e582743678aaa57d5853c721, type: 3}
+>>>>>>> 1812f8e52688be10da95ecced5895d92f9f7cee8
 --- !u!114 &897191280 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}

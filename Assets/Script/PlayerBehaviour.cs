@@ -197,8 +197,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         transform.position = StartPosition;
         oldPosition = gameObject.transform.position;
-        colorBar = new GameObject[10];
-        for (int i = 0; i < 10; i++)
+        colorBar = new GameObject[packageCapacity];
+        for (int i = 0; i < packageCapacity; i++)
         {
             colorBar[i] = this.gameObject.transform.GetChild(i + 1).gameObject;
 
@@ -209,6 +209,9 @@ public class PlayerBehaviour : MonoBehaviour
             // Call SetColor using the shader property name "_Color" and setting the color to red
             //cubeRenderer.material.SetColor("_Color", Color.white);
         }
+        tcb[0].GetComponent<SpriteRenderer>().color = Color.white;
+        tcb[1].GetComponent<SpriteRenderer>().color = Color.white;
+        colorQueue.Clear();
         totalDistance = 0;
         playerColor = Color.white;
         gameObject.GetComponent<SpriteRenderer>().color = playerColor;
