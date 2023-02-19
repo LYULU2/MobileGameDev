@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     {
         isWaiting = true;  //set the bool to stop moving
         print("Start to wait");
-        yield return new WaitForSeconds(3); // wait for 5 sec
+        yield return new WaitForSeconds(5); // wait for 5 sec
         print("Wait complete");
         isWaiting = false; // set the bool to start moving
 
