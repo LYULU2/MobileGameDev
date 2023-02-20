@@ -23,23 +23,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerPos.position) < distance)
+        if (Vector2.Distance(transform.position, playerPos.position) < distance && !isWaiting)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
-
         }
-        else      
-        {
-            if (Vector2.Distance(transform.position, playerPos.position) <= 0)
-            {
-
-            }
-            else
-            {
-                transform.position = Vector2.MoveTowards(transform.position, currentPos, speedEnemy * Time.deltaTime);
-            }
-        }
-        if (!isWaiting)
+        else
         {
             startWaiting();
         }
@@ -57,14 +45,16 @@ public class EnemyMovement : MonoBehaviour
     {
         stayPos = transform.position;
         print("Start to wait");
-        while (timer <= waitingForSeconds)
+        if (timer <= waitingForSeconds)
         {
-            timer += Time.deltaTime;
-            transform.position = stayPos;
+            timer += Time.deltaTime;;
         }
-        print("Wait complete");
-        isWaiting = false; // set the bool to start moving
-        timer = 0;
+        else
+        {
+            print("Waiting complete");
+            isWaiting = false; // set the bool to start moving
+            timer = 0;
+        }
     }
 
 }
