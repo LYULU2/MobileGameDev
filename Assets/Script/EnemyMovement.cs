@@ -7,9 +7,12 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     private Transform playerPos;
     private Vector2 currentPos;
+    private Vector2 stayPos;
     public float distance;
     public float speedEnemy;
     private bool isWaiting = false;
+    public float waitingForSeconds = 3;
+    private float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,32 +39,28 @@ public class EnemyMovement : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, currentPos, speedEnemy * Time.deltaTime);
             }
         } 
-
-        if (!isWaiting)
-        {
-            if (Vector2.Distance(player.transform.position, transform.position) == 0)
-            {
-                Debug.Log("collision");
-                StartCoroutine(Wait());
-            }
-        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (!isWaiting && collision.transform.tag == "Player")
         {
-            StartCoroutine(Wait());
+            startWaiting();
         }
     }
 
-    IEnumerator Wait()
+    void startWaiting()
     {
+        stayPos = transform.position;
         isWaiting = true;  //set the bool to stop moving
         print("Start to wait");
-        yield return new WaitForSeconds(5); // wait for 5 sec
+        while (timer <= waitingForSeconds)
+        {
+            timer += Time.deltaTime;
+            transform.position = stayPos;
+        }
         print("Wait complete");
         isWaiting = false; // set the bool to start moving
-
+        timer = 0;
     }
 
 }
