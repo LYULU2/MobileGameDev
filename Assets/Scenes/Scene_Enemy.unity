@@ -1580,8 +1580,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
-<<<<<<< HEAD
-=======
 --- !u!1001 &852555982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1683,7 +1681,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23285261e582743678aaa57d5853c721, type: 3}
->>>>>>> 1812f8e52688be10da95ecced5895d92f9f7cee8
 --- !u!114 &897191280 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
