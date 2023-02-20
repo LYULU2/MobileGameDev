@@ -38,20 +38,24 @@ public class EnemyMovement : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, currentPos, speedEnemy * Time.deltaTime);
             }
-        } 
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!isWaiting && collision.transform.tag == "Player")
+        }
+        if (!isWaiting)
         {
             startWaiting();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            isWaiting = true;
         }
     }
 
     void startWaiting()
     {
         stayPos = transform.position;
-        isWaiting = true;  //set the bool to stop moving
         print("Start to wait");
         while (timer <= waitingForSeconds)
         {
