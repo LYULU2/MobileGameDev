@@ -23,7 +23,6 @@ public class PlayerBehaviour : MonoBehaviour
     private Color playerColor;
     public int packageCapacity;
     private GameObject[] colorBar;
-    private GameObject[] tcb;
     //true = blue, false = yellow
     private Queue<bool> colorQueue = new Queue<bool>();
     float[] cx = new float[2];
@@ -38,7 +37,6 @@ public class PlayerBehaviour : MonoBehaviour
         StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
         colorBar = new GameObject[packageCapacity];
-        tcb = GameObject.FindGameObjectsWithTag("tcb");
         colorQueue.Clear();
         for (int i = 0; i < packageCapacity; i++) {
             colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
@@ -48,18 +46,6 @@ public class PlayerBehaviour : MonoBehaviour
 
             // Call SetColor using the shader property name "_Color" and setting the color to red
             cubeRenderer.material.SetColor("_Color", Color.white);
-        }
-        colorBar2Position = tcb[0].transform.position;
-        colorBar1Position = tcb[1].transform.position;
-        cx[0] = colorBar1Position.x;
-        cx[1] = colorBar2Position.x;
-        cy = colorBar2Position.y;
-        cz = colorBar2Position.z;
-        //workaround ... not find root cause yet ...
-        if (cx[0] > cx[1]) {
-            float tmp = cx[1];
-            cx[1] = cx[0];
-            cx[0] = tmp;
         }
     }
     private void Update() 
@@ -130,51 +116,6 @@ public class PlayerBehaviour : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().color = playerColor;
         updateColorBar();
-        updateTopColorBar();
-    }
-    private void updateTopColorBar() {
-        //tcb 0 = blue, 1 = yellow
-        if (Yellow == 0) {
-            var cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color1;
-            cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color1;
-            tcb[0].transform.position = new Vector3(cx[1], cy, cz);
-            tcb[1].transform.position = new Vector3(cx[0], cy, cz);
-        } else if (Blue == 0) {
-            var cubeRenderer = tcb[0].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color2;
-            cubeRenderer = tcb[1].GetComponent<SpriteRenderer>();
-            cubeRenderer.color = color2;
-            tcb[0].transform.position = new Vector3(cx[1], cy, cz);
-            tcb[1].transform.position = new Vector3(cx[0], cy, cz);
-        }
-        else if (Blue == Yellow) {
-            tcb[0].transform.localScale = new Vector3(12.88075f, 1.880215f, 1f);
-            tcb[1].transform.localScale = new Vector3(12.88075f, 1.880215f, 1f);
-            var c2 = tcb[0].GetComponent<SpriteRenderer>();
-            c2.color = color2;
-            var c1 = tcb[1].GetComponent<SpriteRenderer>();
-            c1.color = color1;
-            tcb[0].transform.position = new Vector3(cx[1], cy, cz);
-            tcb[1].transform.position = new Vector3(cx[0], cy, cz);
-        } else {
-            //Y = 10*Yellow/total;
-            float B = 25.7615f*(float)Blue/(float)(Yellow + Blue);
-            float Y = 25.7615f-B;
-            float start = cx[0]-6.4404f;
-            Debug.Log(cx[0]+ " : " + cx[1]);
-            Debug.Log(B + ", " + Y + " : " + start);
-            tcb[1].transform.localScale = new Vector3(B, 1.880215f, 1f);
-            tcb[0].transform.localScale = new Vector3(Y, 1.880215f, 1f);
-            tcb[1].transform.position = new Vector3(B/2+start, cy, cz);
-            tcb[0].transform.position = new Vector3(start+B+Y/2, cy, cz);
-
-            var c2 = tcb[0].GetComponent<SpriteRenderer>();
-            c2.color = color2;
-            var c1 = tcb[1].GetComponent<SpriteRenderer>();
-            c1.color = color1;
-        }
     }
     private void updateColorBar() 
     {
@@ -193,10 +134,6 @@ public class PlayerBehaviour : MonoBehaviour
                 cubeRenderer.color = Color.white;
             }
         }
-        // for (int j = 0; j < B; j++) {
-        //     var cubeRenderer = colorBar[j].GetComponent<SpriteRenderer>();
-        //     cubeRenderer.color = color1;
-        // }
     }
     public void Reset()
     {
@@ -214,8 +151,6 @@ public class PlayerBehaviour : MonoBehaviour
             // Call SetColor using the shader property name "_Color" and setting the color to red
             //cubeRenderer.material.SetColor("_Color", Color.white);
         }
-        tcb[0].GetComponent<SpriteRenderer>().color = Color.white;
-        tcb[1].GetComponent<SpriteRenderer>().color = Color.white;
         colorQueue.Clear();
         totalDistance = 0;
         playerColor = Color.white;
