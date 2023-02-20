@@ -17,7 +17,6 @@ public class moveForward : MonoBehaviour
     {
         
         float step = speed * Time.deltaTime;
-
         // move sprite towards the target location
         transform.position = Vector2.MoveTowards(transform.position, target, step);
     }

@@ -30,6 +30,8 @@ public class PlayerBehaviour : MonoBehaviour
     float cy, cz;
     //Reload same level
 
+    public float distanceLastTP = 1;
+
 
     private void Start()
     {
@@ -71,6 +73,9 @@ public class PlayerBehaviour : MonoBehaviour
         Vector3 distanceVector = gameObject.transform.position - oldPosition;
         float distance = distanceVector.magnitude;
         totalDistance += distance;
+        if (distance < 1.0f) {
+            distanceLastTP += distance;
+        }
         oldPosition = gameObject.transform.position;
         //Debug.Log("we walk" + totalDistance);
     }

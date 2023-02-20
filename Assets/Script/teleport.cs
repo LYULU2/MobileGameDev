@@ -26,12 +26,13 @@ public class teleport : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" && collision.transform.GetComponent<PlayerBehaviour>().distanceLastTP > 1.0f)
         {
             // tepleport player to x,y
             collision.transform.position = new Vector2(x, y);
+            collision.transform.GetComponent<PlayerBehaviour>().distanceLastTP = 0;
             //Debug.Log("Teleporting");
-        } 
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
