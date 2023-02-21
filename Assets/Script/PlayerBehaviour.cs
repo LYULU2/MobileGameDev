@@ -134,6 +134,7 @@ public class PlayerBehaviour : MonoBehaviour
                 cubeRenderer.color = Color.white;
             }
         }
+        if (colorQueue.Count == 0) gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
     public void Reset()
     {
