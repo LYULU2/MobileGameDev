@@ -12,6 +12,7 @@ public class RESET : MonoBehaviour
     public GameObject Canvas;
     public GameObject GameManager;
 	public GameObject Stats;
+    public GameObject Enemy;
     // Start is called before the first frame update
     public void Reset()
     {
@@ -21,6 +22,7 @@ public class RESET : MonoBehaviour
         Player.GetComponent<PlayerBehaviour>().Reset();
         Canvas.GetComponent<CanvasScript>().Reset();
         GameManager.GetComponent<GameManager>().Reset();
+        Enemy.GetComponent<EnemyMovement>().Reset();
     }
     
     void Start()

@@ -2165,6 +2165,7 @@ MonoBehaviour:
   player: {fileID: 477796502}
   distance: 10
   speedEnemy: 5
+  waitingForSeconds: 3
 --- !u!58 &1624716278
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2924,6 +2925,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
+      propertyPath: Black
+      value: 
+      objectReference: {fileID: 1393630261}
+    - target: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1624716274}
     - target: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
       propertyPath: Stats
       value: 
