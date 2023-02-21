@@ -124,7 +124,7 @@ public class StatisticManager : MonoBehaviour
     {
         //post data when not testing in editor
 #if !UNITY_EDITOR
-        PostTutorialData(finsh);
+        PostTutorialData(finish);
 #endif
     }
 }
