@@ -74,6 +74,7 @@ public class PlayerBehaviour : MonoBehaviour
                 else Yellow--;
             }
             updateColorBar();
+            updatePlayerColor();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,7 +96,10 @@ public class PlayerBehaviour : MonoBehaviour
             if (front) Blue--;
             else Yellow--;
         }
-        // update player's color based on the number of collected balls
+        updatePlayerColor();
+    }    
+    private void updatePlayerColor()
+    {
         if (Blue > Yellow)
         {
             playerColor = BlueBall.GetComponent<SpriteRenderer>().color;
@@ -113,10 +117,10 @@ public class PlayerBehaviour : MonoBehaviour
             playerColor = CheckPoint.GetComponent<SpriteRenderer>().color;
         }
 
-
         gameObject.GetComponent<SpriteRenderer>().color = playerColor;
         updateColorBar();
     }
+
     private void updateColorBar() 
     {
         int B = Blue, Y = Yellow, total = B+Y, i = 0;
