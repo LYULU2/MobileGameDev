@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 477796502}
   distance: 10
-  speedEnemy: 5
+  speedEnemy: 3
   waitingForSeconds: 3
 --- !u!58 &1624716278
 CircleCollider2D:
