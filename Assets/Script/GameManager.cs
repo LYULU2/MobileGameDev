@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] para = new string[2] {"Blue","Yellow"};
+        string[] para = new string[3] {"Blue","Yellow","reducePackage"};
         Collectables = FindGameObjectsWithTags(para);
         player = GameObject.FindGameObjectsWithTag("Player")[0];
     }

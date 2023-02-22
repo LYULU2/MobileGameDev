@@ -17,6 +17,7 @@ TagManager:
   - tcb
   - Enemy
   - TutorialCheck
+  - reducePackage
   layers:
   - Default
   - TransparentFX

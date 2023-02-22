@@ -22,7 +22,9 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector3 colorBar2Position;
     private Color playerColor;
     public int packageCapacity;
+    private int current_package_capacity;
     private GameObject[] colorBar;
+    private  List<int> colorIndex = new List<int>();
     //true = blue, false = yellow
     private Queue<bool> colorQueue = new Queue<bool>();
     float[] cx = new float[2];
@@ -34,13 +36,15 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Start()
     {
+        current_package_capacity = packageCapacity;
         StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
         colorBar = new GameObject[packageCapacity];
         colorQueue.Clear();
+        colorIndex.Clear();
         for (int i = 0; i < packageCapacity; i++) {
             colorBar[i] = this.gameObject.transform.GetChild(i+1).gameObject;
-            
+            colorIndex.Add(i);
             // Get the Renderer component from the new cube
             var cubeRenderer = colorBar[i].GetComponent<SpriteRenderer>();
 
@@ -91,7 +95,28 @@ public class PlayerBehaviour : MonoBehaviour
             collision.gameObject.SetActive(false);
             colorQueue.Enqueue(false);
         }
-        if (colorQueue.Count > 6) {
+        else if (collision.tag == "reducePackage")
+        {
+            collision.gameObject.SetActive(false);
+            if (current_package_capacity > 2) {
+                current_package_capacity-=2;
+                colorQueue.Clear();
+                if (current_package_capacity == 4) {
+                    this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+                    this.gameObject.transform.GetChild(6).gameObject.SetActive(false);
+                    colorIndex.RemoveAt(0);
+                    colorIndex.RemoveAt(colorIndex.Count-1);
+
+                } else {
+                    this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+                    this.gameObject.transform.GetChild(5).gameObject.SetActive(false);
+                    colorIndex.RemoveAt(0);
+                    colorIndex.RemoveAt(colorIndex.Count-1);
+                }
+                Blue = Yellow = 0;
+            }
+        } 
+        if (colorQueue.Count > current_package_capacity) {
             bool front = colorQueue.Dequeue();
             if (front) Blue--;
             else Yellow--;
@@ -126,15 +151,15 @@ public class PlayerBehaviour : MonoBehaviour
         int B = Blue, Y = Yellow, total = B+Y, i = 0;
         // Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
         foreach (bool blue in colorQueue) {
-            var cubeRenderer = colorBar[i].GetComponent<SpriteRenderer>();
+            var cubeRenderer = colorBar[colorIndex[i]].GetComponent<SpriteRenderer>();
             if (blue) cubeRenderer.color = color1;
             else cubeRenderer.color = color2;
             i++;
         }
-        int left = packageCapacity-colorQueue.Count;
+        int left = current_package_capacity-colorQueue.Count;
         if (left > 0) {
-            for (int k = packageCapacity-1, j = 0; k > -1 && j < left; k--, j++) {
-                var cubeRenderer = colorBar[k].GetComponent<SpriteRenderer>();
+            for (int k = colorIndex.Count-1, j = 0; k > -1 && j < left; k--, j++) {
+                var cubeRenderer = colorBar[colorIndex[k]].GetComponent<SpriteRenderer>();
                 cubeRenderer.color = Color.white;
             }
         }
@@ -143,12 +168,15 @@ public class PlayerBehaviour : MonoBehaviour
     public void Reset()
     {
         transform.position = StartPosition;
+        current_package_capacity = packageCapacity;
         oldPosition = gameObject.transform.position;
         colorBar = new GameObject[packageCapacity];
+        colorIndex.Clear();
         for (int i = 0; i < packageCapacity; i++)
         {
             colorBar[i] = this.gameObject.transform.GetChild(i + 1).gameObject;
-
+            this.gameObject.transform.GetChild(i+1).gameObject.SetActive(true);
+            colorIndex.Add(i);
             // Get the Renderer component from the new cube
             var cubeRenderer = colorBar[i].GetComponent<SpriteRenderer>();
             cubeRenderer.color = Color.white;
