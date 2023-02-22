@@ -68,9 +68,12 @@ public class CheckPointBehaviour : MonoBehaviour
                     Stats.GetComponent<StatisticManager>().OnGameFinishTutorial(1);
                 }
             } else {
+                
+                /*
                 Stats.GetComponent<StatisticManager>().OnGameFinish();
                 LoseScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
+                */
             }
         }
     }
