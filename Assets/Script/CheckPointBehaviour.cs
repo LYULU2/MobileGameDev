@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static UnityEngine.ColorUtility;
-using UnityEngine.SceneManagement;
 
 public class CheckPointBehaviour : MonoBehaviour
 {

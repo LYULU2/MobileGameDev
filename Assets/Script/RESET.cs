@@ -22,7 +22,7 @@ public class RESET : MonoBehaviour
         Player.GetComponent<PlayerBehaviour>().Reset();
         Canvas.GetComponent<CanvasScript>().Reset();
         GameManager.GetComponent<GameManager>().Reset();
-        Enemy.GetComponent<EnemyMovement>().Reset();
+        if (Enemy) Enemy.GetComponent<EnemyMovement>().Reset();
     }
     
     void Start()

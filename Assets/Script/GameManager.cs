@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour
     public int SceneIndex;
     public GameObject CheckPoint;
     public GameObject WinScreen;
+    public GameObject ResetButton;
 
-    private resetButton rb = new resetButton();
+    private resetButton rb;
     private GameObject player;
     public void Reset()
     {
@@ -34,7 +35,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] para = new string[3] {"Blue","Yellow","reducePackage"};
+        rb = ResetButton.GetComponent<resetButton>();
+        string[] para = new string[4] {"Blue","Yellow","Red","reducePackage"};
         Collectables = FindGameObjectsWithTags(para);
         player = GameObject.FindGameObjectsWithTag("Player")[0];
     }

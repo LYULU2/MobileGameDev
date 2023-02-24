@@ -6,7 +6,7 @@ public class WaypoinyFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
     private int currentWaypointIndex = 0;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 6f;
 
     private void Update()
     {
