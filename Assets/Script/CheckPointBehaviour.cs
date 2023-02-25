@@ -11,6 +11,7 @@ public class CheckPointBehaviour : MonoBehaviour
     public GameObject LoseScreen;
     public GameObject[] checkPoints;
     public GameObject Stats;
+    public AudioSource SoundWrongGoal;
 
     public int SceneIndex;
     /*
@@ -73,6 +74,7 @@ public class CheckPointBehaviour : MonoBehaviour
                 LoseScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
                 */
+                SoundWrongGoal.Play();
             }
         }
     }

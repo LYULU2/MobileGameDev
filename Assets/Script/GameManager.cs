@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviour
         }
         if (valid) {
             //Debug.Log("finish collect!");
+
+			//TODO
+			/**
+			* Might not just be one end
+			*/
             
             Color playerColor = player.GetComponent<SpriteRenderer>().color;
             Color finisher = GameObject.FindGameObjectsWithTag("Finish")[0].GetComponent<SpriteRenderer>().color;
