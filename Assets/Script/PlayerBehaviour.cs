@@ -41,6 +41,8 @@ public class PlayerBehaviour : MonoBehaviour
     private Color colorBrown;
     private Color colorOrange;
 
+    private bool protectedByShield = false;
+
     private void Start()
     {
         current_package_capacity = packageCapacity;
@@ -67,6 +69,8 @@ public class PlayerBehaviour : MonoBehaviour
         colorBrown = new Color32(139,69,19, 255);
         colorOrange = new Color32(255,165,0,255);
         colorRed = new Color32(255, 0, 0, 255);
+
+        updateSuperPower();
     }
     private void Update() 
     {
@@ -88,7 +92,7 @@ public class PlayerBehaviour : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Enemy") {
+        if (collision.gameObject.tag == "Enemy" && !protectedByShield) {
             for (int i = 0; i < 2 && colorQueue.Count > 0; i++)
             {
                 int c = colorQueue.Dequeue();
@@ -101,6 +105,40 @@ public class PlayerBehaviour : MonoBehaviour
             StartCoroutine(Flasher());
         }
     }
+    private void updateSuperPower() // check if the super power of the player is activated by checking the colorQueue to be all the same or not
+    {
+        bool same = false;
+        if (colorQueue.Count == current_package_capacity) {
+            int first = colorQueue.Peek();
+            same = true;
+            foreach (int c in colorQueue) {
+                if (c != first) {
+                    same = false;
+                    break;
+                }
+            }
+        }
+        if (same) { // increase the scale of the player to (1.4, 1.4, 1.4)
+            //Debug.Log("scale up");
+            gameObject.transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+            // activate the shield
+            protectedByShield = true;
+            // add the mass of the player to 2000
+            gameObject.GetComponent<Rigidbody2D>().mass = 2000;
+            // change the sprite of the player from Capsule to the character sprite
+            // gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("character");
+        } else { // reduce to unit size
+            //Debug.Log("scale down");
+            gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            // deactivate the shield
+            protectedByShield = false;
+            // reduce the mass of the player to 1
+            gameObject.GetComponent<Rigidbody2D>().mass = 1;
+            // change the sprite of the player from shield to the Capsule sprite
+            // gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Capsule");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Blue")
@@ -149,6 +187,7 @@ public class PlayerBehaviour : MonoBehaviour
             else Red--;
         }
         updatePlayerColor();
+        updateSuperPower();
     }    
     private void updatePlayerColor()
     {
@@ -236,6 +275,7 @@ public class PlayerBehaviour : MonoBehaviour
         Yellow = 0;
         Red = 0;
         gameObject.SetActive(true);
+        updateSuperPower();
     }
     IEnumerator Flasher() 
     {
