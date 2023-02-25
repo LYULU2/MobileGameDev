@@ -4,17 +4,6 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-/**
- * color chart:
- * yellow = (250, 240, 0, 255)
- * blue = (0, 136, 255, 255)
- * green = (0, 255, 0, 255)
- * red = (255, 0, 0, 255)
- * brown = ()
- * orange = ()
- * purple = (
- */
-
 public class PlayerBehaviour : MonoBehaviour
 {
     public GameObject CheckPoint;
@@ -51,7 +40,6 @@ public class PlayerBehaviour : MonoBehaviour
     private Color colorPurple;
     private Color colorBrown;
     private Color colorOrange;
-
 
     private void Start()
     {
@@ -110,6 +98,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
             updateColorBar();
             updatePlayerColor();
+            StartCoroutine(Flasher());
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -248,4 +237,17 @@ public class PlayerBehaviour : MonoBehaviour
         Red = 0;
         gameObject.SetActive(true);
     }
+    IEnumerator Flasher() 
+    {
+        Color oldColor = this.gameObject.GetComponent<SpriteRenderer>().color;
+        Color flashColor = new Color(1, 1, 1, 0.7f);
+        for (int i = 0; i < 2; i++)
+        {
+            GetComponent<SpriteRenderer>().color = flashColor;
+            yield return new WaitForSeconds(.3f);
+            GetComponent<SpriteRenderer>().color = oldColor; 
+            yield return new WaitForSeconds(.3f);
+        }
+    }
 }
+
