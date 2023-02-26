@@ -22,7 +22,19 @@ public class RESET : MonoBehaviour
         Player.GetComponent<PlayerBehaviour>().Reset();
         Canvas.GetComponent<CanvasScript>().Reset();
         GameManager.GetComponent<GameManager>().Reset();
-        if (Enemy) Enemy.GetComponent<EnemyMovement>().Reset();
+        if (Enemy)
+        {
+            EnemyMovement flag;
+            Enemy.TryGetComponent<EnemyMovement>(out flag);
+            if (flag != null)
+            {
+                Enemy.GetComponent<EnemyMovement>().Reset();
+            }
+            else
+            {
+                Enemy.GetComponent<WaypoinyFollower>().Reset();
+            }
+        }
     }
     
     void Start()

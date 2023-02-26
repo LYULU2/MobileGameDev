@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public GameObject WinScreen;
     public GameObject ResetButton;
 
-    private resetButton rb;
     private GameObject player;
     public void Reset()
     {
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = ResetButton.GetComponent<resetButton>();
         string[] para = new string[4] {"Blue","Yellow","Red","reducePackage"};
         Collectables = FindGameObjectsWithTags(para);
         player = GameObject.FindGameObjectsWithTag("Player")[0];
@@ -61,7 +59,7 @@ public class GameManager : MonoBehaviour
             Color finisher = GameObject.FindGameObjectsWithTag("Finish")[0].GetComponent<SpriteRenderer>().color;
             string playerColorHex = ColorUtility.ToHtmlStringRGBA(playerColor);
             string wallColorHex = ColorUtility.ToHtmlStringRGBA(finisher);
-            if (playerColorHex != wallColorHex) rb.OnButtonPress();
+            if (playerColorHex != wallColorHex) ResetButton.GetComponent<RESET>().Reset();
         }
     }
     // Update is called once per frame
