@@ -40,6 +40,8 @@ public class EnemyMovement : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             isWaiting = true;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            
         }
     }
 
@@ -56,6 +58,7 @@ public class EnemyMovement : MonoBehaviour
             print("Waiting complete");
             isWaiting = false; // set the bool to start moving
             timer = 0;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
