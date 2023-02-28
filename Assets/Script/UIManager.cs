@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject PauseButton;
     public GameObject PauseMenuButtons;
     public GameObject MainMenuCanvas;
+    public GameObject InGameCanvas;
     public GameObject LevelSelectCanvas;
     public GameObject SettingCanvas;
     public GameObject PauseCanvas;
@@ -49,6 +50,7 @@ public class UIManager : MonoBehaviour
         MainMenuButtons.SetActive(true);
         // Canvas
         MainMenuCanvas.SetActive(true);
+        InGameCanvas.SetActive(false);
         LevelSelectCanvas.SetActive(false);
         SettingCanvas.SetActive(false);
     }
@@ -68,6 +70,7 @@ public class UIManager : MonoBehaviour
         PauseMenuButtons.SetActive(false);
         // Canvas
         MainMenuCanvas.SetActive(false);
+        InGameCanvas.SetActive(true);
         PauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
         LoseCanvas.SetActive(false);
@@ -108,12 +111,32 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void LoadScenn3(){
+    public void LoadScene3(){
         SceneManager.LoadScene(3);
     }
 
     public void LoadScene4(){
         SceneManager.LoadScene(4);
+    }
+
+    public void LoadScene5(){
+        SceneManager.LoadScene(5);
+    }
+
+    public void LoadScene6(){
+        SceneManager.LoadScene(6);
+    }
+
+    public void LoadScenn7(){
+        SceneManager.LoadScene(7);
+    }
+
+    public void LoadScene8(){
+        SceneManager.LoadScene(8);
+    }
+
+    public void LoadScene9(){
+        SceneManager.LoadScene(9);
     }
 
 }

@@ -282,6 +282,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9024753666604786017, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230390, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -334,25 +338,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9024753667378941221, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -96
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024753667387798786, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024753668055359080, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024753668616079109, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 9024753667469740708, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_Delegates.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9052674701870347842, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
+    - target: {fileID: 9024753668342788189, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9024753668531692770, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -2923465105676037312, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+    - {fileID: 9024753667816316602, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+    - {fileID: 9024753666943476803, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+    - {fileID: 9024753667469740708, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+    - {fileID: 9024753668342788189, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
