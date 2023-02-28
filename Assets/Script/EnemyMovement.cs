@@ -40,8 +40,10 @@ public class EnemyMovement : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             isWaiting = true;
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            
+            if (!collision.gameObject.GetComponent<PlayerBehaviour>().protectedByShield)
+            {
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            }
         }
     }
 

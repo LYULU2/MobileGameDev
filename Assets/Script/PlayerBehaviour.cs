@@ -44,7 +44,7 @@ public class PlayerBehaviour : MonoBehaviour
     private Color colorBrown;
     private Color colorOrange;
 
-    private bool protectedByShield = false;
+    public bool protectedByShield = false;
 
     private void Start()
     {
