@@ -32,7 +32,7 @@ public class RESET : MonoBehaviour
             }
             else
             {
-                Enemy.GetComponent<WaypoinyFollower>().Reset();
+                Enemy.GetComponent<WaypointFollower>().Reset();
             }
         }
     }
