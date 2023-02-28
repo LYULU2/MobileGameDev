@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject PauseCanvas;
     public GameObject WinCanvas;
     public GameObject LoseCanvas;
+    public GameObject ResetButton;
     // Start is called before the first frame update
     void Start(){
         if (SceneManager.GetActiveScene().buildIndex == 0){
@@ -73,7 +74,12 @@ public class UIManager : MonoBehaviour
     }
 
     public void Restart(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+        ResetButton.GetComponent<RESET>().Reset();
+        PauseButton.SetActive(true);
+        PauseCanvas.SetActive(false);
+        PauseMenuButtons.SetActive(false);
+
     }
 
     public void PauseMenu(){
