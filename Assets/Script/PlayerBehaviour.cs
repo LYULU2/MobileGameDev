@@ -13,6 +13,9 @@ public class PlayerBehaviour : MonoBehaviour
     public int Blue = 0;
     public int Yellow = 0;
     public int Red = 0;
+    public int reducePackage = 0;
+    public int numHitEnemy = 0;
+    public int numBounceEnemy = 0;
     public float totalDistance = 0;
     public int SceneIndex;
     //private double barLength = 12.88075*2;
@@ -92,7 +95,9 @@ public class PlayerBehaviour : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Enemy" && !protectedByShield) {
+        if (collision.gameObject.tag == "Enemy" && !protectedByShield)
+        {
+            numHitEnemy++;
             for (int i = 0; i < 2 && colorQueue.Count > 0; i++)
             {
                 int c = colorQueue.Dequeue();
@@ -104,6 +109,12 @@ public class PlayerBehaviour : MonoBehaviour
             updatePlayerColor();
             StartCoroutine(Flasher());
         }
+
+        if (collision.gameObject.tag == "Enemy" && protectedByShield)
+        {
+            numBounceEnemy++;
+        }
+        
     }
     private void updateSuperPower() // check if the super power of the player is activated by checking the colorQueue to be all the same or not
     {
@@ -161,6 +172,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else if (collision.tag == "reducePackage")
         {
+            reducePackage++;
             collision.gameObject.SetActive(false);
             if (current_package_capacity > 2) {
                 current_package_capacity-=2;

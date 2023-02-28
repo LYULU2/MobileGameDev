@@ -31,13 +31,17 @@ public class StatisticManager : MonoBehaviour
     public void PostData()
     {
         currentRequest = new RequestHelper {
-            Uri = basePath + "/exp.json",
+            Uri = basePath + "/full.json",
             Body = new Data {
                 curDistance = player.GetComponent<PlayerBehaviour>().totalDistance,
                 resetTimes = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().restartTimes,
                 playTime = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().timer,
                 collectBlue = player.GetComponent<PlayerBehaviour>().Blue,
                 collectYellow = player.GetComponent<PlayerBehaviour>().Yellow,
+                collectRed = player.GetComponent<PlayerBehaviour>().Red,
+                collectReducePackage = player.GetComponent<PlayerBehaviour>().reducePackage,
+                numHitEnemy = player.GetComponent<PlayerBehaviour>().numHitEnemy,
+                numBounceEnemy = player.GetComponent<PlayerBehaviour>().numBounceEnemy,
                 sceneName = SceneManager.GetActiveScene().name
             },
             EnableDebug = true
@@ -59,12 +63,16 @@ public class StatisticManager : MonoBehaviour
     public void PostResetData()
     {
         currentRequest = new RequestHelper {
-            Uri = basePath + "/reset.json",
+            Uri = basePath + "/resetMidterm.json",
             Body = new ResetData {
                 curDistance = player.GetComponent<PlayerBehaviour>().totalDistance,
                 playTime = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().timer,
                 collectBlue = player.GetComponent<PlayerBehaviour>().Blue,
                 collectYellow = player.GetComponent<PlayerBehaviour>().Yellow,
+                collectRed = player.GetComponent<PlayerBehaviour>().Red,
+                collectReducePackage = player.GetComponent<PlayerBehaviour>().reducePackage,
+                numHitEnemy = player.GetComponent<PlayerBehaviour>().numHitEnemy,
+                numBounceEnemy = player.GetComponent<PlayerBehaviour>().numBounceEnemy,
                 sceneName = SceneManager.GetActiveScene().name
             },
             EnableDebug = true

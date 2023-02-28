@@ -11,6 +11,10 @@ namespace Model
         public float playTime;
         public int collectBlue;
         public int collectYellow;
+        public int collectRed;
+        public int collectReducePackage;
+        public int numHitEnemy;
+        public int numBounceEnemy;
 
         public override string ToString(){
             return UnityEngine.JsonUtility.ToJson (this, true);
