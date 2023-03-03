@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - TutorialCheck
   - reducePackage
+  - resetColor
   layers:
   - Default
   - TransparentFX

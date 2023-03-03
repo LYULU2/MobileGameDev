@@ -189,9 +189,14 @@ public class PlayerBehaviour : MonoBehaviour
                     colorIndex.RemoveAt(0);
                     colorIndex.RemoveAt(colorIndex.Count-1);
                 }
-                //Blue = Yellow = Red = 0;
             }
-        } 
+        } else if (collision.tag == "resetColor") {
+            Blue = Yellow = Red = 0;
+            collision.gameObject.SetActive(false);
+            colorQueue.Clear();
+            updateColorBar();
+            updatePlayerColor();
+        }
         if (colorQueue.Count > current_package_capacity) {
             int front = colorQueue.Dequeue();
             if (front == 0) Blue--;
