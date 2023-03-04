@@ -189,6 +189,11 @@ public class PlayerBehaviour : MonoBehaviour
                     colorIndex.RemoveAt(0);
                     colorIndex.RemoveAt(colorIndex.Count-1);
                 }
+                Debug.Log("------------------");
+                foreach( int i in colorIndex) {
+                    Debug.Log(i);
+                }
+                Debug.Log("------------------");
             }
         } else if (collision.tag == "resetColor") {
             Blue = Yellow = Red = 0;
@@ -197,13 +202,15 @@ public class PlayerBehaviour : MonoBehaviour
             updateColorBar();
             updatePlayerColor();
         }
-        if (colorQueue.Count > current_package_capacity) {
+        while (colorQueue.Count > current_package_capacity) {
             int front = colorQueue.Dequeue();
             if (front == 0) Blue--;
             else if (front == 1) Yellow--;
             else Red--;
         }
+        Debug.Log("--------- 2 ---------");
         updatePlayerColor();
+        Debug.Log("--------- 3 ---------");
         updateSuperPower();
     }    
     private void updatePlayerColor()
@@ -256,6 +263,7 @@ public class PlayerBehaviour : MonoBehaviour
             else if (c==2) cubeRenderer.color = colorRed;
             i++;
         }
+        Debug.Log("---- lol ----");
         int left = current_package_capacity-colorQueue.Count;
         if (left > 0) {
             for (int k = colorIndex.Count-1, j = 0; k > -1 && j < left; k--, j++) {
