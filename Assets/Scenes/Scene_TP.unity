@@ -519,7 +519,6 @@ MonoBehaviour:
   Collectables: []
   SceneIndex: 0
   CheckPoint: {fileID: 288103112}
-  WinScreen: {fileID: 1380976460}
   ResetButton: {fileID: 5325734388376904832}
 --- !u!4 &349606660
 Transform:
@@ -1741,17 +1740,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
---- !u!114 &897191280 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
-  m_PrefabInstance: {fileID: 5325734388376904831}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5325734388376904832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703e4bcca12ad044b935a26da8322b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &934348186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,13 +1822,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1008004402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5152369952332959853, guid: e3261f0dd4c93014a80a87fb28e47d24, type: 3}
-  m_PrefabInstance: {fileID: 5152369952533462367}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1088557094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,11 +1908,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1127848470 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5152369952202209612, guid: e3261f0dd4c93014a80a87fb28e47d24, type: 3}
-  m_PrefabInstance: {fileID: 5152369952533462367}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1148003770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2016,7 +1994,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9024753667218230390, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230390, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2072,11 +2050,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
---- !u!1 &1380976460 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5152369951766952467, guid: e3261f0dd4c93014a80a87fb28e47d24, type: 3}
-  m_PrefabInstance: {fileID: 5152369952533462367}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1540055592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 304523671263461848, guid: eb4ec92002bb443308896582b850b1ab, type: 3}
@@ -3060,7 +3033,7 @@ PrefabInstance:
     - target: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
       propertyPath: Canvas
       value: 
-      objectReference: {fileID: 1127848470}
+      objectReference: {fileID: 0}
     - target: {fileID: 5325734388273489104, guid: 0954ecd122fbb4bf6b6a97b53072e6d2, type: 3}
       propertyPath: Player
       value: 
@@ -3106,11 +3079,11 @@ PrefabInstance:
     - target: {fileID: 5919164483207715685, guid: bf266fa95b6b643f1929c31e49d3b318, type: 3}
       propertyPath: WinScreen
       value: 
-      objectReference: {fileID: 1380976460}
+      objectReference: {fileID: 0}
     - target: {fileID: 5919164483207715685, guid: bf266fa95b6b643f1929c31e49d3b318, type: 3}
       propertyPath: LoseScreen
       value: 
-      objectReference: {fileID: 1008004402}
+      objectReference: {fileID: 0}
     - target: {fileID: 5919164483207715685, guid: bf266fa95b6b643f1929c31e49d3b318, type: 3}
       propertyPath: SceneIndex
       value: 0

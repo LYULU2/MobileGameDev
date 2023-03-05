@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Collectables;
     public int SceneIndex;
     public GameObject CheckPoint;
-    public GameObject WinScreen;
+    // public GameObject WinScreen;
     public GameObject ResetButton;
 
     private GameObject player;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] para = new string[4] {"Blue","Yellow","Red","reducePackage"};
+        string[] para = new string[5] {"Blue","Yellow","Red","reducePackage", "resetColor"};
         Collectables = FindGameObjectsWithTags(para);
         player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
@@ -66,13 +66,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         finishCollect();
-        if (WinScreen.activeSelf == true)
-        {
-            int currentIndex = SceneManager.GetActiveScene().buildIndex;
-            if (currentIndex +1 < SceneManager.sceneCountInBuildSettings && Input.GetKeyDown(KeyCode.N))
-            {
-                SceneManager.LoadScene(currentIndex + 1);
-            }
-        }
+        // if (WinScreen.activeSelf == true)
+        // {
+        //     int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        //     if (currentIndex +1 < SceneManager.sceneCountInBuildSettings && Input.GetKeyDown(KeyCode.N))
+        //     {
+        //         SceneManager.LoadScene(currentIndex + 1);
+        //     }
+        // }
     }
 }

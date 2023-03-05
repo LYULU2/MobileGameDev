@@ -98,7 +98,6 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Enemy" && !protectedByShield)
         {
             numHitEnemy++;
@@ -180,7 +179,7 @@ public class PlayerBehaviour : MonoBehaviour
             collision.gameObject.SetActive(false);
             if (current_package_capacity > 2) {
                 current_package_capacity-=2;
-                colorQueue.Clear();
+                //colorQueue.Clear();
                 if (current_package_capacity == 4) {
                     this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
                     this.gameObject.transform.GetChild(6).gameObject.SetActive(false);
@@ -193,10 +192,15 @@ public class PlayerBehaviour : MonoBehaviour
                     colorIndex.RemoveAt(0);
                     colorIndex.RemoveAt(colorIndex.Count-1);
                 }
-                Blue = Yellow = Red = 0;
             }
-        } 
-        if (colorQueue.Count > current_package_capacity) {
+        } else if (collision.tag == "resetColor") {
+            Blue = Yellow = Red = 0;
+            collision.gameObject.SetActive(false);
+            colorQueue.Clear();
+            updateColorBar();
+            updatePlayerColor();
+        }
+        while (colorQueue.Count > current_package_capacity) {
             int front = colorQueue.Dequeue();
             if (front == 0) Blue--;
             else if (front == 1) Yellow--;
