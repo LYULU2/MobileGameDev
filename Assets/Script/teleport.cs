@@ -24,6 +24,8 @@ public class teleport : MonoBehaviour
     
 
     private void parseColorQueue(string colorString) {
+        // clear the colorQueue
+        colorQueue.Clear();
         // enumerate the string and add the color to the colorQueue
         foreach (char c in colorString) {
             switch (c) {
