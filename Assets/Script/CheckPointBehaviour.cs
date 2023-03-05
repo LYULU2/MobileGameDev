@@ -7,8 +7,6 @@ using static UnityEngine.ColorUtility;
 
 public class CheckPointBehaviour : MonoBehaviour
 {
-    public GameObject WinScreen;
-    public GameObject LoseScreen;
     public GameObject[] checkPoints;
     public GameObject Stats;
     public AudioSource SoundWrongGoal;
@@ -41,10 +39,6 @@ public class CheckPointBehaviour : MonoBehaviour
             }
         }
     */
-    private void Reset()
-    {
-        
-    }
     private void Start() {
         checkPoints = GameObject.FindGameObjectsWithTag("Finish");
     }
@@ -60,7 +54,7 @@ public class CheckPointBehaviour : MonoBehaviour
             string wallColorHex = ColorUtility.ToHtmlStringRGBA(wallColor);
             if (playerColorHex == wallColorHex) {
                 Stats.GetComponent<StatisticManager>().OnGameFinish();
-                WinScreen.SetActive(true);
+                GameObject.Find("UI_Manager").GetComponent<UIManager>().ShowWinMenu();
                 collision.gameObject.SetActive(false);
                 //post data if win the tutorial
                 if (SceneManager.GetActiveScene().name == "Scene1")
@@ -71,7 +65,6 @@ public class CheckPointBehaviour : MonoBehaviour
                 
                 /*
                 Stats.GetComponent<StatisticManager>().OnGameFinish();
-                LoseScreen.SetActive(true);
                 collision.gameObject.SetActive(false);
                 */
                 SoundWrongGoal.Play();

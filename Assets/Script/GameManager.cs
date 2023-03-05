@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Collectables;
     public int SceneIndex;
     public GameObject CheckPoint;
-    public GameObject WinScreen;
+    // public GameObject WinScreen;
     public GameObject ResetButton;
 
     private GameObject player;
@@ -66,13 +66,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         finishCollect();
-        if (WinScreen.activeSelf == true)
-        {
-            int currentIndex = SceneManager.GetActiveScene().buildIndex;
-            if (currentIndex +1 < SceneManager.sceneCountInBuildSettings && Input.GetKeyDown(KeyCode.N))
-            {
-                SceneManager.LoadScene(currentIndex + 1);
-            }
-        }
+        // if (WinScreen.activeSelf == true)
+        // {
+        //     int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        //     if (currentIndex +1 < SceneManager.sceneCountInBuildSettings && Input.GetKeyDown(KeyCode.N))
+        //     {
+        //         SceneManager.LoadScene(currentIndex + 1);
+        //     }
+        // }
     }
 }

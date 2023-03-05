@@ -9,7 +9,7 @@ public class RESET : MonoBehaviour
     public float timer = 0f;
     // public int SceneIndex;
     public GameObject Player;
-    public GameObject Canvas;
+    // public GameObject Canvas;
     public GameObject GameManager;
 	public GameObject Stats;
     public GameObject Enemy;
@@ -20,7 +20,7 @@ public class RESET : MonoBehaviour
         timer = 0f;
         restartTimes += 1;
         Player.GetComponent<PlayerBehaviour>().Reset();
-        Canvas.GetComponent<CanvasScript>().Reset();
+        // Canvas.GetComponent<CanvasScript>().Reset();
         GameManager.GetComponent<GameManager>().Reset();
         if (Enemy)
         {
