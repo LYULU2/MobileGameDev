@@ -13,6 +13,8 @@ public class RESET : MonoBehaviour
     public GameObject GameManager;
 	public GameObject Stats;
     public GameObject Enemy;
+    public GameObject TPUnits;
+
     // Start is called before the first frame update
     public void Reset()
     {
@@ -33,6 +35,14 @@ public class RESET : MonoBehaviour
             else
             {
                 Enemy.GetComponent<WaypoinyFollower>().Reset();
+            }
+        }
+        if (TPUnits)
+        {
+            // enumerate all the children of TPUnits and reset them
+            foreach (Transform child in TPUnits.transform)
+            {
+                child.GetComponent<teleport>().Reset();
             }
         }
     }

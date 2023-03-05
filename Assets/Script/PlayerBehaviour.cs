@@ -46,6 +46,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     public bool protectedByShield = false;
 
+    public Queue<int> getColorQueue() {
+        return colorQueue;
+    }
+
     private void Start()
     {
         current_package_capacity = packageCapacity;
