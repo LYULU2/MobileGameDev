@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.13333334, a: 1}
+  m_Color: {r: 0.19607843, g: 0.8627451, b: 0.33333334, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,8 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce62fea47ad0f54781eb318f10e979b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WinScreen: {fileID: 0}
-  LoseScreen: {fileID: 0}
   checkPoints: []
   Stats: {fileID: 0}
+  SoundWrongGoal: {fileID: 0}
   SceneIndex: 0
