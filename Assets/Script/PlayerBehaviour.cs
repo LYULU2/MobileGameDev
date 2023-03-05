@@ -71,7 +71,7 @@ public class PlayerBehaviour : MonoBehaviour
         //initialize colors
         colorBlue = new Color32(0, 136, 255, 255);
         colorYellow = new Color32(255, 240, 0, 255);
-        colorGreen = new Color32(0, 255, 34, 255);
+        colorGreen = new Color32(50, 220, 85, 255);
         colorPurple = new Color32(147,112,219, 255);
         colorBrown = new Color32(139,69,19, 255);
         colorOrange = new Color32(255,165,0,255);
