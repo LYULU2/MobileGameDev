@@ -91,10 +91,10 @@ public class teleport : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // destory the current object if collide with an enemy
+        // deactive the current object if collide with an enemy
         if (collision.transform.tag == "Enemy")
         {
-            Destroy(gameObject); // destroy the current object
+            gameObject.SetActive(false);
             return ;
         }
         Debug.Log(unlocked);
@@ -129,6 +129,7 @@ public class teleport : MonoBehaviour
 
     public void Reset()
     {
+        gameObject.SetActive(true);
         unlocked = init_unlocked;
         parseColorQueue(colorQueueString);
     }
