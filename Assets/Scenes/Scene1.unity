@@ -3379,6 +3379,10 @@ PrefabInstance:
       propertyPath: packageCapacity
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2885209254637193822, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193823, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: m_RootOrder
       value: 2
