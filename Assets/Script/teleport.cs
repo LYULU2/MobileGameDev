@@ -8,6 +8,7 @@ public class teleport : MonoBehaviour
     private BoxCollider2D teleportPortal;
     public GameObject Stats;
 	private bool sentData;
+    [SerializeField] AudioClip errorSFX;
     [SerializeField] private Sprite unlockSprite;
     [SerializeField] GameObject[] keys;
     [SerializeField] private Sprite lockSprite;
@@ -120,7 +121,11 @@ public class teleport : MonoBehaviour
             if (getColorQueueString(collision.transform.GetComponent<PlayerBehaviour>().getColorQueue()) == getColorQueueString(colorQueue)) {
                 unlocked = true;
                 updateUX();
-            } 
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(errorSFX, gameObject.transform.position);
+            }
         }
 
         // teleport the player to the destination if collide with the player

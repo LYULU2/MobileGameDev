@@ -58,12 +58,13 @@ public class RESET : MonoBehaviour
     {
         timer += Time.deltaTime;
         
-
+        /*
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reset();
 
         }
+        */
         
     }
     /*
