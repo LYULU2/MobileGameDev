@@ -4034,6 +4034,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5574879450516114424, guid: 23285261e582743678aaa57d5853c721, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5574879450516114426, guid: 23285261e582743678aaa57d5853c721, type: 3}
       propertyPath: player
       value: 
@@ -4871,6 +4875,10 @@ PrefabInstance:
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: packageCapacity
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885209254637193821, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193822, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: movementSpeed
