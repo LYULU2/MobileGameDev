@@ -124,7 +124,7 @@ public class teleport : MonoBehaviour
             }
             else
             {
-                AudioSource.PlayClipAtPoint(errorSFX, gameObject.transform.position);
+                AudioSource.PlayClipAtPoint(errorSFX, gameObject.transform.position, 100f);
             }
         }
 
