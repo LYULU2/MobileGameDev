@@ -8,6 +8,9 @@ public class teleport : MonoBehaviour
     private BoxCollider2D teleportPortal;
     public GameObject Stats;
 	private bool sentData;
+    [SerializeField] private Sprite unlockSprite;
+    [SerializeField] GameObject[] keys;
+    [SerializeField] private Sprite lockSprite;
 
     // Input the coordinate to teleport to
     public float x;
@@ -72,6 +75,8 @@ public class teleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lockSprite = GetComponent<SpriteRenderer>().sprite;
+        keys = new GameObject[6];
         Stats = GameObject.FindGameObjectsWithTag("Stat")[0];
         //Fetch the GameObject's Collider (make sure they have a Collider component)
         teleportPortal = gameObject.GetComponent<BoxCollider2D>();
@@ -79,6 +84,11 @@ public class teleport : MonoBehaviour
         teleportPortal.isTrigger = false;
         unlocked = init_unlocked;
         parseColorQueue(colorQueueString);
+        for (int i = 0; i < 6; i++)
+        {
+
+            keys[i] = transform.GetChild(i).gameObject;
+        }
         //Output whether the Collider is a trigger type Collider or not
         //Debug.Log("Trigger On : " + m_ObjectCollider.isTrigger);
     }
@@ -86,6 +96,11 @@ public class teleport : MonoBehaviour
     // the function used to call the update on the UX
     void updateUX()
     {
+        GetComponent<SpriteRenderer>().sprite = unlockSprite;
+        foreach(GameObject key in keys)
+        {
+            key.SetActive(false);
+        }
         return ;
     }
 
@@ -132,5 +147,10 @@ public class teleport : MonoBehaviour
         gameObject.SetActive(true);
         unlocked = init_unlocked;
         parseColorQueue(colorQueueString);
+        foreach(GameObject key in keys)
+        {
+            key.SetActive(true);
+        }
+        GetComponent<SpriteRenderer>().sprite = lockSprite;
     }
 }

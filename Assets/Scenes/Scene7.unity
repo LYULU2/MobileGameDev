@@ -283,6 +283,10 @@ PrefabInstance:
       value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5661962044291049115, guid: 5c9384d16b43440a29e38e2811f23a29, type: 3}
+      propertyPath: unlockSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb19ae0d646e24a0089397d03c9a55af, type: 3}
+    - target: {fileID: 5661962044291049115, guid: 5c9384d16b43440a29e38e2811f23a29, type: 3}
       propertyPath: colorQueueString
       value: BB
       objectReference: {fileID: 0}
