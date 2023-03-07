@@ -31,7 +31,7 @@ public class StatisticManager : MonoBehaviour
     public void PostData()
     {
         currentRequest = new RequestHelper {
-            Uri = basePath + "/full.json",
+            Uri = basePath + "/midtermFull.json",
             Body = new Data {
                 curDistance = player.GetComponent<PlayerBehaviour>().totalDistance,
                 resetTimes = GameObject.FindGameObjectsWithTag("Reset")[0].GetComponent<RESET>().restartTimes,
@@ -42,7 +42,8 @@ public class StatisticManager : MonoBehaviour
                 collectReducePackage = player.GetComponent<PlayerBehaviour>().reducePackage,
                 numHitEnemy = player.GetComponent<PlayerBehaviour>().numHitEnemy,
                 numBounceEnemy = player.GetComponent<PlayerBehaviour>().numBounceEnemy,
-                sceneName = SceneManager.GetActiveScene().name
+                sceneName = SceneManager.GetActiveScene().name,
+                portalLockHit = player.GetComponent<PlayerBehaviour>().portalLockHit
             },
             EnableDebug = true
         };

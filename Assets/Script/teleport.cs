@@ -134,6 +134,7 @@ public class teleport : MonoBehaviour
             if (!unlocked)
             {
                 Debug.Log("Teleport is locked");
+                collision.transform.GetComponent<PlayerBehaviour>().portalLockHit += 1;
                 return ;
             }
             // tepleport player to x,y

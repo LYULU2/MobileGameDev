@@ -17,6 +17,8 @@ public class PlayerBehaviour : MonoBehaviour
     public int numHitEnemy = 0;
     public int numBounceEnemy = 0;
     public float totalDistance = 0;
+    public int portalLockHit = 0;
+    
     public int SceneIndex;
     //private double barLength = 12.88075*2;
     private Vector3 StartPosition;

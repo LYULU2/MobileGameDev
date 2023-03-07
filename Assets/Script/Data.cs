@@ -15,6 +15,7 @@ namespace Model
         public int collectReducePackage;
         public int numHitEnemy;
         public int numBounceEnemy;
+        public int portalLockHit;
 
         public override string ToString(){
             return UnityEngine.JsonUtility.ToJson (this, true);
