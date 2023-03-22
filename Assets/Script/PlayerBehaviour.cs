@@ -84,8 +84,19 @@ public class PlayerBehaviour : MonoBehaviour
     private void Update() 
     {
         UpdateTotalDistance();
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            ejectColor();
+        }
     }
-
+    private void ejectColor() {
+        if (colorQueue.Count == 0) return;
+        int c = colorQueue.Dequeue();
+        if (c == 0) Blue--;
+        else if (c == 1)Yellow--;
+        else if (c == 2) Red--;
+        updateColorBar();
+        updatePlayerColor();
+    }
     private void UpdateTotalDistance()
     {
         //calculate player's total walking distance
