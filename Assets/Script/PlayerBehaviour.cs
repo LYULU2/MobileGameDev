@@ -35,6 +35,8 @@ public class PlayerBehaviour : MonoBehaviour
     //float[] cx = new float[2];
     //float cy, cz;
     //Reload same level
+    public GameObject bulletPrefab; // The prefab of the object to create
+    public float force = 500f; // The force to apply to the object
 
     public float distanceLastTP = 1;
     
@@ -91,11 +93,30 @@ public class PlayerBehaviour : MonoBehaviour
     private void ejectColor() {
         if (colorQueue.Count == 0) return;
         int c = colorQueue.Dequeue();
-        if (c == 0) Blue--;
-        else if (c == 1)Yellow--;
-        else if (c == 2) Red--;
+        GameObject nb= Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        if (c == 0) {
+            Blue--;
+            // Change the color of the new game object
+            nb.GetComponent<SpriteRenderer>().color = Color.blue;
+            // Change the tag of the new game object
+            nb.tag = "blueBullet";
+        } else if (c == 1) {
+            Yellow--;
+            // Change the color of the new game object
+            nb.GetComponent<SpriteRenderer>().color = Color.yellow;
+            // Change the tag of the new game object
+            nb.tag = "yellowBullet";
+        } else if (c == 2) {
+            Red--;
+            // Change the color of the new game object
+            nb.GetComponent<SpriteRenderer>().color = Color.red;
+            // Change the tag of the new game object
+            nb.tag = "redBullet";
+        }
         updateColorBar();
         updatePlayerColor();
+        
+        nb.GetComponent<Rigidbody2D>().AddForce(Vector2.right * force);
     }
     private void UpdateTotalDistance()
     {
