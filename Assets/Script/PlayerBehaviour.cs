@@ -151,7 +151,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             numBounceEnemy++;
         }
-        
+        //we can use it if we want to add bullet color back to the player
+        encounterBullet(collision);
     }
     private void updateSuperPower() // check if the super power of the player is activated by checking the colorQueue to be all the same or not
     {
@@ -186,22 +187,54 @@ public class PlayerBehaviour : MonoBehaviour
             // gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Capsule");
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void encounterBullet(Collision2D collision)
     {
-        if (collision.tag == "Blue")
+
+        GameObject otherGameObject = collision.gameObject;
+        Debug.Log("its tag name is " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "ablueBullet")
         {
             Blue = Blue + 1;
             collision.gameObject.SetActive(false);
             colorQueue.Enqueue(0);
         } 
-        else if (collision.tag == "Yellow") 
+        else if (collision.gameObject.tag == "ayellowBullet") 
         {
             Yellow = Yellow + 1;
             collision.gameObject.SetActive(false);
             colorQueue.Enqueue(1);
         }
-        else if (collision.tag == "Red") 
+        else if (collision.gameObject.tag == "aredBullet") 
+        {
+            Red = Red + 1;
+            collision.gameObject.SetActive(false);
+            colorQueue.Enqueue(2);
+        }
+        
+        while (colorQueue.Count > current_package_capacity) {
+            int front = colorQueue.Dequeue();
+            if (front == 0) Blue--;
+            else if (front == 1) Yellow--;
+            else Red--;
+        }
+        updatePlayerColor();
+        updateSuperPower();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {   
+        if (collision.tag == "Blue" || collision.tag == "blueBullet")
+        {
+            Blue = Blue + 1;
+            collision.gameObject.SetActive(false);
+            colorQueue.Enqueue(0);
+        } 
+        else if (collision.tag == "Yellow" || collision.tag == "yellowBullet") 
+        {
+            Yellow = Yellow + 1;
+            collision.gameObject.SetActive(false);
+            colorQueue.Enqueue(1);
+        }
+        else if (collision.tag == "Red" || collision.tag == "redBullet") 
         {
             Red = Red + 1;
             collision.gameObject.SetActive(false);
