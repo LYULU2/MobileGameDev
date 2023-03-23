@@ -14,25 +14,95 @@ public class EnemyMovement : MonoBehaviour
     private bool isWaiting = false;
     public float waitingForSeconds = 3;
     private float timer = 0;
-    // Start is called before the first frame update
+
+    private List<Vector2Int> currentPath;
+    private int currentWaypoint;
+
     void Start()
     {
         startPos = transform.position;
         playerPos = player.GetComponent<Transform>();
         currentPos = GetComponent<Transform>().position;
+
+        currentPath = new List<Vector2Int>();
+        currentWaypoint = 0;
+        InvokeRepeating("UpdateRoute", 0.5f, 0.5f);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+
+        if (currentPath == null || currentWaypoint >= currentPath.Count)
+        {
+            return;
+        }
+
+        Vector2 targetPosition = currentPath[currentWaypoint];
+        Vector2 moveDirection = (targetPosition - (Vector2)transform.position).normalized;
+
         if (Vector2.Distance(transform.position, playerPos.position) < distance && !isWaiting)
         {
-            transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
+            transform.position += (Vector3)moveDirection * speedEnemy * Time.deltaTime;
         }
         else
         {
             startWaiting();
         }
+
+        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            currentWaypoint++;
+        }
+    }
+
+    void UpdateRoute()
+    {
+        Vector2Int startTile = GetTileFromWorldPosition(transform.position);
+        Vector2Int endTile = GetTileFromWorldPosition(player.transform.position);
+
+        List<Vector2Int> path = FindPath(startTile, endTile);
+        if (path != null && path.Count > 0)
+        {
+            currentPath = path;
+            currentWaypoint = 0;
+        }
+    }
+
+    private Vector2Int GetTileFromWorldPosition(Vector3 position)
+    {
+        Vector2Int tilePos = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+        return tilePos;
+    }
+
+    private List<Vector2Int> FindPath(Vector2Int startTile, Vector2Int endTile)
+    {
+        List<Vector2Int> path = new List<Vector2Int>();
+
+        Vector2Int currentTile = startTile;
+        while (currentTile != endTile)
+        {
+            if (currentTile.x < endTile.x)
+            {
+                currentTile.x++;
+            }
+            else if (currentTile.x > endTile.x)
+            {
+                currentTile.x--;
+            }
+            if (currentTile.y < endTile.y)
+            {
+                currentTile.y++;
+            }
+            else if (currentTile.y > endTile.y)
+            {
+                currentTile.y--;
+            }
+
+            path.Add(currentTile);
+        }
+
+        return path;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
