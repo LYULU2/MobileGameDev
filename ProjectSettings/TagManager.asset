@@ -19,6 +19,12 @@ TagManager:
   - TutorialCheck
   - reducePackage
   - resetColor
+  - blueBullet
+  - yellowBullet
+  - redBullet
+  - ablueBullet
+  - ayellowBullet
+  - aredBullet
   layers:
   - Default
   - TransparentFX
