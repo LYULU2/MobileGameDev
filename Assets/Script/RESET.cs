@@ -26,25 +26,29 @@ public class RESET : MonoBehaviour
         GameManager.GetComponent<GameManager>().Reset();
         if (Enemy)
         {
-            // if the enemy is a sinlge enemy then reset it
+            // if the enemy is a single enemy then reset it
             if (Enemy.GetComponent<EnemyMovement>() != null)
             {
-                Enemy.GetComponent<EnemyMovement>().Reset();
+                resetEnemy(Enemy.transform);
             }
             else {
                 // otherwise enumerate all the children of Enemy and reset them
                 foreach (Transform child in Enemy.transform)
                 {
-                    EnemyMovement flag;
-                    child.TryGetComponent<EnemyMovement>(out flag);
-                    if (flag != null)
+                    // check if the child is a single enemy, and reset it if it is
+                    if (child.GetComponent<EnemyMovement>() != null)
                     {
-                        child.GetComponent<EnemyMovement>().Reset();
+                        resetEnemy(child);
                     }
                     else
                     {
-                        child.GetComponent<WaypointFollower>().Reset();
+                        // otherwise enumerate all the children of the child and reset them
+                        foreach (Transform grandchild in child.transform)
+                        {
+                            resetEnemy(grandchild);
+                        }
                     }
+                    
                 }
             }
         }
@@ -55,6 +59,20 @@ public class RESET : MonoBehaviour
             {
                 child.GetComponent<teleport>().Reset();
             }
+        }
+    }
+
+    void resetEnemy(Transform enemy)
+    {
+        EnemyMovement flag;
+        Enemy.TryGetComponent<EnemyMovement>(out flag);
+        if (flag != null)
+        {
+            Enemy.GetComponent<EnemyMovement>().Reset();
+        }
+        else
+        {
+            Enemy.GetComponent<WaypointFollower>().Reset();
         }
     }
     
