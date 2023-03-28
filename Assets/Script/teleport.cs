@@ -82,7 +82,7 @@ public class teleport : MonoBehaviour
         //Fetch the GameObject's Collider (make sure they have a Collider component)
         teleportPortal = gameObject.GetComponent<BoxCollider2D>();
         //Here the GameObject's Collider is not a trigger
-        teleportPortal.isTrigger = false;
+        teleportPortal.isTrigger = true;
         unlocked = init_unlocked;
         parseColorQueue(colorQueueString);
         for (int i = 0; i < 6; i++)
