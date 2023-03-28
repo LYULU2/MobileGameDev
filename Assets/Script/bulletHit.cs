@@ -31,6 +31,16 @@ public class bulletHit : MonoBehaviour
             enemyRenderer.color = myColor;
             // Destroy the object that this script is attached to
             gameObject.SetActive(false);
+            //change enemy's position
+            // Get the current position of the object
+            Vector3 currentPosition = collision.gameObject.transform.position;
+
+            // Set the x position to a new value
+            float newXPosition = 5.0f;
+            currentPosition.x = currentPosition.x+newXPosition;
+
+            // Update the position of the object
+            collision.gameObject.transform.position = currentPosition;
         } else if (myTag!="" && myTag[0] != 'a' && collision.gameObject.tag == "Untagged") {
             gameObject.tag = "a"+myTag;
         }
