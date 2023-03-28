@@ -105,7 +105,7 @@ public class teleport : MonoBehaviour
         return ;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         // deactive the current object if collide with an enemy
         if (collision.transform.tag == "Enemy")
@@ -118,7 +118,10 @@ public class teleport : MonoBehaviour
         // unlock the teleport if collide with player, and the colorQueue of the player is the same as the colorQueue of the teleport
         if (collision.transform.tag == "Player" && !unlocked )
         {
-            if (getColorQueueString(collision.transform.GetComponent<PlayerBehaviour>().getColorQueue()) == getColorQueueString(colorQueue)) {
+            Debug.Log("Teleport is locked");
+            Debug.Log(colorQueueString);
+            // if (getColorQueueString(collision.transform.GetComponent<PlayerBehaviour>().getColorQueue()) == getColorQueueString(colorQueue)) {
+            if (getColorQueueString(collision.transform.GetComponent<PlayerBehaviour>().getColorQueue()) == colorQueueString) {
                 unlocked = true;
                 updateUX();
             }
@@ -145,7 +148,7 @@ public class teleport : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        teleportPortal.isTrigger = false;
+        teleportPortal.isTrigger = true;
     }
 
     public void Reset()

@@ -45,7 +45,10 @@ public class RESET : MonoBehaviour
                         // otherwise enumerate all the children of the child and reset them
                         foreach (Transform grandchild in child.transform)
                         {
-                            resetEnemy(grandchild);
+                            Debug.Log(grandchild.name);
+                            if (grandchild.GetComponent<EnemyMovement>() != null) {
+                                resetEnemy(grandchild);
+                            }
                         }
                     }
                     
@@ -62,17 +65,19 @@ public class RESET : MonoBehaviour
         }
     }
 
-    void resetEnemy(Transform enemy)
+    void resetEnemy(Transform currentEnemy)
     {
         EnemyMovement flag;
-        Enemy.TryGetComponent<EnemyMovement>(out flag);
-        if (flag != null)
+        // Debug.Log(Enemy);
+        currentEnemy.TryGetComponent<EnemyMovement>(out flag);
+        // Debug.Log(flag);
+        if (flag)
         {
-            Enemy.GetComponent<EnemyMovement>().Reset();
+            currentEnemy.GetComponent<EnemyMovement>().Reset();
         }
         else
         {
-            Enemy.GetComponent<WaypointFollower>().Reset();
+            currentEnemy.GetComponent<WaypointFollower>().Reset();
         }
     }
     
