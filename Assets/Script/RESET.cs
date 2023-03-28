@@ -26,15 +26,26 @@ public class RESET : MonoBehaviour
         GameManager.GetComponent<GameManager>().Reset();
         if (Enemy)
         {
-            EnemyMovement flag;
-            Enemy.TryGetComponent<EnemyMovement>(out flag);
-            if (flag != null)
+            // if the enemy is a sinlge enemy then reset it
+            if (Enemy.GetComponent<EnemyMovement>() != null)
             {
                 Enemy.GetComponent<EnemyMovement>().Reset();
             }
-            else
-            {
-                Enemy.GetComponent<WaypointFollower>().Reset();
+            else {
+                // otherwise enumerate all the children of Enemy and reset them
+                foreach (Transform child in Enemy.transform)
+                {
+                    EnemyMovement flag;
+                    child.TryGetComponent<EnemyMovement>(out flag);
+                    if (flag != null)
+                    {
+                        child.GetComponent<EnemyMovement>().Reset();
+                    }
+                    else
+                    {
+                        child.GetComponent<WaypointFollower>().Reset();
+                    }
+                }
             }
         }
         if (TPUnits)
