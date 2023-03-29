@@ -54,6 +54,13 @@ public class RESET : MonoBehaviour
                     
                 }
             }
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies) {
+                Renderer enemyRenderer = enemy.GetComponent<Renderer>();
+                if (enemyRenderer != null) {
+                    enemyRenderer.material.color = Color.black;
+                }
+            }
         }
         if (TPUnits)
         {
@@ -63,8 +70,32 @@ public class RESET : MonoBehaviour
                 child.GetComponent<teleport>().Reset();
             }
         }
-    }
+        resetBullet();
 
+
+    }
+    public void resetBullet() {
+        // Find all GameObjects with the "blueBullet" tag
+        GameObject[] blueBullets = GameObject.FindGameObjectsWithTag("ablueBullet");
+
+        // Loop through all blueBullets and destroy them
+        foreach (GameObject bullet in blueBullets) {
+            Destroy(bullet);
+        }
+        
+        GameObject[] yellowBullets = GameObject.FindGameObjectsWithTag("ayellowBullet");
+
+        // Loop through all blueBullets and destroy them
+        foreach (GameObject bullet in yellowBullets) {
+            Destroy(bullet);
+        }
+        GameObject[] redBullets = GameObject.FindGameObjectsWithTag("aredBullet");
+
+        // Loop through all blueBullets and destroy them
+        foreach (GameObject bullet in redBullets) {
+            Destroy(bullet);
+        }
+    }
     void resetEnemy(Transform currentEnemy)
     {
         EnemyMovement flag;

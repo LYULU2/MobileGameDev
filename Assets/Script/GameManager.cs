@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Collectables;
     public int SceneIndex;
     public GameObject CheckPoint;
+    RESET RR = new RESET();
     // public GameObject WinScreen;
     public GameObject ResetButton;
 
@@ -62,10 +63,42 @@ public class GameManager : MonoBehaviour
             if (playerColorHex != wallColorHex) ResetButton.GetComponent<RESET>().Reset();
         }
     }
+    void resetBullet() {
+        Debug.Log(" enter resetBullet ");
+        // Find all GameObjects with the "blueBullet" tag
+        GameObject[] blueBullets = GameObject.FindGameObjectsWithTag("ablueBullet");
+
+        // Loop through all blueBullets and destroy them
+        foreach (GameObject bullet in blueBullets) {
+            Debug.Log("@@");
+            Destroy(bullet);
+        }
+        
+        GameObject[] yellowBullets = GameObject.FindGameObjectsWithTag("ayellowBullet");
+
+        // Loop through all blueBullets and destroy them
+        foreach (GameObject bullet in yellowBullets) {
+            Debug.Log("##");
+            Destroy(bullet);
+        }
+        GameObject[] redBullets = GameObject.FindGameObjectsWithTag("aredBullet");
+
+        // Loop through all blueBullets and destroy them
+        foreach (GameObject bullet in redBullets) {
+            Debug.Log("##");
+            Destroy(bullet);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         finishCollect();
+        if (Input.GetKeyDown(KeyCode.R)) {
+            // Do something when the 'R' key is pressed
+            Debug.Log("The 'R' key has been pressed");
+            RR.resetBullet();
+            //resetBullet();
+        }
         // if (WinScreen.activeSelf == true)
         // {
         //     int currentIndex = SceneManager.GetActiveScene().buildIndex;
