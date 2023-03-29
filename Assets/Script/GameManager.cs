@@ -64,13 +64,11 @@ public class GameManager : MonoBehaviour
         }
     }
     void resetBullet() {
-        Debug.Log(" enter resetBullet ");
         // Find all GameObjects with the "blueBullet" tag
         GameObject[] blueBullets = GameObject.FindGameObjectsWithTag("ablueBullet");
 
         // Loop through all blueBullets and destroy them
         foreach (GameObject bullet in blueBullets) {
-            Debug.Log("@@");
             Destroy(bullet);
         }
         
@@ -78,14 +76,12 @@ public class GameManager : MonoBehaviour
 
         // Loop through all blueBullets and destroy them
         foreach (GameObject bullet in yellowBullets) {
-            Debug.Log("##");
             Destroy(bullet);
         }
         GameObject[] redBullets = GameObject.FindGameObjectsWithTag("aredBullet");
 
         // Loop through all blueBullets and destroy them
         foreach (GameObject bullet in redBullets) {
-            Debug.Log("##");
             Destroy(bullet);
         }
     }
@@ -95,7 +91,6 @@ public class GameManager : MonoBehaviour
         finishCollect();
         if (Input.GetKeyDown(KeyCode.R)) {
             // Do something when the 'R' key is pressed
-            Debug.Log("The 'R' key has been pressed");
             RR.resetBullet();
             //resetBullet();
         }
