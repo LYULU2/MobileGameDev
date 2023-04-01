@@ -97,19 +97,19 @@ public class PlayerBehaviour : MonoBehaviour
         if (c == 0) {
             Blue--;
             // Change the color of the new game object
-            nb.GetComponent<SpriteRenderer>().color = Color.blue;
+            nb.GetComponent<SpriteRenderer>().color = new Color32(0, 136, 255, 255);
             // Change the tag of the new game object
             nb.tag = "blueBullet";
         } else if (c == 1) {
             Yellow--;
             // Change the color of the new game object
-            nb.GetComponent<SpriteRenderer>().color = Color.yellow;
+            nb.GetComponent<SpriteRenderer>().color =  new Color32(255, 240, 0, 255);
             // Change the tag of the new game object
             nb.tag = "yellowBullet";
         } else if (c == 2) {
             Red--;
             // Change the color of the new game object
-            nb.GetComponent<SpriteRenderer>().color = Color.red;
+            nb.GetComponent<SpriteRenderer>().color =  new Color32(255, 0, 0, 255);
             // Change the tag of the new game object
             nb.tag = "redBullet";
         }
@@ -132,24 +132,32 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && !protectedByShield)
+        Debug.Log("bump into enemy !!!");
+        if (collision.gameObject.tag == "Enemy")
         {
-            numHitEnemy++;
-            for (int i = 0; i < 2 && colorQueue.Count > 0; i++)
-            {
-                int c = colorQueue.Dequeue();
-                if (c == 0) Blue--;
-                else if (c == 1)Yellow--;
-                else if (c == 2) Red--;
+            Color col = collision.gameObject.GetComponent<SpriteRenderer>().color;
+            Debug.Log(col);
+            Debug.Log(gameObject.GetComponent<SpriteRenderer>().color);
+            if (gameObject.GetComponent<SpriteRenderer>().color == col) {
+                protectedByShield = true;
+                collision.gameObject.SetActive(false);
+                Debug.Log("destroy enemy");
             }
-            updateColorBar();
-            updatePlayerColor();
-            StartCoroutine(Flasher());
-        }
-
-        if (collision.gameObject.tag == "Enemy" && protectedByShield)
-        {
-            numBounceEnemy++;
+            if (!protectedByShield) {
+                numHitEnemy++;
+                for (int i = 0; i < 2 && colorQueue.Count > 0; i++)
+                {
+                    int c = colorQueue.Dequeue();
+                    if (c == 0) Blue--;
+                    else if (c == 1)Yellow--;
+                    else if (c == 2) Red--;
+                }
+                updateColorBar();
+                updatePlayerColor();
+                StartCoroutine(Flasher());
+            } else {
+                numBounceEnemy++;
+            }   
         }
         //we can use it if we want to add bullet color back to the player
         encounterBullet(collision);
@@ -191,7 +199,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
 
         GameObject otherGameObject = collision.gameObject;
-        Debug.Log("its tag name is " + collision.gameObject.tag);
+        //Debug.Log("its tag name is " + collision.gameObject.tag);
         if (collision.gameObject.tag == "ablueBullet")
         {
             Blue = Blue + 1;

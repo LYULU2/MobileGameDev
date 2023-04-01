@@ -56,6 +56,7 @@ public class RESET : MonoBehaviour
             }
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies) {
+                enemy.SetActive(true);
                 Renderer enemyRenderer = enemy.GetComponent<Renderer>();
                 if (enemyRenderer != null) {
                     enemyRenderer.material.color = Color.black;
