@@ -10,9 +10,9 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 stayPos;
     private Vector2 startPos;
     public float distance;
-    public float speedEnemy;
+    private float speedEnemy = 3;
     private bool isWaiting = false;
-    public float waitingForSeconds = 3;
+    private float waitingForSeconds = 5;
     private float timer = 0;
 
     private List<Vector2Int> currentPath;
@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour
 
         currentPath = new List<Vector2Int>();
         currentWaypoint = 0;
-        InvokeRepeating("UpdateRoute", 0.5f, 0.5f);
+        InvokeRepeating("UpdateRoute", 1.0f, 1.0f);
     }
 
     
