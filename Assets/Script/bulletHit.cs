@@ -6,6 +6,10 @@ public class bulletHit : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color myColor;
+	public GameObject blueBallPrefab;
+	public GameObject redBallPrefab;
+	public GameObject YellowBallPrefab;
+	public Dictionary<string, GameObject> color2Prefab;
     string myTag ="";
     // Start is called before the first frame update
     void Start()
@@ -17,6 +21,10 @@ public class bulletHit : MonoBehaviour
         myTag = gameObject.tag;
         // Do something with the color
         Debug.Log("myTag is " + myTag);
+		color2Prefab = new Dictionary<string, GameObject>();
+		color2Prefab.Add("0088FFFF", blueBallPrefab);
+		color2Prefab.Add("FFF000FF", YellowBallPrefab);
+		color2Prefab.Add("A60F0FFF", redBallPrefab);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -36,9 +44,12 @@ public class bulletHit : MonoBehaviour
             Vector3 currentPosition = collision.gameObject.transform.position;
 
             // Set the x position to a new value
-            float newXPosition = 5.0f;
-            currentPosition.x = currentPosition.x+newXPosition;
+            //float newXPosition = 5.0f;
+            //currentPosition.x = currentPosition.x+newXPosition;
 
+			collision.gameObject.SetActive(false);
+			
+			Instantiate(color2Prefab[ColorUtility.ToHtmlStringRGBA(myColor)], currentPosition, Quaternion.identity);
             // Update the position of the object
             collision.gameObject.transform.position = currentPosition;
         } else if (myTag!="" && myTag[0] != 'a' && collision.gameObject.tag == "Untagged") {

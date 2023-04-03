@@ -1152,6 +1152,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: LightBulb
+      value: 
+      objectReference: {fileID: 680785100}
+    - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: ResetButton
       value: 
       objectReference: {fileID: 1621548252}
@@ -1161,6 +1165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+--- !u!1 &680785100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8774100540994700805, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 680785099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &825202097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4466,6 +4475,10 @@ PrefabInstance:
       propertyPath: color2.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: powerLight
+      value: 
+      objectReference: {fileID: 680785100}
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: bulletPrefab
       value: 

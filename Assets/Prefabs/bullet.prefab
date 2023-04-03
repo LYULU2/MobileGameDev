@@ -136,3 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44e61f6b4a134f4388f0f1f940e907e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blueBallPrefab: {fileID: 304523671263461847, guid: eb4ec92002bb443308896582b850b1ab, type: 3}
+  redBallPrefab: {fileID: 6991727320705484262, guid: 8961e777661534270b2993bf4704e2c2, type: 3}
+  YellowBallPrefab: {fileID: 8998607322257822213, guid: b003b3a089d79405aa1a4dfe89ae02ed, type: 3}

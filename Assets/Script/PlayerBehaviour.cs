@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject BlueBall;
     public GameObject YellowBall;
     public GameObject RedBall;
+    public GameObject powerLight;
     public int Blue = 0;
     public int Yellow = 0;
     public int Red = 0;
@@ -18,7 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int numBounceEnemy = 0;
     public float totalDistance = 0;
     public int portalLockHit = 0;
-    
+
     public int SceneIndex;
 
     private Vector3 StartScale;
@@ -82,7 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
         colorPurple = new Color32(147,112,219, 255);
         colorBrown = new Color32(139,69,19, 255);
         colorOrange = new Color32(255,165,0,255);
-        colorRed = new Color32(255, 0, 0, 255);
+        colorRed = new Color32(166, 15, 15, 255);
 
         updateSuperPower();
     }
@@ -102,19 +103,19 @@ public class PlayerBehaviour : MonoBehaviour
         if (c == 0) {
             Blue--;
             // Change the color of the new game object
-            nb.GetComponent<SpriteRenderer>().color = new Color32(0, 136, 255, 255);
+            nb.GetComponent<SpriteRenderer>().color = colorBlue;
             // Change the tag of the new game object
             nb.tag = "blueBullet";
         } else if (c == 1) {
             Yellow--;
             // Change the color of the new game object
-            nb.GetComponent<SpriteRenderer>().color =  new Color32(255, 240, 0, 255);
+            nb.GetComponent<SpriteRenderer>().color =  colorYellow;
             // Change the tag of the new game object
             nb.tag = "yellowBullet";
         } else if (c == 2) {
             Red--;
             // Change the color of the new game object
-            nb.GetComponent<SpriteRenderer>().color =  new Color32(255, 0, 0, 255);
+            nb.GetComponent<SpriteRenderer>().color =  colorRed;
             // Change the tag of the new game object
             nb.tag = "redBullet";
         }
@@ -137,17 +138,19 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("bump into enemy !!!");
+        //Debug.Log("bump into enemy !!!");
         if (collision.gameObject.tag == "Enemy")
         {
             Color col = collision.gameObject.GetComponent<SpriteRenderer>().color;
             Debug.Log(col);
             Debug.Log(gameObject.GetComponent<SpriteRenderer>().color);
+            //white eats enemies
+            /* 
             if (gameObject.GetComponent<SpriteRenderer>().color == col) {
                 protectedByShield = true;
                 collision.gameObject.SetActive(false);
                 Debug.Log("destroy enemy");
-            }
+            }*/
             if (!protectedByShield) {
                 numHitEnemy++;
                 for (int i = 0; i < 2 && colorQueue.Count > 0; i++)
@@ -181,6 +184,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
         if (same) { // increase the scale of the player to (1.4, 1.4, 1.4)
+            powerLight.GetComponent<powerUpLight>().updateUXLight(true);
             //Debug.Log("scale up");
             gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
             // activate the shield
@@ -190,6 +194,7 @@ public class PlayerBehaviour : MonoBehaviour
             // change the sprite of the player from Capsule to the character sprite
             // gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("character");
         } else { // reduce to unit size
+            powerLight.GetComponent<powerUpLight>().updateUXLight(false);
             //Debug.Log("scale down");
             gameObject.transform.localScale = StartScale;
             // deactivate the shield

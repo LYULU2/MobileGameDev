@@ -277,7 +277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 356, y: -152}
+  m_AnchoredPosition: {x: 246, y: -134}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163563439
@@ -623,6 +623,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &356963282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8774100540994700805, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 835093421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &405825578 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2382865661956447277, guid: 8884ec4e39d0f4e64b00d0cdeec7ff8a, type: 3}
@@ -663,7 +668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 248, y: 99}
+  m_AnchoredPosition: {x: 253, y: 83}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433095360
@@ -899,9 +904,17 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 349606658}
+    - target: {fileID: 4291861449936688388, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5461412989261279738, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774100540994700805, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024753666604786017, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_IsActive
@@ -952,6 +965,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: LightBulb
+      value: 
+      objectReference: {fileID: 356963282}
+    - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: ResetButton
       value: 
       objectReference: {fileID: 1483116915}
@@ -971,7 +988,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8774100540994700804, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
 --- !u!1 &847898046
 GameObject:
@@ -3619,7 +3637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -144, y: 99}
+  m_AnchoredPosition: {x: -108.9, y: 83.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772405906
@@ -3754,7 +3772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64, y: -152}
+  m_AnchoredPosition: {x: -64, y: -133}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856689252
@@ -4411,6 +4429,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: RedBall
+      value: 
+      objectReference: {fileID: 6991727320705484262, guid: 8961e777661534270b2993bf4704e2c2, type: 3}
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: color1.a
       value: 1
       objectReference: {fileID: 0}
@@ -4434,6 +4456,10 @@ PrefabInstance:
       propertyPath: color2.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: powerLight
+      value: 
+      objectReference: {fileID: 356963282}
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: packageCapacity
       value: 6
