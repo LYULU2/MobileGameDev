@@ -845,6 +845,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 880289022824620028, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2816104597900175708, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: Stats
       value: 
@@ -861,6 +865,10 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 349606658}
+    - target: {fileID: 5461412989261279738, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9024753666604786017, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_IsActive
       value: 0
