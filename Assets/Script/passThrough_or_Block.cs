@@ -7,7 +7,6 @@ public class passThrough_or_Block : MonoBehaviour
 {
     private BoxCollider2D wall;
     public GameObject Stats;
-	private bool sentData;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,13 +32,6 @@ public class passThrough_or_Block : MonoBehaviour
         if (collision.transform.tag == "Player" && playerColorHex == wallColorHex)
         {
             wall.isTrigger = true;
-            // post the data if its a check point wall
-            if (gameObject.CompareTag("TutorialCheck") && !sentData)
-            {
-                // 1-> win 0->lose
-				sentData = true;
-                Stats.GetComponent<StatisticManager>().OnGameFinishTutorial(0);
-            }
         } 
     }
     private void OnTriggerExit2D(Collider2D collision)

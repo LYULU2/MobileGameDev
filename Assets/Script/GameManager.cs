@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Collectables;
     public int SceneIndex;
     public GameObject CheckPoint;
-    RESET RR = new RESET();
+    RESET RR;
     // public GameObject WinScreen;
     public GameObject ResetButton;
 
@@ -35,10 +35,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RR = ResetButton.GetComponent<RESET>();
         string[] para = new string[5] {"Blue","Yellow","Red","reducePackage", "resetColor"};
         Collectables = FindGameObjectsWithTags(para);
         player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
+    /**
+     * This part is confusing, player won't even realize what happened
+     */
     private void finishCollect() {
         //deal with the situation when all collectables' active is false and player's color is not match to the end
         bool valid = true;
@@ -88,7 +92,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        finishCollect();
+        //finishCollect();
         if (Input.GetKeyDown(KeyCode.R)) {
             // Do something when the 'R' key is pressed
             RR.resetBullet();
