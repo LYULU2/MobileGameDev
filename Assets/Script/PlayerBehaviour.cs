@@ -96,7 +96,9 @@ public class PlayerBehaviour : MonoBehaviour
     private void ejectColor() {
         if (colorQueue.Count == 0) return;
         int c = colorQueue.Dequeue();
-        GameObject nb= Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Vector3 newPosition = transform.position;
+        newPosition.x += 1.5f;
+        GameObject nb= Instantiate(bulletPrefab, newPosition, Quaternion.identity);
         if (c == 0) {
             Blue--;
             // Change the color of the new game object
