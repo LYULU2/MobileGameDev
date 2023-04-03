@@ -7,7 +7,7 @@ using static UnityEngine.ColorUtility;
 
 public class CheckPointBehaviour : MonoBehaviour
 {
-    public GameObject[] checkPoints;
+    public GameObject child;
     public GameObject Stats;
     public AudioSource SoundWrongGoal;
 
@@ -39,8 +39,9 @@ public class CheckPointBehaviour : MonoBehaviour
             }
         }
     */
-    private void Start() {
-        checkPoints = GameObject.FindGameObjectsWithTag("Finish");
+    private void Start()
+    {
+        child = transform.GetChild(0).gameObject;
     }
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,7 +50,7 @@ public class CheckPointBehaviour : MonoBehaviour
         {
             Color playerColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
             
-            Color wallColor = gameObject.GetComponent<SpriteRenderer>().color;
+            Color wallColor = child.GetComponent<SpriteRenderer>().color;
             string playerColorHex = ColorUtility.ToHtmlStringRGBA(playerColor);
             string wallColorHex = ColorUtility.ToHtmlStringRGBA(wallColor);
             if (playerColorHex == wallColorHex) {

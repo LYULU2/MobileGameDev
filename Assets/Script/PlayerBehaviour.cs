@@ -20,6 +20,8 @@ public class PlayerBehaviour : MonoBehaviour
     public int portalLockHit = 0;
     
     public int SceneIndex;
+
+    private Vector3 StartScale;
     //private double barLength = 12.88075*2;
     private Vector3 StartPosition;
     private Vector3 oldPosition;
@@ -56,6 +58,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Start()
     {
+        StartScale = transform.localScale;
         current_package_capacity = packageCapacity;
         StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
@@ -177,7 +180,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (same) { // increase the scale of the player to (1.4, 1.4, 1.4)
             //Debug.Log("scale up");
-            gameObject.transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+            gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
             // activate the shield
             protectedByShield = true;
             // add the mass of the player to 2000
@@ -186,7 +189,7 @@ public class PlayerBehaviour : MonoBehaviour
             // gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("character");
         } else { // reduce to unit size
             //Debug.Log("scale down");
-            gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            gameObject.transform.localScale = StartScale;
             // deactivate the shield
             protectedByShield = false;
             // reduce the mass of the player to 1
@@ -345,6 +348,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
     public void Reset()
     {
+        transform.localScale = StartScale;
         transform.position = StartPosition;
         current_package_capacity = packageCapacity;
         oldPosition = gameObject.transform.position;
