@@ -25,6 +25,7 @@ TagManager:
   - ablueBullet
   - ayellowBullet
   - aredBullet
+  - egg
   layers:
   - Default
   - TransparentFX
