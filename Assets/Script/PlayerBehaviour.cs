@@ -95,7 +95,16 @@ public class PlayerBehaviour : MonoBehaviour
         if (colorQueue.Count == 0) return;
         int c = colorQueue.Dequeue();
         Vector3 newPosition = transform.position;
-        newPosition.x += 1.5f;
+        // Check if the object is facing right or left
+        if (transform.right.x > 0)
+        {
+            // Object is facing right
+            newPosition.x += 1.5f;
+        } else {
+            // Object is facing left
+            newPosition.x -= 1.5f;
+        }
+        
         GameObject nb= Instantiate(bulletPrefab, newPosition, Quaternion.identity);
         if (c == 0) {
             Blue--;
@@ -118,8 +127,11 @@ public class PlayerBehaviour : MonoBehaviour
         }
         updateColorBar();
         updatePlayerColor();
-        
-        nb.GetComponent<Rigidbody2D>().AddForce(Vector2.right * force);
+        if (transform.right.x > 0) {
+            nb.GetComponent<Rigidbody2D>().AddForce(Vector2.right * force);
+        } else {
+            nb.GetComponent<Rigidbody2D>().AddForce(Vector2.left * force);
+        }
     }
     private void UpdateTotalDistance()
     {
