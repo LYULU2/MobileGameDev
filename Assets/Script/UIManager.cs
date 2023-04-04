@@ -150,4 +150,14 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(9);
     }
 
+    public void LoadScene10(){
+        SceneManager.LoadScene(10);
+    }
+    public void LoadScene11(){
+        SceneManager.LoadScene(11);
+    }
+    public void LoadScene12(){
+        SceneManager.LoadScene(12);
+    }
+
 }
