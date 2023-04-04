@@ -1786,6 +1786,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1240256361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3420867423693500749, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 1740907883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1253459024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,6 +3113,10 @@ PrefabInstance:
       propertyPath: powerLight
       value: 
       objectReference: {fileID: 1352828758}
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: _Colorbar_UI
+      value: 
+      objectReference: {fileID: 1240256361}
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: bulletPrefab
       value: 

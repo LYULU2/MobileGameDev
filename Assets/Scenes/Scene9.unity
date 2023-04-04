@@ -11556,6 +11556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+--- !u!1 &1929261151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3420867423693500749, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 1929261150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1953271794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12556,6 +12561,10 @@ PrefabInstance:
       propertyPath: powerLight
       value: 
       objectReference: {fileID: 970684066}
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: _Colorbar_UI
+      value: 
+      objectReference: {fileID: 1929261151}
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: bulletPrefab
       value: 

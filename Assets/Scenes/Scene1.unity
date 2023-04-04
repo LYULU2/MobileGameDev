@@ -242,6 +242,11 @@ Transform:
   m_Father: {fileID: 1604946605}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &93655629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3420867423693500749, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 835093421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &163563437
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4466,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 356963282}
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: _Colorbar_UI
+      value: 
+      objectReference: {fileID: 93655629}
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: packageCapacity
       value: 6
       objectReference: {fileID: 0}
@@ -4522,6 +4531,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193823, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570440225597531947, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758215213724939422, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632098981742758792, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129851007748225006, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273053115729614732, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707184614668896499, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

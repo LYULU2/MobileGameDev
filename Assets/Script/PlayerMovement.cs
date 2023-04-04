@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
         {
             //Debug.Log("horray");
             rigidbody.velocity = new Vector2(movementSpeed * movementHorizontal, 0);
+            if (movementHorizontal > 0) transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            else if (movementHorizontal < 0) transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            
         }
         else if (movementVertical != 0)
         {

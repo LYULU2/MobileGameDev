@@ -250,6 +250,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5919164483207715707, guid: bf266fa95b6b643f1929c31e49d3b318, type: 3}
   m_PrefabInstance: {fileID: 5919164483183453236}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &311027266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3420867423693500749, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 498736948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &345920129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,6 +2816,10 @@ PrefabInstance:
       propertyPath: powerLight
       value: 
       objectReference: {fileID: 498736949}
+    - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
+      propertyPath: _Colorbar_UI
+      value: 
+      objectReference: {fileID: 311027266}
     - target: {fileID: 2885209254637193817, guid: 059ff8fa5e7ca411d84540885ca52f10, type: 3}
       propertyPath: bulletPrefab
       value: 
