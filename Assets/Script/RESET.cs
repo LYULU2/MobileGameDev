@@ -14,6 +14,7 @@ public class RESET : MonoBehaviour
 	public GameObject Stats;
     public GameObject Enemy;
     public GameObject TPUnits;
+    public GameObject Egg;
 
     // Start is called before the first frame update
     public void Reset()
@@ -72,7 +73,9 @@ public class RESET : MonoBehaviour
             }
         }
         resetBullet();
-
+        if (Egg) {
+            Egg.GetComponent<egg>().Reset();
+        }
 
     }
     public void resetBullet() {
