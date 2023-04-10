@@ -15,7 +15,6 @@ public class UIManager : MonoBehaviour
     public GameObject PauseCanvas;
     public GameObject WinCanvas;
     public GameObject ResetButton;
-    public GameObject LightBulb;
     // Start is called before the first frame update
     void Start(){
         if (SceneManager.GetActiveScene().buildIndex == 0){
@@ -73,10 +72,6 @@ public class UIManager : MonoBehaviour
         InGameCanvas.SetActive(true);
         PauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
-        if (SceneManager.GetActiveScene().buildIndex < 6)
-        {
-            LightBulb.SetActive(false);
-        }
     }
 
     public void Restart(){

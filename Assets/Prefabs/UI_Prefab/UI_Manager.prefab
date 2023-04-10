@@ -1636,7 +1636,6 @@ MonoBehaviour:
   PauseCanvas: {fileID: 9024753668209715117}
   WinCanvas: {fileID: 6153545680382752549}
   ResetButton: {fileID: 0}
-  LightBulb: {fileID: 0}
 --- !u!1 &9024753667344039479
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,6 +3713,10 @@ PrefabInstance:
     - target: {fileID: 8597916528919677006, guid: 9522f3471b0e64c2c8bea68b3512154e, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597916528919677006, guid: 9522f3471b0e64c2c8bea68b3512154e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 360
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9522f3471b0e64c2c8bea68b3512154e, type: 3}

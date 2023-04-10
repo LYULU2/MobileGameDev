@@ -959,6 +959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike
       objectReference: {fileID: 0}
+    - target: {fileID: 3969094695600154320, guid: 447be9ba85244430696b8d2e29f170cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6626851773762750801, guid: 447be9ba85244430696b8d2e29f170cd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3997,6 +4001,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1996522751503374203, guid: 03f7542f040bd4c39bb6ab31d5154e64, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 477796502}
     - target: {fileID: 1996522752330053817, guid: 03f7542f040bd4c39bb6ab31d5154e64, type: 3}
       propertyPath: m_RootOrder
       value: 13
