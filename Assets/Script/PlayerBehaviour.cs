@@ -30,7 +30,8 @@ public class PlayerBehaviour : MonoBehaviour
     private Color playerColor;
     public int packageCapacity;
     private int current_package_capacity;
-    private GameObject[] colorBar;
+    private GameObject[] UI_colorBar;
+    private GameObject[] Player_ColorBar;
     private  List<int> colorIndex = new List<int>();
     //0 = blue, 1 = yellow, 2 = red
     private Queue<int> colorQueue = new Queue<int>();
@@ -62,17 +63,21 @@ public class PlayerBehaviour : MonoBehaviour
         current_package_capacity = packageCapacity;
         StartPosition = gameObject.transform.position;
         oldPosition = gameObject.transform.position;
-        colorBar = new GameObject[packageCapacity];
+        UI_colorBar = new GameObject[packageCapacity];
+        Player_ColorBar = new GameObject[packageCapacity];
         colorQueue.Clear();
         colorIndex.Clear();
         for (int i = 0; i < packageCapacity; i++) {
-            colorBar[i] = _Colorbar_UI.transform.GetChild(i).gameObject;
+            UI_colorBar[i] = _Colorbar_UI.transform.GetChild(i).gameObject;
+            Player_ColorBar[i] = _Colorbar_Body.transform.GetChild(i).gameObject;
             colorIndex.Add(i);
             // Get the Renderer component from the new cube
-            var cubeRenderer = colorBar[i].GetComponent<Image>();
+            var cubeRenderer = UI_colorBar[i].GetComponent<Image>();
+            var circleRenderer = Player_ColorBar[i].GetComponent<SpriteRenderer>();
 
             // Call SetColor using the shader property name "_Color" and setting the color to white
             cubeRenderer.material.SetColor("_Color", Color.white);
+            circleRenderer.material.SetColor("_Color", Color.white);
         }
         
         //initialize colors
@@ -280,13 +285,17 @@ public class PlayerBehaviour : MonoBehaviour
                 //colorQueue.Clear();
                 if (current_package_capacity == 4) {
                     _Colorbar_UI.transform.GetChild(0).gameObject.SetActive(false);
+                    _Colorbar_Body.transform.GetChild(0).gameObject.SetActive(false);
                     _Colorbar_UI.transform.GetChild(5).gameObject.SetActive(false);
+                    _Colorbar_Body.transform.GetChild(5).gameObject.SetActive(false);
                     colorIndex.RemoveAt(0);
                     colorIndex.RemoveAt(colorIndex.Count-1);
 
                 } else {
                     _Colorbar_UI.transform.transform.GetChild(1).gameObject.SetActive(false);
+                    _Colorbar_Body.transform.GetChild(1).gameObject.SetActive(false);
                     _Colorbar_UI.transform.transform.GetChild(4).gameObject.SetActive(false);
+                    _Colorbar_Body.transform.GetChild(4).gameObject.SetActive(false);
                     colorIndex.RemoveAt(0);
                     colorIndex.RemoveAt(colorIndex.Count-1);
                 }
@@ -351,17 +360,20 @@ public class PlayerBehaviour : MonoBehaviour
         int B = Blue, Y = Yellow, R = Red, total = B+Y+R, i = 0;
         // Debug.Log("Yellow: " + Yellow + " Blue: " + Blue+ " B: " + B);
         foreach (int c in colorQueue) {
-            var cubeRenderer = colorBar[colorIndex[i]].GetComponent<Image>();
-            if (c==0) cubeRenderer.color = colorBlue;
-            else if (c==1) cubeRenderer.color = colorYellow;
-            else if (c==2) cubeRenderer.color = colorRed;
+            var cubeRenderer = UI_colorBar[colorIndex[i]].GetComponent<Image>();
+            var circleRenderer = Player_ColorBar[colorIndex[i]].GetComponent<SpriteRenderer>();
+            if (c==0) {cubeRenderer.color = colorBlue; circleRenderer.color = colorBlue;}
+            else if (c==1){ cubeRenderer.color = colorYellow; circleRenderer.color = colorYellow;}
+            else if (c==2){ cubeRenderer.color = colorRed; circleRenderer.color = colorRed;}
             i++;
         }
         int left = current_package_capacity-colorQueue.Count;
         if (left > 0) {
             for (int k = colorIndex.Count-1, j = 0; k > -1 && j < left; k--, j++) {
-                var cubeRenderer = colorBar[colorIndex[k]].GetComponent<Image>();
+                var cubeRenderer = UI_colorBar[colorIndex[k]].GetComponent<Image>();
                 cubeRenderer.color = Color.white;
+                var circleRenderer = Player_ColorBar[colorIndex[k]].GetComponent<SpriteRenderer>();
+                circleRenderer.color = Color.white;
             }
         }
         if (colorQueue.Count == 0) gameObject.GetComponent<SpriteRenderer>().color = Color.white;
@@ -373,16 +385,21 @@ public class PlayerBehaviour : MonoBehaviour
         transform.position = StartPosition;
         current_package_capacity = packageCapacity;
         oldPosition = gameObject.transform.position;
-        colorBar = new GameObject[packageCapacity];
+        UI_colorBar = new GameObject[packageCapacity];
+        Player_ColorBar = new GameObject[packageCapacity];
         colorIndex.Clear();
         for (int i = 0; i < packageCapacity; i++)
         {
-            colorBar[i] = _Colorbar_UI.transform.transform.GetChild(i).gameObject;
+            UI_colorBar[i] = _Colorbar_UI.transform.transform.GetChild(i).gameObject;
             _Colorbar_UI.transform.transform.GetChild(i).gameObject.SetActive(true);
+            Player_ColorBar[i] = _Colorbar_Body.transform.transform.GetChild(i).gameObject;
+            _Colorbar_Body.transform.transform.GetChild(i).gameObject.SetActive(true);
             colorIndex.Add(i);
             // Get the Renderer component from the new cube
-            var cubeRenderer = colorBar[i].GetComponent<Image>();
+            var cubeRenderer = UI_colorBar[i].GetComponent<Image>();
+            var circleRenderer = Player_ColorBar[i].GetComponent<SpriteRenderer>();
             cubeRenderer.color = Color.white;
+            circleRenderer.color = Color.white;
 
             // Call SetColor using the shader property name "_Color" and setting the color to red
             //cubeRenderer.material.SetColor("_Color", Color.white);
