@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RESET : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class RESET : MonoBehaviour
     // Start is called before the first frame update
     public void Reset()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        /*
 		Stats.GetComponent<StatisticManager>().OnGameReset();
         timer = 0f;
         restartTimes += 1;
@@ -74,6 +77,7 @@ public class RESET : MonoBehaviour
         if (Egg) {
             Egg.GetComponent<egg>().Reset();
         }
+        */
 
     }
     public void resetBullet() {
