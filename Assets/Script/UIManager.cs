@@ -65,21 +65,21 @@ public class UIManager : MonoBehaviour
     public void InGame(){
         Time.timeScale = 1f;
         // Buttons
-        PauseButton.SetActive(true);
-        PauseMenuButtons.SetActive(false);
+        //PauseButton.SetActive(true);
+        //PauseMenuButtons.SetActive(false);
         // Canvas
         MainMenuCanvas.SetActive(false);
         InGameCanvas.SetActive(true);
-        PauseCanvas.SetActive(false);
+        // PauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
     }
 
     public void Restart(){
         Time.timeScale = 1f;
         ResetButton.GetComponent<RESET>().Reset();
-        PauseButton.SetActive(true);
-        PauseCanvas.SetActive(false);
-        PauseMenuButtons.SetActive(false);
+        // PauseButton.SetActive(true);
+        // PauseCanvas.SetActive(false);
+        // PauseMenuButtons.SetActive(false);
 
     }
 

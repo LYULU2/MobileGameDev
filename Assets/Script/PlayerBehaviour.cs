@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerBehaviour : MonoBehaviour
 {
     public GameObject _Colorbar_UI;
+    public GameObject _Colorbar_Body;
     public GameObject powerLight;
     public int Blue = 0;
     public int Yellow = 0;
