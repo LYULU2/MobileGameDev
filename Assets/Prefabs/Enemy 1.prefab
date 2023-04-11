@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3855141e310ae4f6c8b71860d6ed0b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2885209254637193811, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
   distance: 10
 --- !u!50 &7263235572909975330
 Rigidbody2D:
