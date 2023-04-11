@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: superPowerIndicator
       value: 
       objectReference: {fileID: 1310914802}
+    - target: {fileID: 2885209254637193822, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193823, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: m_RootOrder
       value: 12
