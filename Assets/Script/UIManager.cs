@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void BackToMainMenuFromGame(){
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("AMainMenu");
     }
 
     public void QuitGame(){
