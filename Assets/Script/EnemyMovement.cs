@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement : MonoBehaviour
 {   
@@ -23,7 +26,6 @@ public class EnemyMovement : MonoBehaviour
         startPos = transform.position;
         playerPos = player.GetComponent<Transform>();
         currentPos = GetComponent<Transform>().position;
-
         currentPath = new List<Vector2Int>();
         currentWaypoint = 0;
         InvokeRepeating("UpdateRoute", 1.0f, 1.0f);
@@ -138,6 +140,7 @@ public class EnemyMovement : MonoBehaviour
     {
         print("reset");
         transform.position = startPos;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
 }

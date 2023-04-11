@@ -53,6 +53,8 @@ public class bulletHit : MonoBehaviour
             // Update the position of the object
             collision.gameObject.transform.position = currentPosition;
         } else if (myTag!="" && myTag[0] != 'a' && collision.gameObject.tag == "Untagged") {
+	        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+	        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             gameObject.tag = "a"+myTag;
         }
         

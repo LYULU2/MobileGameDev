@@ -10,6 +10,7 @@ public class WaypointFollower : MonoBehaviour
     Vector3 startPosition;
     public void Reset()
     {
+        
         transform.position = startPosition;
     }
     private void Start()

@@ -82,6 +82,7 @@ public class UIManager : MonoBehaviour
     public void Restart(){
         Time.timeScale = 1f;
         ResetButton.GetComponent<RESET>().Reset();
+        
         // PauseButton.SetActive(true);
         // PauseCanvas.SetActive(false);
         // PauseMenuButtons.SetActive(false);

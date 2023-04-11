@@ -25,10 +25,11 @@ public class RESET : MonoBehaviour
         Player.GetComponent<PlayerBehaviour>().Reset();
         // Canvas.GetComponent<CanvasScript>().Reset();
         GameManager.GetComponent<GameManager>().Reset();
+        
         if (Enemy)
         {
             // if the enemy is a single enemy then reset it
-            if (Enemy.GetComponent<EnemyMovement>() != null)
+            if (Enemy.GetComponent<EnemyMovement>() != null || Enemy.GetComponent<WaypointFollower>() != null)
             {
                 resetEnemy(Enemy.transform);
             }
@@ -58,10 +59,7 @@ public class RESET : MonoBehaviour
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies) {
                 enemy.SetActive(true);
-                Renderer enemyRenderer = enemy.GetComponent<Renderer>();
-                if (enemyRenderer != null) {
-                    enemyRenderer.material.color = Color.black;
-                }
+                
             }
         }
         if (TPUnits)
@@ -103,8 +101,9 @@ public class RESET : MonoBehaviour
     void resetEnemy(Transform currentEnemy)
     {
         EnemyMovement flag;
-        // Debug.Log(Enemy);
-        currentEnemy.TryGetComponent<EnemyMovement>(out flag);
+        
+        currentEnemy.gameObject.TryGetComponent<EnemyMovement>(out flag);
+        
         // Debug.Log(flag);
         if (flag)
         {
@@ -127,13 +126,13 @@ public class RESET : MonoBehaviour
     {
         timer += Time.deltaTime;
         
-        /*
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reset();
 
         }
-        */
+        
         
     }
     /*

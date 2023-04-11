@@ -186,7 +186,7 @@ MonoBehaviour:
   portalLockHit: 0
   SceneIndex: 0
   packageCapacity: 6
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8480056976912628853, guid: 9df947a487a674f1e9d316784deb52de, type: 3}
   force: 500
   distanceLastTP: 1
   protectedByShield: 0
