@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Enemy3.unity
     guid: 94eb2dd6367c648ee9569f1d3334c6ef
   - enabled: 1
+    path: Assets/Scenes/EggTutorial.unity
+    guid: faeb324d144856947b0543f682c76e31
+  - enabled: 1
     path: Assets/Scenes/SuperPower.unity
     guid: 6e980f847e94ac74ba2ede34e54a1ac0
   - enabled: 1
