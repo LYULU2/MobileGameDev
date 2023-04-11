@@ -12,6 +12,9 @@ public class WaypointFollower : MonoBehaviour
     {
         
         transform.position = startPosition;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        gameObject.SetActive(true);
     }
     private void Start()
     {
