@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject SettingCanvas;
     public GameObject PauseCanvas;
     public GameObject WinCanvas;
+    public GameObject HintCanvas;
     public GameObject ResetButton;
     // Start is called before the first frame update
     void Start(){
@@ -70,8 +71,12 @@ public class UIManager : MonoBehaviour
         // Canvas
         MainMenuCanvas.SetActive(false);
         InGameCanvas.SetActive(true);
+        HintCanvas.SetActive(false);
         // PauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
+    }
+    public void ShowHint(){
+        HintCanvas.SetActive(HintCanvas.activeSelf ? false: true);
     }
 
     public void Restart(){

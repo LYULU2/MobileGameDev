@@ -895,7 +895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336290005390407809, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2816104597900175708, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: Stats
@@ -915,15 +915,23 @@ PrefabInstance:
       objectReference: {fileID: 349606658}
     - target: {fileID: 3588163649142436245, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4291861449936688388, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5461412989261279738, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399938553463392229, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163495835909700398, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8774100540994700805, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_IsActive
@@ -3066,6 +3074,10 @@ PrefabInstance:
       propertyPath: packageCapacity
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
+      propertyPath: superPowerIndicator
+      value: 
+      objectReference: {fileID: 1760815543}
     - target: {fileID: 2885209254637193823, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3697,6 +3709,11 @@ Canvas:
   m_SortingLayerID: 991132563
   m_SortingOrder: -1
   m_TargetDisplay: 0
+--- !u!1 &1760815543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3228008341678000323, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 835093421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1772405904
 GameObject:
   m_ObjectHideFlags: 0
