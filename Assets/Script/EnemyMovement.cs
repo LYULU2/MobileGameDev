@@ -141,6 +141,8 @@ public class EnemyMovement : MonoBehaviour
         print("reset");
         transform.position = startPos;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        gameObject.SetActive(true);
     }
 
 }
