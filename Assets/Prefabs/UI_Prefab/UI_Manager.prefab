@@ -4251,6 +4251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: powerLight
       objectReference: {fileID: 0}
+    - target: {fileID: 4564826619627208670, guid: 9522f3471b0e64c2c8bea68b3512154e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4564826619627208671, guid: 9522f3471b0e64c2c8bea68b3512154e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4755,6 +4759,10 @@ PrefabInstance:
     - target: {fileID: 44985456862017728, guid: 2abd37723ffb94160990195d84da318e, type: 3}
       propertyPath: m_Name
       value: Button12
+      objectReference: {fileID: 0}
+    - target: {fileID: 44985456862017728, guid: 2abd37723ffb94160990195d84da318e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 44985456862017729, guid: 2abd37723ffb94160990195d84da318e, type: 3}
       propertyPath: m_Pivot.x
@@ -5554,7 +5562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44985456862017729, guid: 2abd37723ffb94160990195d84da318e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -154
+      value: -157
       objectReference: {fileID: 0}
     - target: {fileID: 44985456862017729, guid: 2abd37723ffb94160990195d84da318e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5574,9 +5582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766192584280217880, guid: 2abd37723ffb94160990195d84da318e, type: 3}
       propertyPath: m_Text
-      value: 'Level 10
-
-'
+      value: Level 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2abd37723ffb94160990195d84da318e, type: 3}
