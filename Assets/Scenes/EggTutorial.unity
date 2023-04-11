@@ -765,6 +765,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2122061270}
+    - target: {fileID: 7263235572909975334, guid: 5d1ebbd16279340d8a9627526f785d75, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263235572909975334, guid: 5d1ebbd16279340d8a9627526f785d75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.94
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d1ebbd16279340d8a9627526f785d75, type: 3}
 --- !u!4 &615393222 stripped
@@ -3062,14 +3070,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'In hard levels with enemies, there is one hidden egg to help you directly
-    pass the level.
+    pass the level as long as you have not kill any enemy.
 
 
-    Seduce an enemy to hit the hidden egg to let it appear.
+    Seduce an enemy
+    to hit the invisible egg to let it visible.
 
 
-    Move
-    the player to an appeared egg to directly win.'
+    Move the player to an visible
+    egg to directly win.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3132,7 +3141,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 27.806221, w: -141.1903}
+  m_margin: {x: -11.017785, y: 0, z: 27.806221, w: -141.1903}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
