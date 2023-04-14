@@ -35,9 +35,7 @@ public class PlayerBehaviour : MonoBehaviour
     private  List<int> colorIndex = new List<int>();
     //0 = blue, 1 = yellow, 2 = red
     private Queue<int> colorQueue = new Queue<int>();
-    //float[] cx = new float[2];
-    //float cy, cz;
-    //Reload same level
+    private bool equipped = false;
     public GameObject bulletPrefab; // The prefab of the object to create
     public float force = 500f; // The force to apply to the object
 
@@ -94,10 +92,12 @@ public class PlayerBehaviour : MonoBehaviour
     private void Update() 
     {
         UpdateTotalDistance();
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        //if gun is equipped
+        if (equipped && Input.GetKeyDown(KeyCode.Space)) {
             ejectColor();
         }
     }
+    //shoot
     private void ejectColor() {
         if (colorQueue.Count == 0) return;
         int c = colorQueue.Dequeue();
@@ -152,6 +152,7 @@ public class PlayerBehaviour : MonoBehaviour
         oldPosition = gameObject.transform.position;
         //Debug.Log("we walk" + totalDistance);
     }
+    //handle enemy collision
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("bump into enemy !!!");
@@ -160,13 +161,6 @@ public class PlayerBehaviour : MonoBehaviour
             Color col = collision.gameObject.GetComponent<SpriteRenderer>().color;
             Debug.Log(col);
             Debug.Log(gameObject.GetComponent<SpriteRenderer>().color);
-            //white eats enemies
-            /* 
-            if (gameObject.GetComponent<SpriteRenderer>().color == col) {
-                protectedByShield = true;
-                collision.gameObject.SetActive(false);
-                Debug.Log("destroy enemy");
-            }*/
             if (!protectedByShield) {
                 numHitEnemy++;
                 for (int i = 0; i < 2 && colorQueue.Count > 0; i++)
@@ -223,6 +217,7 @@ public class PlayerBehaviour : MonoBehaviour
             // gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Capsule");
         }
     }
+    //collect bullet 
     private void encounterBullet(Collision2D collision)
     {
 
@@ -256,8 +251,16 @@ public class PlayerBehaviour : MonoBehaviour
         updatePlayerColor();
         updateSuperPower();
     }
+    // tigger collectibles
     private void OnTriggerEnter2D(Collider2D collision)
-    {   
+    {
+        //for collecting gun
+        if (collision.tag == "Gun")
+        {
+            equipped = true;
+            this.transform.GetChild(2).gameObject.SetActive(true);
+            return;
+        }
         if (collision.tag == "Blue" || collision.tag == "blueBullet")
         {
             Blue = Blue + 1;

@@ -307,7 +307,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1604946605}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &77807525
 PrefabInstance:
@@ -4578,6 +4578,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6979738911943808534, guid: 5c9384d16b43440a29e38e2811f23a29, type: 3}
   m_PrefabInstance: {fileID: 869391796}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &909780336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1604946605}
+    m_Modifications:
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 611456479481584020, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+      propertyPath: m_Name
+      value: gun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+--- !u!4 &909780337 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 611456479481584017, guid: 4948d6125d7694afd8747405ad533d62, type: 3}
+  m_PrefabInstance: {fileID: 909780336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &934348186
 GameObject:
   m_ObjectHideFlags: 0
@@ -5413,6 +5475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 909780337}
   - {fileID: 1624135498}
   - {fileID: 29411806}
   - {fileID: 1695330561}
@@ -5452,7 +5515,7 @@ Transform:
   - {fileID: 9746706}
   - {fileID: 624018233}
   m_Father: {fileID: 1604946605}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1624135499
 SpriteRenderer:
@@ -5539,7 +5602,7 @@ Transform:
   - {fileID: 23716973}
   - {fileID: 77807526}
   m_Father: {fileID: 1604946605}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695330560
 GameObject:
@@ -5572,7 +5635,7 @@ Transform:
   - {fileID: 1498200012}
   - {fileID: 869391797}
   m_Father: {fileID: 1604946605}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1711595691 stripped
 Transform:

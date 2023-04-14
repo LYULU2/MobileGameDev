@@ -26,6 +26,7 @@ TagManager:
   - ayellowBullet
   - aredBullet
   - egg
+  - Gun
   layers:
   - Default
   - TransparentFX
