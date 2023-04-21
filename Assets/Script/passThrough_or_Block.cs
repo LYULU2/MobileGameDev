@@ -36,6 +36,6 @@ public class passThrough_or_Block : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        wall.isTrigger = false;
+        //wall.isTrigger = false;
     }
 }
