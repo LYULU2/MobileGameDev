@@ -938,7 +938,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 00e1fbce3b6e24e08a4f4c4f67c8647d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2c26694daa784cf4bdd27406310e960, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -961,6 +961,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29ff6b8665784480802a750c09d9b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultGunSprite: {fileID: 21300000, guid: 907b1401b8c534be0a504b24600c4329, type: 3}
+  yellowGunSprite: {fileID: 21300000, guid: 907b1401b8c534be0a504b24600c4329, type: 3}
+  redGunSprite: {fileID: 21300000, guid: 9260c1315051146c1b812d520b0d91cf, type: 3}
+  blueGunSprite: {fileID: 21300000, guid: a84318f591f9d48ae85cdd592b18ed57, type: 3}
 --- !u!1 &6632098981742758792
 GameObject:
   m_ObjectHideFlags: 0
