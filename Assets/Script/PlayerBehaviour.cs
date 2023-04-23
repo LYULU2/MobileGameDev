@@ -8,7 +8,6 @@ public class PlayerBehaviour : MonoBehaviour
 {
     public GameObject _Colorbar_UI;
     public GameObject _Colorbar_Body;
-    public GameObject powerLight;
     public GameObject superPowerIndicator;
     public int Blue = 0;
     public int Yellow = 0;
@@ -194,7 +193,6 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
         if (same) { // increase the scale of the player to (1.4, 1.4, 1.4)
-            powerLight.GetComponent<powerUpLight>().updateUXLight(true);
             superPowerIndicator.SetActive(true);
             //Debug.Log("scale up");
             gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
@@ -205,7 +203,6 @@ public class PlayerBehaviour : MonoBehaviour
             // change the sprite of the player from Capsule to the character sprite
             // gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("character");
         } else { // reduce to unit size
-            powerLight.GetComponent<powerUpLight>().updateUXLight(false);
             superPowerIndicator.SetActive(false);
             //Debug.Log("scale down");
             gameObject.transform.localScale = StartScale;
