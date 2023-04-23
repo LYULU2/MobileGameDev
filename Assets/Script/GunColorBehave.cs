@@ -28,7 +28,6 @@ public class GunColorBehave : MonoBehaviour
         {
 			this.GetComponent<SpriteRenderer>().sprite = defaultGunSprite;
             // use the default black sprite
-            Debug.Log("Black gun");
         }
         else
         {
@@ -37,19 +36,16 @@ public class GunColorBehave : MonoBehaviour
             {
                 //blue 
 				this.GetComponent<SpriteRenderer>().sprite = blueGunSprite;
-                Debug.Log("Blue gun");
             }
             else if (c == 1)
             {
                 //yellow
 				this.GetComponent<SpriteRenderer>().sprite = yellowGunSprite;
-                Debug.Log("yellow gun");
             }
             else if (c == 2)
             {
                 //red
 				this.GetComponent<SpriteRenderer>().sprite = redGunSprite;
-                Debug.Log("red gun");
             }
         }
 

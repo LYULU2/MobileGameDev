@@ -345,7 +345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Colorbar_UI: {fileID: 0}
   _Colorbar_Body: {fileID: 1726171161409543411}
-  powerLight: {fileID: 0}
   superPowerIndicator: {fileID: 0}
   Blue: 0
   Yellow: 0
@@ -961,7 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29ff6b8665784480802a750c09d9b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultGunSprite: {fileID: 21300000, guid: 907b1401b8c534be0a504b24600c4329, type: 3}
+  defaultGunSprite: {fileID: 21300000, guid: d2c26694daa784cf4bdd27406310e960, type: 3}
   yellowGunSprite: {fileID: 21300000, guid: 907b1401b8c534be0a504b24600c4329, type: 3}
   redGunSprite: {fileID: 21300000, guid: 9260c1315051146c1b812d520b0d91cf, type: 3}
   blueGunSprite: {fileID: 21300000, guid: a84318f591f9d48ae85cdd592b18ed57, type: 3}

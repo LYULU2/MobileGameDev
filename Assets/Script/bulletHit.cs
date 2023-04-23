@@ -51,11 +51,15 @@ public class bulletHit : MonoBehaviour
 			
 			Instantiate(color2Prefab[ColorUtility.ToHtmlStringRGBA(myColor)], currentPosition, Quaternion.identity);
             // Update the position of the object
-            collision.gameObject.transform.position = currentPosition;
+            //collision.gameObject.transform.position = currentPosition;
         } else if (myTag!="" && myTag[0] != 'a' && collision.gameObject.tag == "Untagged") {
-	        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-	        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-            gameObject.tag = "a"+myTag;
+	        //GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+	        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            //gameObject.tag = "a"+myTag;
+            Vector3 currentPosition = this.transform.position;
+            gameObject.SetActive(false);
+            Instantiate(color2Prefab[ColorUtility.ToHtmlStringRGBA(myColor)], currentPosition, Quaternion.identity);
+
         }
         
         //gameObject.SetActive(false);
