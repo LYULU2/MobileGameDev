@@ -443,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: LightBulb
       value: 
-      objectReference: {fileID: 498736949}
+      objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: ResetButton
       value: 
@@ -458,11 +458,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
---- !u!1 &498736949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8774100540994700805, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-  m_PrefabInstance: {fileID: 498736948}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &498736950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3228008341678000323, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
@@ -2866,7 +2861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83.2, y: -57.3}
+  m_AnchoredPosition: {x: 83.2, y: -55.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948183359
@@ -2889,9 +2884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'press ''space'' to paint enemy your color
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3027,7 +3020,7 @@ PrefabInstance:
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: powerLight
       value: 
-      objectReference: {fileID: 498736949}
+      objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: _Colorbar_UI
       value: 
@@ -3112,6 +3105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29ff6b8665784480802a750c09d9b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultGunSprite: {fileID: 0}
+  yellowGunSprite: {fileID: 0}
+  redGunSprite: {fileID: 0}
+  blueGunSprite: {fileID: 0}
 --- !u!1 &2140247834
 GameObject:
   m_ObjectHideFlags: 0
