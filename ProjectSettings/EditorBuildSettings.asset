@@ -28,13 +28,13 @@ EditorBuildSettings:
     guid: 94eb2dd6367c648ee9569f1d3334c6ef
   - enabled: 1
     path: Assets/Scenes/Tutorial 7.unity
-    guid: 6ca105ecc144642e48c54dc59e02c6b7
+    guid: 1a50a6e7d4ca56d409b0a336b0e8669e
   - enabled: 1
     path: Assets/Scenes/Color Theory 1.unity
     guid: aa8c8c186c6934676861304b85a553d6
   - enabled: 1
     path: Assets/Scenes/Color Theory 2.unity
-    guid: 1a50a6e7d4ca56d409b0a336b0e8669e
+    guid: 6ca105ecc144642e48c54dc59e02c6b7
   - enabled: 1
     path: Assets/Scenes/Enemy + Shoot 1.unity
     guid: bda37323198c94986a54a17742905aba

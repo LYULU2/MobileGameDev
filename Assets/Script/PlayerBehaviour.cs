@@ -46,8 +46,8 @@ public class PlayerBehaviour : MonoBehaviour
     private Color colorRed;
     private Color colorGreen;
     private Color colorPurple;
-    private Color colorBrown;
     private Color colorOrange;
+     private Color colorBlack;
 
     public bool protectedByShield = false;
 
@@ -81,11 +81,11 @@ public class PlayerBehaviour : MonoBehaviour
         //initialize colors
         colorBlue = new Color32(0, 136, 255, 255);
         colorYellow = new Color32(255, 240, 0, 255);
-        colorGreen = new Color32(50, 220, 85, 255);
-        colorPurple = new Color32(147,112,219, 255);
-        colorBrown = new Color32(139,69,19, 255);
-        colorOrange = new Color32(255,165,0,255);
         colorRed = new Color32(166, 15, 15, 255);
+        colorGreen = new Color32(50, 220, 85, 255);
+        colorPurple = new Color32(147, 112, 219, 255);
+        colorOrange = new Color32(255, 165, 0, 255);
+        colorBlack = new Color32(45, 45, 45, 255);
 
         updateSuperPower();
     }
@@ -353,7 +353,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else if (Red == Blue && Red == Yellow)
         {
-            playerColor = colorBrown;
+            playerColor = colorBlack;
         }
 
         gameObject.GetComponent<SpriteRenderer>().color = playerColor;
