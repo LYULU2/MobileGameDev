@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial 4.unity
     guid: 6e980f847e94ac74ba2ede34e54a1ac0
   - enabled: 1
-    path: Assets/Scenes/ShootTurorial.unity
+    path: Assets/Scenes/Enemy + Shoot 2.unity
     guid: 6bd128b226fe24e58a4c3aa1ac25703d
   - enabled: 1
     path: Assets/Scenes/Tutorial 2.unity
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TP_2.unity
     guid: 1a50a6e7d4ca56d409b0a336b0e8669e
   - enabled: 1
-    path: Assets/Scenes/New_Tools.unity
+    path: Assets/Scenes/Tutorial 7.unity
     guid: 6ca105ecc144642e48c54dc59e02c6b7
   - enabled: 1
     path: Assets/Scenes/ThreeColors.unity
