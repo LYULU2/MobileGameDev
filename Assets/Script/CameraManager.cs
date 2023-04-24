@@ -27,6 +27,11 @@ public class CameraManager : MonoBehaviour
             cam.enabled = !cam.enabled;
             camFollow.enabled = !camFollow.enabled;
         }
+
+        if (!cam.enabled && !camFollow.transform.parent.gameObject.activeSelf)
+        {
+            cam.enabled = !cam.enabled;
+        }
         
     }
 }
