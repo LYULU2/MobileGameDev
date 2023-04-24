@@ -736,6 +736,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433095358}
   m_CullTransparentMesh: 1
+--- !u!1 &612529361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3228008341678000323, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 1050758410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &624018232
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,7 +3006,7 @@ PrefabInstance:
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: _Colorbar_UI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1782653095}
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: packageCapacity
       value: 6
@@ -3009,7 +3014,7 @@ PrefabInstance:
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: superPowerIndicator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 612529361}
     - target: {fileID: 2885209254637193822, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: movementSpeed
       value: 10
@@ -3783,6 +3788,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772405904}
   m_CullTransparentMesh: 1
+--- !u!1 &1782653095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3420867423693500749, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+  m_PrefabInstance: {fileID: 1050758410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856689250
 GameObject:
   m_ObjectHideFlags: 0
