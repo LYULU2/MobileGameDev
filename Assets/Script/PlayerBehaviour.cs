@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject _Colorbar_UI;
     public GameObject _Colorbar_Body;
     public GameObject superPowerIndicator;
+    public GameObject Gun;
     public int Blue = 0;
     public int Yellow = 0;
     public int Red = 0;
@@ -256,7 +257,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.tag == "Gun")
         {
             equipped = true;
-            this.transform.GetChild(2).gameObject.SetActive(true);
+            Gun.SetActive(true);
             return;
         }
         if (collision.tag == "Blue" || collision.tag == "blueBullet")
