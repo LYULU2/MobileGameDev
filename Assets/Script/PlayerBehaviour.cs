@@ -17,6 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int numBounceEnemy = 0;
     public float totalDistance = 0;
     public int portalLockHit = 0;
+    public Transform bulletPosition;
 
     public int SceneIndex;
 
@@ -100,7 +101,7 @@ public class PlayerBehaviour : MonoBehaviour
     private void ejectColor() {
         if (colorQueue.Count == 0) return;
         int c = colorQueue.Dequeue();
-        Vector3 newPosition = transform.position;
+        Vector3 newPosition = bulletPosition.position;
         // Check if the object is facing right or left
         if (transform.right.x > 0)
         {
