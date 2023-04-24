@@ -289,6 +289,10 @@ public class PlayerBehaviour : MonoBehaviour
                     _Colorbar_Body.transform.GetChild(0).gameObject.SetActive(false);
                     _Colorbar_UI.transform.GetChild(5).gameObject.SetActive(false);
                     _Colorbar_Body.transform.GetChild(5).gameObject.SetActive(false);
+                    for (int i = 4; i > 0; i--)
+                    {
+                        _Colorbar_UI.transform.GetChild(i).position = _Colorbar_UI.transform.GetChild(i - 1).position;
+                    }
                     colorIndex.RemoveAt(0);
                     colorIndex.RemoveAt(colorIndex.Count-1);
 
