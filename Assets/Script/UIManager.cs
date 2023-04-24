@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
         // Canvas
         MainMenuCanvas.SetActive(false);
         InGameCanvas.SetActive(true);
-        HintCanvas.SetActive(false);
+        HintCanvas.SetActive(true);
         // PauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
     }
