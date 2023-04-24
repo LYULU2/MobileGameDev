@@ -42,9 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Enemy + Shoot 2.unity
     guid: 6bd128b226fe24e58a4c3aa1ac25703d
   - enabled: 1
-    path: Assets/Scenes/Real Challenge as Hell 1.unity
+    path: Assets/Scenes/Real Challenge 1.unity
     guid: d864ef108c97a4308957bd48b15768c3
   - enabled: 1
-    path: Assets/Scenes/Real Challenge as Hell 2.unity
+    path: Assets/Scenes/Real Challenge 2.unity
     guid: 5e3065c32a1a61340b9fc1fe025dc113
   m_configObjects: {}

@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public Button HintButton;
     public Sprite HintShowImage;
     public Sprite HintHindImage;
+    public Text sceneNameText;
 
     // Start is called before the first frame update
     void Start(){
@@ -79,6 +80,7 @@ public class UIManager : MonoBehaviour
         HintCanvas.SetActive(true);
         // PauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
+        sceneNameText.text = SceneManager.GetActiveScene().name;
     }
     public void ShowHint(){
         HintCanvas.SetActive(HintCanvas.activeSelf ? false: true);
