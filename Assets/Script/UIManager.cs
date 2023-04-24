@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -16,6 +17,10 @@ public class UIManager : MonoBehaviour
     public GameObject WinCanvas;
     public GameObject HintCanvas;
     public GameObject ResetButton;
+    public Button HintButton;
+    public Sprite HintShowImage;
+    public Sprite HintHindImage;
+
     // Start is called before the first frame update
     void Start(){
         if (SceneManager.GetActiveScene().buildIndex == 0){
@@ -77,6 +82,7 @@ public class UIManager : MonoBehaviour
     }
     public void ShowHint(){
         HintCanvas.SetActive(HintCanvas.activeSelf ? false: true);
+        HintButton.GetComponent<Image>().sprite = HintCanvas.activeSelf ? HintShowImage : HintHindImage; 
     }
 
     public void Restart(){
