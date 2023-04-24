@@ -1784,7 +1784,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934348186}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -2178,7 +2178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605873990495327950, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605873990495327950, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
+      propertyPath: orthographic size
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8784747914218263388, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: m_IsActive

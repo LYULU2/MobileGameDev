@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         this.transform.LookAt(player.transform);
+        this.transform.rotation = Quaternion.Euler(Vector3.zero);
     }
 
     void LateUpdate()

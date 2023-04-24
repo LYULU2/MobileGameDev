@@ -1064,7 +1064,7 @@ PrefabInstance:
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: LightBulb
       value: 
-      objectReference: {fileID: 680785100}
+      objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: ResetButton
       value: 
@@ -1075,11 +1075,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
---- !u!1 &680785100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8774100540994700805, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-  m_PrefabInstance: {fileID: 680785099}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &680785101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3228008341678000323, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
@@ -1981,7 +1976,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934348186}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -3119,7 +3114,7 @@ PrefabInstance:
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: powerLight
       value: 
-      objectReference: {fileID: 680785100}
+      objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: _Colorbar_UI
       value: 
@@ -3186,7 +3181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605873990495327950, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605873990495327950, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
+      propertyPath: orthographic size
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 119e288e61824427987e9eb4e50109c1, type: 3}

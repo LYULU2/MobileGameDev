@@ -7755,7 +7755,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934348186}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -7867,11 +7867,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 304523671263461848, guid: eb4ec92002bb443308896582b850b1ab, type: 3}
   m_PrefabInstance: {fileID: 944572733}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &970684066 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8774100540994700805, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
-  m_PrefabInstance: {fileID: 1929261150}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &972484692
 PrefabInstance:
@@ -8602,7 +8597,7 @@ PrefabInstance:
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: powerLight
       value: 
-      objectReference: {fileID: 970684066}
+      objectReference: {fileID: 0}
     - target: {fileID: 2885209254637193817, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: _Colorbar_UI
       value: 
@@ -8661,7 +8656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605873990495327950, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8784747914218263388, guid: 119e288e61824427987e9eb4e50109c1, type: 3}
       propertyPath: m_IsActive
@@ -11399,7 +11394,7 @@ PrefabInstance:
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: LightBulb
       value: 
-      objectReference: {fileID: 970684066}
+      objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230391, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: ResetButton
       value: 
