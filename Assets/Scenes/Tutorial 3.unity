@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 934348188}
   camFollow: {fileID: 1878722513}
-  instructions: {fileID: 1995124788}
+  instructions: {fileID: 0}
 --- !u!4 &149253067
 Transform:
   m_ObjectHideFlags: 0
