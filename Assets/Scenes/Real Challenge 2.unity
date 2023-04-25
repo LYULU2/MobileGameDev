@@ -11787,6 +11787,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5053421856201184802, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_Text
+      value: 'Congratulations! You completed ALL LEVELS.
+
+        Thanks for playing
+        XD'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153545680382752549, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508676546827790411, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291583820157748450, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9024753667218230390, guid: 7b2f27de2c255479e9979ce441247d35, type: 3}
       propertyPath: m_RootOrder
       value: 11
